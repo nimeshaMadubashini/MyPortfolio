@@ -12,7 +12,7 @@
     <meta name="theme-color" content="blue">
     <meta name="viewport" content="width=device-width initial-scale=1 minimum-scale=3 maximum-scale=10">
     <link rel="icon" href="assest\image\icons8-protect-100.png">
-
+<link rel="stylesheet" href="styleSheet.css">
 </head>
 <!--<body>-->
 
@@ -23,9 +23,12 @@
 <!--</body>-->
 <body>
 <header>
-    <h2>Home</h2>
-    <nav>
-        <menu>
+
+    <nav class="navbar">
+        <menu class="nav1">
+            <a href="#home">
+                <li>Home</li>
+            </a>
             <a href="#About me">
                 <li>About Me</li>
             </a>
@@ -51,7 +54,7 @@
         </menu>
     </nav>
 </header>
-<section>
+<section id="home">
     <div>
         <h1>PORTFOLIO</h1>
     </div>
@@ -107,7 +110,7 @@
         <article><h2>About me</h2>
             <aside>
                 <img src="assest/image/aboutpic.png" width="233">
-            </aside>
+             </aside>
             <p> My name is Nimesha ,21,still an undergrad in <abbr
                     title="Institute of Software engmeer"><strong>IJSE</strong></abbr></p>
             <p> I’m skilled with Java,Mysql,Html and CSS,and I am trying to learn other programming
@@ -278,7 +281,7 @@
 <section id="assignmet">
 <h2>Assignment</h2>
     <section>
-        <div>
+        <div class="zoomWrapper">
             <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
             <h3>Assignment 01</h3>
             <h5>View</h5>
@@ -326,6 +329,7 @@
                 </a>
             </li>
         </ul>
+
     </nav>
     <h3 id="contact">Contact me</h3>
     <div>
