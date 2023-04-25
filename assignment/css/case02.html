@@ -17,6 +17,10 @@
           position: relative;
           right: 0px;
           left:0px;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 40;
       }
       *{
           margin: 0px;
@@ -65,6 +69,7 @@
       }
       body>main{
           position: relative;
+          z-index: 2;
 
 
       }
@@ -129,7 +134,20 @@ text-decoration: none;
 
       }
 
-
+      #chatbox{
+          width: 200px;
+          height: 50px;
+          background: darkblue;
+          text-align: center;
+          color: white;
+          position: fixed;
+          right: 0px;
+          bottom: 0px;
+      }
+      #chatbox>p{
+          padding-top: 10px;
+          font-size: 20px;
+      }
 
   </style>
 
@@ -190,8 +208,10 @@ text-decoration: none;
         ipsum iure libero molestias necessitatibus neque, officia omnis optio, repellat rerum veritatis voluptates
         voluptatum.</p>
 
-    </section>
 </section>
+    <section >
+        <div id="chatbox"><p>Check Box</p></div>
+    </section>
     </main>
 <footer>
 <p>Develop By IJSE</p>
