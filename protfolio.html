@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio | Nimesha Madubashini</title>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta nmae="keyword" content="Nimesha,madubashini,Software Engineer">
+    <meta name="description" content="This is repesent my as Software engineer student">
+    <meta name="author" content="Nimesha Madubashini">
+    <meta name="Owner" content="Nimesha">
+    <meta name="robots" content="index">
+    <meta name="theme-color" content="blue">
+    <meta name="viewport" content="width=device-width initial-scale=1 minimum-scale=3 maximum-scale=10">
+    <link rel="icon" href="\assest\image\icons8-protect-100.png">
+    <link rel="stylesheet" href="/assest/css/normalize.css">
+    <link rel="stylesheet" href="assest/frontAwsome/fontawesome-free-6.4.0-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            height: 10vh;
+            box-shadow: 4px 1px 4px 0px #0000005c;
+            background-color: #228be6;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            align-items: center;
+
+        }
+
+        .logo:hover {
+            cursor: pointer;
+        }
+
+        .logo h1 {
+            color: white;
+            font-family: cursive;
+            font-size: 25px;
+            margin-left: 10px
+        }
+
+        .logo h1 span {
+            color: crimson;
+            font-family: cursive
+
+        }
+
+        header > nav > ul {
+            position: absolute;
+            right: 0px;
+            top: 15px;
+            display: flex;
+        }
+
+        header > nav > ul > li {
+            font-weight: 400;
+            font-size: 17px;
+            margin-left: 2px;
+            margin-right: 30px;
+            display: inline-block;
+            font-family: 'RidhmaPlain', Helvetica, sans-serif;
+            transition: .2s;
+
+        }
+
+        nav > ul > li > a:hover {
+            background-color: #91a7ff;
+            border-radius: 20px;
+
+        }
+
+        nav > ul > li > a.active {
+            background-color: crimson;
+            border-radius: 20px;
+
+        }
+
+        .menu {
+            display: none;
+            height: fit-content;
+            padding: 3px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+            padding-right: 24px;
+        }
+
+        header > nav > ul > li > a {
+            text-decoration: none;
+            color: white;
+            padding: 4px;
+        }
+
+        header > nav > ul > li:nth-child(8) {
+            margin-right: 40px;
+        }
+
+        .menu:hover {
+            background-color: black;
+        }
+
+        .menu > div {
+            width: 20px;
+            height: 2px;
+            background-color: white;
+            margin: 6px 0;
+
+
+        }
+
+        @media only screen and (max-width: 1100px) {
+            header {
+                width: 100%;
+                height: 60px;
+                padding: 0 20px;
+            }
+
+        }
+
+        @media only screen and (max-width: 875px) {
+            header {
+                height: 50px;
+            }
+
+            header > nav {
+                display: block;
+                position: absolute;
+                width: 65%;
+                height: 60vh;
+                z-index: 999;
+                /*
+                background-color: white;
+                */
+                top: 50px;
+                right: -100%;
+                /*
+                border-radius: 10px;
+                */
+                box-shadow: 2px 0 0 rgba(0, 0, 0, 0.5);
+                transition: .2s;
+                transform-origin: top center;
+            }
+
+            header > nav > ul {
+                display: block;
+                padding: 0 300px;
+                margin: 2px 0;
+                padding-right: 0px;
+            }
+
+            .menu {
+
+                display: block;
+            }
+
+            header > nav > ul > li {
+                padding-top: 10px;
+            }
+
+            header > nav > ul > li:nth-child(1) {
+                padding-top: 2px;
+            }
+
+            header > nav > ul > li > a {
+                text-align: center;
+                margin-bottom: 5px;
+                padding: 5px 48px;
+                border-radius: 5px;
+                color: #222222;
+            }
+
+            #nav_Check:checked ~ nav {
+                right: 0px
+            }
+
+            #nav_Check:checked ~ .menu > div:nth-child(even) {
+                background: transparent;
+            }
+
+            #nav_Check:checked ~ .menu > div:first-child {
+                transform: translateY(10px) rotate(45deg);
+            }
+
+            #nav_Check:checked ~ .menu > div:last-child {
+                transform: translateY(-6px) rotate(-45deg);
+            }
+
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <h1>Prot<span>folio</span></h1>
+    </div>
+    <input type="checkbox" id="nav_Check" hidden>
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#About me">About Me</a></li>
+            <li><a href="#Education">Education</a></li>
+            <li><a href="#Skill">Skill</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#assignmet">Assignment</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+    </nav>
+    <label for="nav_Check" class="menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </label>
+</header>
+</body>
+</html>
