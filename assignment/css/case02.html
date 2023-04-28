@@ -20,7 +20,7 @@
           position: fixed;
           top: 0;
           width: 100%;
-          z-index: 40;
+          z-index: 5;
       }
       *{
           margin: 0px;
@@ -69,8 +69,12 @@
       }
       body>main{
           position: relative;
-          z-index: 2;
+          z-index:2;
 
+      }
+      main{
+
+          padding-top: 54px;
 
       }
       body>main>nav{
@@ -109,28 +113,26 @@ text-decoration: none;
       main>section>section{
           height: 300px;
           border: 1px solid black;
-          position:relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
       }
       main>section>section>div{
           height: 100%;
-          width:calc(100%/3);
-          position: absolute;
+          flex-grow: 1;
 
       }
       main>section>section>div:nth-child(1){
-          left: 0px;
 
       }
 
       main>section>section>div:nth-child(2){
-          left:calc(100%/3);
-          margin: auto;
+
 
       }
 
       main>section>section>div:nth-child(3){
 
-          right: 0px;
 
       }
 
