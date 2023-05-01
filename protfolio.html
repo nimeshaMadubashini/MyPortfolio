@@ -10,7 +10,7 @@
     <meta name="Owner" content="Nimesha">
     <meta name="robots" content="index">
     <meta name="theme-color" content="blue">
-    <meta name="viewport" content="width=device-width initial-scale=1 minimum-scale=3 maximum-scale=10">
+    <meta name="viewport" content="width=device-width initial-scale=1.0 minimum-scale=3 maximum-scale=10">
     <link rel="icon" href="\assest\image\icons8-protect-100.png">
     <link rel="stylesheet" href="/assest/css/normalize.css">
     <link rel="stylesheet" href="assest/frontAwsome/fontawesome-free-6.4.0-web/css/all.css">
@@ -911,8 +911,96 @@
             right: 0;
             top: 74px;
             margin: auto;
+        }
+        @media only screen and (max-width: 1024px) {
+            #Education {
+                width: 100vw;
+                height: 100vh;
+                top: 62px;
+            }
+
+            #Education > div:nth-child(1) {
+                position: absolute;
+                left: 2px;
+                top: 0px;
+                width: 150px;
+            }
+        }
+
+        #Skill{
+            position: relative;
+            background: url("/assest/image/6893591.jpg");
+            background-size: cover;
+            border-top:2px solid black;
+            top: 73px;
+            width:100vw;
+            height:100vh;
+            background-position: center;
 
         }
+        #Skill > div:nth-child(1) {
+            position: absolute;
+            left: 1px;
+            top: 0px;
+            width: 28%;
+            color: whitesmoke;
+            background: linear-gradient(to left, #91EAE4, #86A8E7);
+        }
+        .skillOne{
+            display:flex;
+            justify-content: space-around;
+            margin-top: 42px;
+
+        }
+        #Skill>section:first-of-type>div{
+            text-align: center;
+            position: relative;
+            padding-top: 5px;
+            border-radius: 5px;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: scale3d(1, 1, 1);
+        }
+        #Skill>section:nth-of-type(2) {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 30px;
+        }
+#Skill>h3{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+    margin-top:39px;
+}
+@media (max-width: 1440px) {
+    #Skill>h3{
+        font-size: 20px;
+    }
+
+}
+       #Skill>.skillThree{
+            display: flex;
+            align-items: center;
+           margin-top:19px;
+           padding-left:250px;
+        }
+       @media (max-width:1024px) {
+           #Skill>.skillThree{
+               width: 40%;
+           }
+       }
+       #Skill>.skillThree>img:nth-child(1){
+padding-right:25px;
+       }
+        #Skill>.skillThree>img:nth-child(2){
+            padding-right:25px;
+        }
+        #Skill>.skillThree>img:nth-child(3){
+            padding-right:25px;
+        }
+
     </style>
 </head>
 <body>
@@ -1117,6 +1205,62 @@
     <div></div>
     <div></div>
     <div class="line"></div>
+
+</section>
+<!--skill-->
+<section id="Skill">
+    <div>    <h2>Languages,Skill & Tools</h2></div>
+    <section class="skillOne">
+        <!-- java-->
+        <div>
+            <img height="30" src="assest/image/icons8-java-48.png" alt="">
+            <span>Java</span>
+            <p>Java is a high-level, class-based, object-oriented programming
+                language that is designed to have as few implementation dependencies as possible....</p>
+            <span>Learn More</span>
+        </div>
+
+        <!-- Sql-->
+        <div>
+            <img height="32" src="assest/image/logo-mysql-170x115.png" alt="">
+            <span>MySQL</span>
+            <p>SQL is a domain-specific language used in programming and designed
+                for managing data held in a relational database management system,...
+            </p>
+            <span>Learn More</span>
+        </div>
+
+        <!--html-->
+        <div>
+            <img height="30" src="assest/image/icons8-html-5-48.png" alt="">
+            <span>HTML</span>
+            <p>The HyperText Markup Language or HTML is the standard markup
+                language for documents designed to be displayed in a web browser. It can be assisted by
+                technologies such as Cascading Style...
+            </p>
+            <span>Learn More</span>
+        </div>
+
+    </section>
+    <!-- tech icon-->
+    <section>
+        <img src="assest/image/icons8-adobe-lightroom-48.png" height="39" alt="">
+        <img height="38" src="assest/image/icons8-adobe-photoshop-48.png" alt="">
+        <img src=assest/image/icons8-intellij-idea-48.png  height="37" alt="">
+        <img src=assest/image/icons8-visual-studio-code-2019-48.png height="38" alt="">
+        <img src=assest/image/icons8-figma-48.png height="33" alt="">
+        <img src=assest/image/icons8-java-48.png height="38" alt="">
+        <img src=assest/image/icons8-html-5-48.png height="35" alt="">
+        <img src=assest/image/icons8-mysql-logo-48.png height="44" alt="">
+        <img height="45" src=assest/image/th-removebg-preview.png  alt="">
+    </section>
+    <h3>Technological Certificates</h3>
+    <!--    certificate-->
+    <section class="skillThree">
+        <img width="200" src="/assest/image/ce3.jpeg" alt="">
+        <img width="200" src="assest/image/cet2.jpeg" alt="">
+        <img width="200" src="assest/image/ceti1.jpeg" alt="">
+    </section>
 
 </section>
 
