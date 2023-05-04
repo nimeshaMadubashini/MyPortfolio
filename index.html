@@ -1,119 +1,1314 @@
 <!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Portfolio | Nimesha Madubashini</title>
+    <meta name="viewport" content="width=device-width initial-scale=1">
     <meta nmae="keyword" content="Nimesha,madubashini,Software Engineer">
     <meta name="description" content="This is repesent my as Software engineer student">
     <meta name="author" content="Nimesha Madubashini">
     <meta name="Owner" content="Nimesha">
     <meta name="robots" content="index">
     <meta name="theme-color" content="blue">
-    <meta name="viewport" content="width=device-width initial-scale=1 minimum-scale=3 maximum-scale=10">
-    <link rel="icon" href="assest\image\icons8-protect-100.png">
-<link rel="stylesheet" href="assest/css/styleSheet.css">
-</head>
-<!--<body>-->
+    <meta name="viewport" content="width=device-width initial-scale=1.0 minimum-scale=3 maximum-scale=10">
+    <link rel="icon" href="/assest/image/icons8-protect-100.png">
+    <link rel="stylesheet" href="/assest/css/normalize.css">
+    <link rel="stylesheet" href="/assest/css/styleSheet.css">
+    <link rel="stylesheet" href="assest/frontAwsome/fontawesome-free-6.4.0-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
-<!--<h1>W.A Nimesha Madhubashini</h1>
-<h1>GDSE-62</h1>
-<a href="https://madhuwellappili.000webhostapp.com/" target="_blank">000 web host</a>
-<a href="http://madhuwellappili.epizy.com/?i=1" target="_blank">Infinity</a>-->
-<!--</body>-->
+    <style>
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        header {
+            position: fixed;
+            width: 80%;
+            height: 10vh;
+            box-shadow: 4px 1px 4px 0px #0000005c;
+            background-color: #228be6;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            align-items: center;
+            top: 0px;
+            z-index: 4;
+
+        }
+
+        .logo:hover {
+            cursor: pointer;
+        }
+
+        .logo h1 {
+            color: white;
+            font-family: cursive;
+            font-size: 25px;
+            margin-left: 10px
+        }
+
+        .logo h1 span {
+            color: crimson;
+            font-family: cursive
+
+        }
+
+        header > nav > ul {
+            position: absolute;
+            right: 0px;
+            top: 15px;
+            display: flex;
+        }
+
+        header > nav > ul > li {
+            font-weight: 400;
+            font-size: 17px;
+            margin-left: 2px;
+            margin-right: 30px;
+            display: inline-block;
+            font-family: 'RidhmaPlain', Helvetica, sans-serif;
+            transition: .2s;
+
+        }
+
+        nav > ul > li > a:hover {
+            background-color: #91a7ff;
+            border-radius: 20px;
+
+        }
+
+        nav > ul > li > a.active {
+            background-color: crimson;
+            border-radius: 20px;
+
+        }
+
+        .menu {
+            display: none;
+            height: fit-content;
+            padding: 3px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+            padding-right: 24px;
+        }
+
+        header > nav > ul > li > a {
+            text-decoration: none;
+            color: white;
+            padding: 4px;
+        }
+
+        header > nav > ul > li:nth-child(8) {
+            margin-right: 40px;
+        }
+
+        .menu:hover {
+            background-color: black;
+        }
+
+        .menu > div {
+            width: 20px;
+            height: 2px;
+            background-color: white;
+            margin: 6px 0;
+
+
+        }
+
+        @media only screen and (max-width: 1100px) {
+            header {
+                width: 100%;
+                height: 60px;
+                padding: 0 20px;
+            }
+
+        }
+
+        @media only screen and (max-width: 875px) {
+            header {
+                height: 50px;
+            }
+
+            header > nav {
+                display: block;
+                position: absolute;
+                width: 65%;
+                height: 60vh;
+                z-index: 999;
+                /*
+                background-color: white;
+                */
+                top: 50px;
+                right: -100%;
+                /*
+                border-radius: 10px;
+                */
+                box-shadow: 2px 0 0 rgba(0, 0, 0, 0.5);
+                transition: .2s;
+                transform-origin: top center;
+            }
+
+            header > nav > ul {
+                display: block;
+                padding: 0 300px;
+                margin: 2px 0;
+                padding-right: 0px;
+            }
+
+            .menu {
+
+                display: block;
+            }
+
+            header > nav > ul > li {
+                padding-top: 10px;
+            }
+
+            header > nav > ul > li:nth-child(1) {
+                padding-top: 2px;
+            }
+
+            header > nav > ul > li > a {
+                text-align: center;
+                margin-bottom: 5px;
+                padding: 5px 48px;
+                border-radius: 5px;
+                color: #222222;
+            }
+
+            #nav_Check:checked ~ nav {
+                right: 0px
+            }
+
+            #nav_Check:checked ~ .menu > div:nth-child(even) {
+                background: transparent;
+            }
+
+            #nav_Check:checked ~ .menu > div:first-child {
+                transform: translateY(10px) rotate(45deg);
+            }
+
+            #nav_Check:checked ~ .menu > div:last-child {
+                transform: translateY(-6px) rotate(-45deg);
+            }
+
+        }
+
+        /*home*/
+        #home {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            margin: 0px;
+            z-index: 2;
+            top: 48px;
+
+        }
+
+        .homeOne {
+            position: absolute;
+            width: 60%;
+            height: 70%;
+            top: 0px;
+            left: 0px;
+            background-color: #1a73e8;
+            background: url("/assest/image/homeOne.jpg");
+            background-size: cover;
+        }
+
+        body > #home > div:nth-child(1) > h1 {
+            color: white;
+            width: 50px;
+            rotate: x;
+            font-size: 45px;
+            margin-top: 36px;
+            transform: rotate(90deg);
+            padding-left: 0px;
+            margin-left: 36px;
+        }
+
+        body > #home > div:nth-child(1) > p {
+            font-size: 34px;
+            position: absolute;
+            bottom: 0px;
+            left: 10px;
+            font-family: monospace;
+        }
+
+        .mark > div {
+            width: 49px;
+            height: 2px;
+            background-color: white;
+            margin: 6px 0;
+        }
+
+        .mark {
+            display: block;
+            height: fit-content;
+            padding: 3px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+            padding-right: 24px;
+            position: absolute;
+            top: 27px;
+            right: 0px
+        }
+
+        .mark > div:nth-child(even) {
+            background: transparent;
+        }
+
+        .mark > div:first-child {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .mark > div:last-child {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        .mark2 > div {
+            width: 49px;
+            height: 2px;
+            background-color: white;
+            margin: 6px 0;
+        }
+
+        .mark2 {
+            display: block;
+            height: fit-content;
+            padding: 3px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+            padding-right: 24px;
+            position: absolute;
+            top: 27px;
+            right: 81px
+        }
+
+        .mark2 > div:nth-child(even) {
+            background: transparent;
+        }
+
+        .mark2 > div:first-child {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .mark2 > div:last-child {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        .mark3 > div {
+            width: 49px;
+            height: 2px;
+            background-color: white;
+            margin: 6px 0;
+        }
+
+        .mark3 {
+            display: block;
+            height: fit-content;
+            padding: 3px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+            padding-right: 24px;
+            position: absolute;
+            top: 27px;
+            right: 162px
+        }
+
+        .mark3 > div:nth-child(even) {
+            background: transparent;
+        }
+
+        .mark3 > div:first-child {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .mark3 > div:last-child {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        .homeTwo {
+            position: absolute;
+            width: 40%;
+            height: 70%;
+            top: 0px;
+            right: 0px;
+            background-color: white;
+            background: url("/assest/image/rew.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        body > #home > .homeTwo > nav {
+            padding-top: 50px;
+            position: absolute;
+            right: 20px;
+            top: 0px;
+            bottom: 0px;
+        }
+
+        body > #home > .homeTwo > nav > ul > li {
+            list-style: none
+        }
+
+        .homeFour {
+            background: linear-gradient(to top, #EF629F, #FFC3A1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            position: absolute;
+            width: 40%;
+            height: 30%;
+            bottom: 0px;
+            right: 0px;
+            background-color: black;
+        }
+
+        .mark4 > div {
+            width: 49px;
+            height: 2px;
+            background-color: white;
+            margin: 6px 0;
+        }
+
+        .mark4 {
+            display: block;
+            height: fit-content;
+            padding: 3px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+            padding-right: 24px;
+            position: absolute;
+            top: 4px;
+            right: 145px
+        }
+
+        .mark4 > div:nth-child(even) {
+            background: transparent;
+        }
+
+        .mark4 > div:first-child {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .mark4 > div:last-child {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        .mark5 > div {
+            width: 49px;
+            height: 2px;
+            background-color: white;
+            margin: 6px 0;
+        }
+
+        .mark5 {
+            display: block;
+            height: fit-content;
+            padding: 3px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+            padding-right: 24px;
+            position: absolute;
+            top: 54px;
+            right: 145px
+        }
+
+        .mark5 > div:nth-child(even) {
+            background: transparent;
+        }
+
+        .mark5 > div:first-child {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .mark5 > div:last-child {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        .mark6 > div {
+            width: 49px;
+            height: 2px;
+            background-color: white;
+            margin: 6px 0;
+        }
+
+        .mark6 {
+            display: block;
+            height: fit-content;
+            padding: 3px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+            padding-right: 24px;
+            position: absolute;
+            top: 104px;
+            right: 145px
+        }
+
+        .mark6 > div:nth-child(even) {
+            background: transparent;
+        }
+
+        .mark6 > div:first-child {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .mark6 > div:last-child {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        .homeThree {
+            background: url("/assest/image/21545.jpeg");
+            position: absolute;
+            width: 60%;
+            height: 30%;
+            bottom: 0px;
+            left: 0px;
+            background-size: cover;
+            /*
+            background-position: center;
+            */
+        }
+
+        body > #home > div:nth-child(3) > p {
+            text-align: center;
+            font-size: 32px;
+            font-style: italic;
+            color: #302b63;
+        }
+
+        body > #home > div:nth-child(3) > div {
+            border-radius: 10px;
+            background: linear-gradient(to top, #4e54c8, #8f94fb);
+            width: 28%;
+            height: 20%;
+            position: relative;
+            margin-top: 41px;
+            margin-left: 297px;
+        }
+
+        body > #home > div:nth-child(3) > div > div {
+            position: absolute;
+            bottom: -2px;
+            right: 12px;
+        }
+
+        body > #home > div:nth-child(3) > div > p > a {
+            text-decoration: none;
+            color: whitesmoke;
+            margin-left: 10px;
+        }
+
+        body > #home > div:nth-child(3) > div > p {
+            padding-top: 6px;
+        }
+
+        body > #home > div:nth-child(3) > div > p > a:hover {
+            color: crimson;
+            border-radius: 5px;
+        }
+
+        .homeFive {
+            width: 17%;
+            height: 35%;
+            position: absolute;
+            top: 80px;
+            bottom: 0px;
+            right: 0px;
+            left: 490px;
+        }
+
+        .homesix {
+            width: 18%;
+            height: 45%;
+            position: absolute;
+            top: 110px;
+            bottom: 0px;
+            right: 0px;
+            left: 400px;
+            border: 5px solid black;
+        }
+
+        /*Abbout me*/
+        #AboutMe {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            margin: 0px;
+            top: 54px;
+            border-top: 2px solid black;
+        }
+
+        .aboutOne {
+            position: absolute;
+            width: 42%;
+            height: 85%;
+        }
+
+        .aboutOne > div:nth-child(1) {
+            background: linear-gradient(to top, #dd5e89, #f7bb97);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 45%;
+            height: 84%;
+
+        }
+
+        .aboutOne > div:nth-child(2) {
+            position: absolute;
+            top: 31px;
+            right: 0px;
+            width: 76%;
+            height: 90%;
+            background: url("/assest/image/aboutpic.png");
+            background-size: cover;
+        }
+
+        body > #AboutMe > .oboutTwo {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            background: linear-gradient(to left, #86A8E7, #91EAE4);
+            width: 75%;
+            height: 45%;
+
+        }
+
+        body > #AboutMe > .oboutThree {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            background: linear-gradient(to bottom, #c6ffdd, #FFFDE4, #ffdde1);
+            /*
+            background-color: #FAF0E6;
+            */
+            width: 58%;
+            height: 55%;
+            box-shadow: 5px 4px 17px -2px #91a7ff;
+        }
+
+        #AboutMe > .oboutThree > div {
+            background: linear-gradient(to left, #dd5e89, #f7bb97);
+            position: absolute;
+            width: 30%;
+            top: 0px;
+            right: 0px;
+            height: 10%;
+
+
+        }
+
+        .mark7 > div {
+            width: 38px;
+            height: 2px;
+            background-color: #12b886;
+            margin: 6px 0;
+        }
+
+        .mark7 {
+            display: block;
+            height: fit-content;
+            padding: 3px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+            padding-right: 24px;
+            position: absolute;
+            top: 6px;
+            left: 2px
+        }
+
+        .mark7 > div:nth-child(even) {
+            background: transparent;
+        }
+
+        .mark7 > div:first-child {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .mark7 > div:last-child {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        .mark8 > div {
+            width: 38px;
+            height: 2px;
+            background-color: #12b886;
+            margin: 6px 0;
+        }
+
+        .mark8 {
+            display: block;
+            height: fit-content;
+            padding: 3px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+            padding-right: 24px;
+            position: absolute;
+            top: 6px;
+            left: 74px
+        }
+
+        .mark8 > div:nth-child(even) {
+            background: transparent;
+        }
+
+        .mark8 > div:first-child {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .mark8 > div:last-child {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        .mark9 > div {
+            width: 38px;
+            height: 2px;
+            background-color: #12b886;
+            margin: 6px 0;
+        }
+
+        .mark9 {
+            display: block;
+            height: fit-content;
+            padding: 3px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+            padding-right: 24px;
+            position: absolute;
+            top: 6px;
+            left: 149px
+        }
+
+        .mark9 > div:nth-child(even) {
+            background: transparent;
+        }
+
+        .mark9 > div:first-child {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .mark9 > div:last-child {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        #AboutMe > .aboutfour {
+            position: absolute;
+            right: 45px;
+            top: 58px;
+            width: 53%;
+            height: 81%;
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+
+        }
+
+        #AboutMe > .aboutfour > div {
+            position: absolute;
+            left: 1px;
+            top: 0px;
+            width: 35%;
+            color: whitesmoke;
+            background: linear-gradient(to left, #91EAE4, #86A8E7);
+        }
+
+        #AboutMe > .aboutfour > aside {
+            position: absolute;
+            top: 40px;
+            left: 2px;
+            font-size: 25.8px;
+            font-family: monospace;
+        }
+
+        #AboutMe > #name {
+            position: absolute;
+            color: black;
+            font-family: monospace;
+            font-size: 35px;
+            left: 170px;
+            bottom: -2px;
+        }
+
+        .oboutTwo > p {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            font-family: monospace;
+            font-size: 27px;
+            color: crimson;
+        }
+
+        /*Education*/
+        #Education {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: url("/assest/image/skillback.jpg");
+            border-top: 2px solid black;
+            background-size: cover;
+            top: 62px;
+        }
+
+        #Education > div:nth-child(1) {
+            position: absolute;
+            left: 2px;
+            top: 0px;
+            width: 16%;
+            color: whitesmoke;
+            background: linear-gradient(to left, #91EAE4, #86A8E7);
+        }
+
+        #Education > div:nth-child(2) {
+            position: absolute;
+            top: 13%;
+            left: 18%;
+            width: 20%;
+        }
+
+        #Education > div:nth-child(2) > p:nth-child(1) {
+            font-size: 20px;
+            font-family: serif;
+            margin-bottom: 6px;
+        }
+
+        #Education > div:nth-child(2) > #year {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        #Education > div:nth-child(2) > p:nth-child(4) {
+            color: #185abc;
+        }
+
+        #Education > div > a {
+            text-decoration: none;
+        }
+
+        #Education > div > a:hover {
+            color: crimson;
+        }
+
+
+        #Education > div:nth-child(3) {
+            position: absolute;
+            top: 10%;
+            left: 65%;
+            background-size: cover;
+        }
+
+        #Education > div:nth-child(3):hover {
+            -ms-transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+
+        }
+
+        #Education > div:nth-child(4) {
+            position: absolute;
+            top: 45%;
+            left: 18%;
+        }
+
+        #Education > div:nth-child(5){
+            position: absolute;
+            top: 44%;
+            left: 67%;
+            width:24%;
+        }
+
+
+        #Education > div:nth-child(6) {
+            position: absolute;
+            top: 75%;
+            left: 18%;
+            width:21%;
+        }
+        #Education>div:nth-child(6)>p:nth-child(1){
+            font-size: 20px;
+            font-family: serif;
+            margin-bottom: 6px;
+        }
+        #Education>div:nth-child(6)>p:nth-child(3){
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+        #Education>div:nth-child(6)>p:nth-child(4){
+            color: #185abc;
+        }
+        #Education>div:nth-child(5)>p:nth-child(4){
+            color: #185abc;
+        }
+
+        #Education > div:nth-child(7) {
+            position: absolute;
+            top: 77%;
+            left: 68%;
+        }
+        #Education>div:nth-child(5)>p:nth-child(1){
+            font-size: 20px;
+            font-family: serif;
+            margin-bottom: 6px;
+        }
+        #Education>div:nth-child(5)>p:nth-child(3){
+            margin-bottom: 6px;
+            margin-top: 6px;
+        }
+        #Education>.dot1{
+            position: absolute;
+            right: 0px;
+            left: 49.5%;
+            top: 14%;
+            border-radius: 100%;
+            width:12px;
+            height:12px;
+            background-color:#228be6;
+        }
+        #Education>div:nth-child(9){
+            position: absolute;
+            right: 0px;
+            left: 49.5%;
+            top: 44%;
+            border-radius: 100%;
+            width:12px;
+            height:12px;
+            background-color:#228be6;
+        }
+        #Education>div:nth-child(10){
+            position: absolute;
+            right: 0px;
+            left: 49.5%;
+            top: 75%;
+            border-radius: 100%;
+            width:12px;
+            height:12px;
+            background-color:#228be6;
+        }
+        .line{
+            display: inline-block;
+            position: absolute;
+            border-left: 1px solid #228be6;
+            height: 423px;
+            width: 0;
+            left: 0;
+            right: 0;
+            top: 74px;
+            margin: auto;
+        }
+        @media only screen and (max-width: 1024px) {
+            #Education {
+                width: 100vw;
+                height: 100vh;
+                top: 62px;
+            }
+
+            #Education > div:nth-child(1) {
+                position: absolute;
+                left: 2px;
+                top: 0px;
+                width: 150px;
+            }
+        }
+
+        #Skill{
+            position: relative;
+            background: url("/assest/image/watercolor-splash-background (2).jpg");
+            background-size: cover;
+            border-top:2px solid black;
+            top: 73px;
+            width:100vw;
+            height:100vh;
+            background-position: center;
+
+        }
+        #Skill>.back1{
+            position:absolute;
+            right: 0px;
+            bottom: 0px;
+            height: 500px;
+            width: 250px;
+            background: url("/assest/image/skil.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        #Skill > div:nth-child(1) {
+            position: absolute;
+            left: 1px;
+            top: 0px;
+            width: 28%;
+            color: whitesmoke;
+            background: linear-gradient(to left, #91EAE4, #86A8E7);
+        }
+        .skillOne{
+            display:flex;
+            justify-content: space-around;
+            margin-top: 42px;
+
+        }
+        #Skill>section:first-of-type>div{
+            text-align: center;
+            position: relative;
+            padding-top: 5px;
+            border-radius: 5px;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: scale3d(1, 1, 1);
+        }
+        #Skill>section:nth-of-type(2) {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 30px;
+        }
+#Skill>h3{
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+    margin-top:39px;
+}
+@media (max-width: 1440px) {
+    #Skill>h3{
+        font-size: 20px;
+    }
+
+}
+       #Skill>.skillThree{
+            display: flex;
+            align-items: center;
+           margin-top:19px;
+           padding-left:250px;
+        }
+       @media (max-width:1024px) {
+           #Skill>.skillThree{
+               width: 40%;
+           }
+       }
+       #Skill>.skillThree>img:nth-child(1){
+padding-right:25px;
+       }
+        #Skill>.skillThree>img:nth-child(2){
+            padding-right:25px;
+        }
+        #Skill>.skillThree>img:nth-child(3){
+            padding-right:25px;
+        }
+
+#gallery{
+    position:relative;
+    border-top:2px solid black;
+    width: 100vw;
+    height: 163vh;
+    top:80px;
+    background: url("/assest/image/3257525.jpg");
+background-position: center;
+    background-size: cover;
+}
+        #gallery > div:nth-child(1) {
+            position: absolute;
+            left: 1px;
+            top: 0px;
+            width: 15%;
+            color: whitesmoke;
+            background: linear-gradient(to left, #91EAE4, #86A8E7);
+            text-align: left;
+        }
+#gallery>section{
+    position: relative;
+    width:800px;
+    height:750px;
+    top: 30px;
+    left: 150px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    grid-template-columns:1fr 1fr 1fr ;
+    grid-gap:4px;
+}
+#gallery>section>div{
+}
+#gallery>section>div:nth-child(1){
+    grid-row:1/3;
+    grid-column: 1/2;
+    border-radius: 10px;
+    background: url("/assest/image/WhatsApp Image 2023-02-21 at 22.42.44.jpeg");
+    background-size: cover;
+    background-position: center;
+
+}
+        #gallery>section>div:nth-child(2){
+            grid-row:3/6;
+            grid-column: 1/2;
+            background-color: #228be6;
+            border-radius: 10px;
+            background: url("/assest/image/WhatsApp Image 2023-02-04 at 19.59.10.jpeg");
+            background-size: cover;
+            background-position: center;
+
+        }
+        #gallery>section>div:nth-child(3){
+            grid-row:1/3;
+            grid-column: 2/3;
+            background-color: #228be6;
+            border-radius: 10px;
+            background: url("/assest/image/WhatsApp_Image_2023-02-19_at_11.06.20__1_-removebg-preview (1).png");
+            background-size: cover;
+            background-position: center;
+            margin-top: 45px;
+            margin-bottom: 45px;
+        }
+        #gallery>section>div:nth-child(4){
+            grid-row:3/5;
+            grid-column: 2/3;
+            background-color: #228be6;
+            border-radius: 10px;
+            background: url("/assest/image/galery.png");
+            background-size: cover;
+            background-position: center;
+            margin-top: 45px;
+            margin-bottom: 45px;
+        }
+        #gallery>section>div:nth-child(5){
+            grid-row:1/3;
+            grid-column: 3/4;
+            background-color: #228be6;
+            border-radius: 10px;
+            background: url("/assest/image/WhatsApp Image 2023-02-21 at 22.42.46.jpeg");
+            background-size: cover;
+            background-position: center;
+
+        }
+        #gallery>section>div:nth-child(6){
+            grid-row:3/5;
+            grid-column: 3/4;
+            background-color: #228be6;
+            border-radius: 10px;
+            background: url("/assest/image/WhatsApp Image 2023-02-21 at 22.42.45 (1).jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+#project{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    top:90px;
+border-top: 1px solid black;
+    background:url("/assest/image/6122582.jpg");
+background-size: cover;
+    background-position: center;
+}
+#project>div:nth-child(1){
+    position: absolute;
+    left: 1px;
+    top: 0px;
+    width: 15%;
+    color: whitesmoke;
+    background: linear-gradient(to left, #91EAE4, #86A8E7);
+    text-align: left;
+}
+        #project>div:nth-child(2)>div:nth-child(1){
+            border:1px solid black;
+            position: absolute;
+            top:50px;
+            left: 10px;
+            width: 300px;
+        }
+
+#project>div:nth-child(2)>div:nth-child(2){
+    border:1px solid black;
+    position: absolute;
+    top:200px;
+    left: 200px;
+    width: 300px;
+    background-size: cover;
+}
+#project>article{
+    position: absolute;
+    top: 52px;
+    left: 550px;
+    font-size: 18px;
+    width: 437px;
+    height: 600px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+#project>article>div:nth-child(2){
+padding-top: 25px;
+    line-height:22.25px;
+
+}
+        #project>article>div:nth-child(3){
+            padding-top: 25px;
+            line-height:22.25px;
+
+        }
+        #project>article>a{
+            position: relative;
+            top:10px;
+            font-family: Gadugi;
+        }
+    </style>
+</head>
 <body>
 <header>
-    <nav class="navbar">
-        <menu class="nav1">
-            <a href="#home">
-                <li>Home</li>
-            </a>
-            <a href="#About me">
-                <li>About Me</li>
-            </a>
-            <a href="#Education">
-                <li>Education</li>
-            </a>
-            <a href="#Skill">
-                <li>Skill</li>
-            </a>
-            <a href="#gallery">
-                <li>Gallery</li>
-            </a>
-            <a href="#project">
-                <li>Project</li>
-            </a>
-            <a href="#assignmet">
-                <li>Assignment</li>
-            </a>
-            <a href="#contact">
-                <li>Contact</li>
-            </a>
+    <div class="logo">
+        <h1>Prot<span>folio</span></h1>
+    </div>
+    <input type="checkbox" id="nav_Check" hidden>
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#AboutMe">About Me</a></li>
+            <li><a href="#Education">Education</a></li>
+            <li><a href="#Skill">Skill</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#assignmet">Assignment</a></li>
+            <li><a href="#contact">Contact</a></li>
 
-        </menu>
+        </ul>
     </nav>
+    <label for="nav_Check" class="menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </label>
 </header>
 <section id="home">
-    <div class="pr1">
-    <div class="pf1">
+    <div class="homeOne">
         <h1>PORTFOLIO</h1>
         <p>NIMESHA MADUBASHINI</p>
-        <img src="assest/image/pf1.jpg" alt="">
+        <label class="mark">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <label class="mark2">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <label class="mark3">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
     </div>
-    <aside>
-        <img src="assest/image/hmpge.png" alt="" width="233">
-    </aside>
-    <nav>
-        <aside>
+    <div class="homeTwo">
+        <nav>
             <ul>
                 <li>
                     <a href="https://www.linkedin.com/in/nimesha-madhubhashini-2b0741264/" target="_blank">
-                        <img alt="Linkedin" src="assest/image/linkedin.png" width="20">
+                        <img alt="Linkedin" src="assest/image/linkedin.png" width="30">
                     </a>
                 </li>
                 <br>
                 <li>
                     <a href="tel:+94775523140" target="_blank">
-                        <img alt="whatsapp" src="assest/image/whatsapp.png" width="20">
+                        <img alt="whatsapp" src="assest/image/whatsapp.png" width="30">
                     </a>
                 </li>
                 <br>
                 <li>
                     <a href="https://github.com/nimeshaMadubashini" target="_blank">
-                        <img alt="Github" src="assest/image/github.png" width="20">
+                        <img alt="Github" src="assest/image/github.png" width="30">
                     </a>
                 </li>
                 <br>
                 <li>
                     <a href="tel:+94775523140" target="_blank">
-                        <img alt="Telegram" src="assest/image/telegram.png" width="20">
+                        <img alt="Telegram" src="assest/image/telegram.png" width="30">
                     </a>
                 </li>
                 <br>
                 <li>
                     <a href="https://www.facebook.com/Madu.Gunasekara" target="_blank">
-                        <img alt="FaceBook" src="assest/image/facebook.png" width="20">
+                        <img alt="FaceBook" src="assest/image/facebook.png" width="30">
                     </a>
                 </li>
             </ul>
-        </aside>
-    </nav>
-    <div>
-
-        <P>software Engineer</P>
+        </nav>
     </div>
-    <section>
-        <p><a href="assest/image/Nimesha.pdf.pdf" download="cv.pdf">Download CV</a></p>
-    </section>
+    <div class="homeThree">
+        <P>Software Engineer</P>
+        <div>
+            <p><a href="assest/image/Nimesha.pdf.pdf" download="cv.pdf">Download CV</a></p>
+            <div><img src="/assest/image/cvdwnld.png" width="28px"></div>
+        </div>
+    </div>
+    <div class="homeFour">
+        <label class="mark4">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <label class="mark5">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <label class="mark6">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </div>
+    <div class="homesix"></div>
+    <div class="homeFive">
+        <img src="/assest/image/hm1.png" width="100%">
     </div>
 </section>
 <!--aboutme-->
-<section id="About me">
-    <aside>
-        <article><h2>About me</h2>
-            <aside>
-                <img src="assest/image/aboutpic.png" width="233">
-             </aside>
+<section id="AboutMe">
+    <div class="oboutTwo">
+        <p>Nimesha Madubashini</p>
+    </div>
+    <div class="oboutThree">
+        <div></div>
+        <label class="mark7">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <label class="mark8">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <label class="mark9">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </div>
+    <div class="aboutOne">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="aboutfour">
+        <div><h2>About me</h2></div>
+        <aside>
+
             <p> My name is Nimesha ,21,still an undergrad in <abbr
                     title="Institute of Software engmeer"><strong>IJSE</strong></abbr></p>
             <p> I’m skilled with Java,Mysql,Html and CSS,and I am trying to learn other programming
@@ -121,69 +1316,67 @@
             <p> By now I’m done with a few projects using Java.And I work with many framework and architecture.</p>
             <p> Apart from coding ,I enjoy travelling and watching moveis.
                 And that would do for a short introduction of me.Thank you.</p>
-        </article>
-    </aside>
 
-    <footer>
-        <p>HI,IM <span>NIMESHA  MADUBASHINI</span></p>
-        <!--        <p>NIMESHA  MADUBASHINI</p>-->
-    </footer>
+        </aside>
+
+    </div>
+    <p id="name">HI,IM </p>
+    <!--        <p>NIMESHA  MADUBASHINI</p>-->
+
 </section>
-
 <!--education-->
 <section id="Education">
-    <header><h2>Education</h2></header>
-    <aside>
-        <section>
-            <div>
-                <p> Bsc(Hons). in Computer Science</p>
-                <a href="https://www.ijse.lk/">IJSE-Institute of Software Engineering </a>
-                <p>2022- Present</p>
-                <p> Currently Learning</p>
-            </div>
-            <div>
-                <a href="https://www.ijse.lk/" target="_blank">
-                    <abbr title="Institute of Software enginering">
-                        <img src="assest/image/ijse-logo.gif" width="183" height="63">
-                    </abbr>
-                </a>
-            </div>
-            <div>
-                <a href="https://en.wikipedia.org/wiki/Rajapaksa_Central_College" target="_blank">
-                    <abbr title="H/Rajapaksha Central College-Weeraketiya">
-                        <img src="assest/image/OIP.jpg" width="100" height="110">
-                    </abbr>
-                </a>
-            </div>
-            <div>
-                <p>Advance Level (Commerce Scheme)</p>
-                <a href="https://en.wikipedia.org/wiki/Rajapaksa_Central_College"> H/Rajapaksha Central
-                    College,Weraketiya </a>
-                <p> 2018 - 2020</p>
-                <p> GCE A/L : Passed(BBB)</p>
-            </div>
-            <div>
-                <p>Oridenary Level</p>
-                <a href="https://en.wikipedia.org/wiki/Rajapaksa_Central_College"> H/Rajapaksha Central
-                    College,Weraketiya </a>
-                <p> 2012 - 2017</p>
-                <p>GCE O/L : Passed(A7 B2)</p>
-            </div>
-            <div>
-                <a href="https://en.wikipedia.org/wiki/Rajapaksa_Central_College">
-                    <abbr title="H/Rajapaksha Central College-Weeraketiya">
-                        <img src="assest/image/rcc.png" width="100" height="110">
-                    </abbr>
-                </a>
-            </div>
-        </section>
-    </aside>
-</section>
+    <div><h2>Education</h2></div>
+    <div>
+        <p> Bsc(Hons). in Computer Science</p>
+        <a href="https://www.ijse.lk/">IJSE-Institute of Software Engineering </a>
+        <p id="year"><i class="fa-solid fa-calendar-days"></i> 2022-Present</p>
+        <p> Currently Learning</p>
+    </div>
+    <div>
+        <a href="https://www.ijse.lk/" target="_blank">
+            <abbr title="Institute of Software enginering">
+                <img src="assest/image/ijse.png" width="200">
+            </abbr>
+        </a>
+    </div>
+    <div>
+        <a href="https://en.wikipedia.org/wiki/Rajapaksa_Central_College" target="_blank">
+            <abbr title="H/Rajapaksha Central College-Weeraketiya">
+                <img src="assest/image/OIP.jpg" width="100" height="110">
+            </abbr>
+        </a>
+    </div>
+    <div>
+        <p>Advance Level (Commerce Scheme)</p>
+        <a href="https://en.wikipedia.org/wiki/Rajapaksa_Central_College"> H/Rajapaksha Central College,Weraketiya </a>
+        <p><i class="fa-solid fa-calendar-days"></i> 2018 - 2020</p>
+        <p> GCE A/L : Passed(BBB)</p>
+    </div>
+    <div>
+        <p>Oridenary Level</p>
+        <a href="https://en.wikipedia.org/wiki/Rajapaksa_Central_College"> H/Rajapaksha Central
+            College,Weraketiya </a>
+        <p><i class="fa-solid fa-calendar-days"></i>  2012 - 2017</p>
+        <p>GCE O/L : Passed(A7 B2)</p>
+    </div>
+    <div>
+        <a href="https://en.wikipedia.org/wiki/Rajapaksa_Central_College">
+            <abbr title="H/Rajapaksha Central College-Weeraketiya">
+                <img src="assest/image/rcc.png" width="100" height="110">
+            </abbr>
+        </a>
+    </div>
+    <div class="dot1"></div>
+    <div></div>
+    <div></div>
+    <div class="line"></div>
 
+</section>
 <!--skill-->
 <section id="Skill">
-    <h2>Languages,Skill & Tools</h2>
-    <section>
+    <div>    <h2>Languages,Skill & Tools</h2></div>
+    <section class="skillOne">
         <!-- java-->
         <div>
             <img height="30" src="assest/image/icons8-java-48.png" alt="">
@@ -217,47 +1410,54 @@
     </section>
     <!-- tech icon-->
     <section>
-        <img src="assest/image/icons8-adobe-lightroom-48.png" alt="">
-        <img height="45" src="assest/image/icons8-adobe-photoshop-48.png" alt="">
-        <img src=assest/image/icons8-intellij-idea-48.png alt="">
-        <img src=assest/image/icons8-visual-studio-code-2019-48.png alt="">
-        <img src=assest/image/icons8-figma-48.png alt="">
-        <img src=assest/image/icons8-java-48.png alt="">
-        <img src=assest/image/icons8-html-5-48.png alt="">
-        <img src=assest/image/icons8-mysql-logo-48.png alt="">
-        <img height="55" src=assest/image/th-removebg-preview.png alt="">
+        <img src="assest/image/icons8-adobe-lightroom-48.png" height="39" alt="">
+        <img height="38" src="assest/image/icons8-adobe-photoshop-48.png" alt="">
+        <img src=assest/image/icons8-intellij-idea-48.png  height="37" alt="">
+        <img src=assest/image/icons8-visual-studio-code-2019-48.png height="38" alt="">
+        <img src=assest/image/icons8-figma-48.png height="33" alt="">
+        <img src=assest/image/icons8-java-48.png height="38" alt="">
+        <img src=assest/image/icons8-html-5-48.png height="35" alt="">
+        <img src=assest/image/icons8-mysql-logo-48.png height="44" alt="">
+        <img height="45" src=assest/image/th-removebg-preview.png  alt="">
     </section>
     <h3>Technological Certificates</h3>
     <!--    certificate-->
-    <section>
-        <img width="250" src="assest/image/ce3.jpeg" alt="">
-        <img width="250" src="assest/image/cet2.jpeg" alt="">
-        <img width="250" src="assest/image/ceti1.jpeg" alt="">
+    <section class="skillThree">
+        <img width="200" src="/assest/image/ce3.jpeg" alt="">
+        <img width="200" src="assest/image/cet2.jpeg" alt="">
+        <img width="200" src="assest/image/ceti1.jpeg" alt="">
     </section>
 
 </section>
-
+<!--Galery-->
 <section id="gallery">
-    <header>
-        <h3>Gallery</h3>
-        <aside>
-            <img src="assest/image/WhatsApp Image 2023-02-21 at 22.42.42.jpeg" alt="not image" width="200">
-            <img src="assest/image/WhatsApp Image 2023-02-21 at 22.42.44.jpeg" alt="not image" width="200">
-            <img src="assest/image/WhatsApp Image 2023-02-21 at 22.42.46.jpeg" alt="not image" width="200">
-            <img src="assest/image/WhatsApp Image 2023-02-21 at 22.42.45 (1).jpeg" alt="not image" width="200">
-            <img src="assest/image/WhatsApp_Image_2023-02-19_at_11.06.20__1_-removebg-preview (1).png" alt="not image" width="200">
-            <img src="assest/image/WhatsApp Image 2023-02-04 at 19.59.10.jpeg" alt="not image" width="200">
-
-        </aside>
-    </header>
-</section>
-<section id="project">
+       <div> <h3>Gallery</h3></div>
     <section>
-        <h2>Project</h2>
-        <aside>
-            <img src="assest/image/Screenshot (49).png" alt="" width="300">
-            <img src="assest/image/Screenshot (50).png" alt="" width="300">
-        </aside>
+
+           <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </section>
+</section>
+
+<section id="project">
+        <div><h2>Project</h2></div>
+        <div>
+
+            <div><img src="assest/image/Screenshot (50).png" alt="" width="300"></div>
+            <div>            <img src="assest/image/Screenshot (49).png" alt="" width="300">
+            </div>
+        </div>
         <article><h4>library Management System</h4>
             <div><p>
                 This system is a it solution of manual library.
@@ -266,7 +1466,7 @@
                 can give solution to it.
             </p>
             </div>
-            <div><p>
+            <div><p id="lib2">
                 Use this system we can add,
                 search,update,delete books and members mainly.
                 If we issue book we can view all record related isseu
@@ -275,77 +1475,81 @@
 
             </p>
             </div>
+<a href="https://github.com/nimeshaMadubashini/Layered-Architecture-Final-Project">https://github.com/nimeshaMadubashini/Layered-Architecture-Final-Project</a>
         </article>
-    </section>
+        
+            
 </section>
-
 <section id="assignmet">
-<h2>Assignment</h2>
+    <div><h2>Assignment</h2></div>
     <section>
-        <div class="zoomWrapper">
+        <a href="assignment/css/case01.html" target="_blank">
+        <div class="assign">
             <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
-            <h3>Assignment 01</h3>
+            <h3>CSS-Basic 01</h3>
             <h5>View</h5>
         </div>
-        <div>
-            <img src="assest/image/jsye.png" alt="" width="573">
-            <h3>Assignment 02</h3>
-            <h5>View</h5>
-        </div>
-        <div>
-            <img src="assest/image/purplecss.png" alt="" width="573">
-            <h3>Assignment 03</h3>
-            <h5>View</h5>
-        </div>
-    </section>
-</section>
-<!--contact-->
-<footer>
-    <h2>Let's Talk</h2>
-    <nav>
-        <ul>
-            <li>
-                <a href="https://www.linkedin.com/in/nimesha-madhubhashini-2b0741264/" target="_blank">
-                    <img alt="Linkedin" src="assest/image/linkedin.png" width="20">
-                    nimesha-madhubhashini-2b0741264
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/Madu.Gunasekara" target="_blank">
-                    <img alt="FaceBook" src="assest/image/facebook.png" width="20">
-                    Madu Gunasekara
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/nimeshaMadubashini" target="_blank">
-                    <img alt="Github" src="assest/image/github.png" width="20">
-                    nimesha-madubashini
-                </a>
-            </li>
-
-            <li>
-                <a href="tel:+94775523140" target="_blank">
-                    <img alt="whatsapp" src="assest/image/whatsapp.png" width="20">
-                    +94775523140
-                </a>
-            </li>
-        </ul>
-
-    </nav>
-    <h3 id="contact">Contact me</h3>
-    <div>
-        <a href="mailto:nimeshamadubashini040@gmail.com">
-            <img alt="gmail" src="assest/image/icons8-gmail-logo-48.png" width="20">
-            nimeshamadubashini040@gmail.com
         </a>
-    </div>
-    <section>
-        <div>
-            <h4>C</h4>
+        <a href="assignment/css/case02.html" target="_blank">
+
+            <div class="asign2">
+                <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
+
+                <h3>CSS-Basic 02</h3>
+            <h5>View</h5>
         </div>
-        <h5>2023 All Rights Reserved</h5>
-        <h5>Design By Nimesha Madubashini</h5>
+        </a>
+        <a href="assignment/css/case03.html" target="_blank">
+
+        <div class="assign3">
+            <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
+
+            <h3>CSS-Basic 03</h3>
+            <h5>View</h5>
+        </div>
+        </a>
+        <a href="assignment/css/case04.html" target="_blank">
+            <div class="assign4">
+                <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
+                <h3>CSS-Basic 04</h3>
+                <h5>View</h5>
+            </div>
+        </a>
+
+        <a href="assignment/css/case05.html" target="_blank">
+            <div class="asign6">
+                <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
+                <h3>CSS-Basic 05</h3>
+                <h5>View</h5>
+            </div>
+        </a>
+        <a href="assignment/css/case06.html" target="_blank">
+            <div class="assign6">
+                <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
+                <h3>CSS-Basic 06</h3>
+                <h5>View</h5>
+            </div>
+        </a>
     </section>
-</footer>
+    <div id="navNum">
+        <h2 class="num">01</h2>
+        <h2 class="num">02</h2>
+        <h2 class="num">03</h2>
+        <h2 class="num">04</h2>
+        <h2 class="num">05</h2>
+        <h2 class="num">06</h2>
+        <h2 class="num">07</h2>
+        <h2 class="num">08</h2>
+        <h2 class="num">09</h2>
+        <h2 class="num">10</h2>
+        <h2 class="num">11</h2>
+        <h2 class="num">12</h2>
+        <h2 class="num">13</h2>
+        <h2 class="num">14</h2>
+        <h2 class="num">15</h2>
+    </div>
+</section>
+
+
 </body>
 </html>
