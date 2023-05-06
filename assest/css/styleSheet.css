@@ -47,7 +47,14 @@
 #assignmet>section>a>div>img:hover{
     transform:scale(1.2) ;
 }
+img{
+    transition:0.3s;
+    transition-timing-function: ease;
+}
+img:hover{
+    transform:scale(1.2) ;
 
+}
 @keyframes letter-change-color {
     from{
         color: black;
@@ -62,5 +69,61 @@
     }
     to{
         height: 423px;
+    }
+}
+/*AboutMe*/
+
+@keyframes load {
+    to{
+        width: 0%;
+    }
+
+}
+@keyframes line {
+    50%{
+        color: transparent;
+    }
+
+}
+/*home*/
+@keyframes changecolor {
+    0%{
+        color:white;
+
+
+    }
+    25%{
+        color: #332f2b;
+        transform:rotate(0deg);
+        margin-left: 36px
+
+    }
+    50%{
+        color: crimson;
+        transform:rotate(91deg);
+        margin-left: 292px
+
+    }
+  75%{
+color: #228be6;
+}
+}
+@keyframes anima {
+
+    40% {
+        transform: translate(50px, 0) scale(.7);
+        opacity: 1;
+        color: #302b63;
+    }
+    60% {
+        color: wheat;
+    }
+    80% {
+        transform: translate(0) scale(2);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0) scale(1);
+        opacity: 1;
     }
 }
