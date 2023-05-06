@@ -84,13 +84,13 @@
 
         }
 
-        nav > ul > li > a:hover {
+       header>nav > ul > li > a:hover {
             background-color: #91a7ff;
             border-radius: 20px;
 
         }
 
-        nav > ul > li > a.active {
+       header> nav > ul > li > a.active {
             background-color: crimson;
             border-radius: 20px;
 
@@ -143,7 +143,7 @@
                 height: 50px;
             }
 
-            header > nav {
+            header>nav {
                 display: block;
                 position: absolute;
                 width: 65%;
@@ -806,7 +806,7 @@
             text-decoration: none;
         }
 
-        #Education > div > a:hover {
+        #Education>div>a:hover {
             color: crimson;
         }
 
@@ -818,12 +818,12 @@
             background-size: cover;
         }
 
-        #Education > div:nth-child(3):hover {
+       /* #Education > div:nth-child(3):hover {
             -ms-transform: scale(1.5);
             -webkit-transform: scale(1.5);
             transform: scale(1.5);
 
-        }
+        }*/
 
         #Education > div:nth-child(4) {
             position: absolute;
@@ -870,6 +870,7 @@
             font-size: 20px;
             font-family: serif;
             margin-bottom: 6px;
+
         }
         #Education>div:nth-child(5)>p:nth-child(3){
             margin-bottom: 6px;
@@ -915,8 +916,24 @@
             right: 0;
             top: 74px;
             margin: auto;
+            animation-name: lineanimate;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
         }
-        @media only screen and (max-width: 1024px) {
+.colorAnimate{
+    animation-name:letter-change-color;
+    animation-iteration-count: infinite;
+    animation-duration:2s;
+}
+.eduIcon{
+    transition:2s;
+transition-timing-function: ease;
+}
+.eduIcon:hover{
+    transform: scale(1.25);
+}
+        /*@media only screen and (max-width: 1024px) {
             #Education {
                 width: 100vw;
                 height: 100vh;
@@ -929,7 +946,7 @@
                 top: 0px;
                 width: 150px;
             }
-        }
+        }*/
 
         #Skill{
             position: relative;
@@ -1167,6 +1184,122 @@ padding-top: 25px;
             top:10px;
             font-family: Gadugi;
         }
+        #assignmet {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            top: 101px;
+            border-top: 1px solid black;
+            background: url("/assest/image/abstract-blue-draw.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        footer{
+            position: relative;
+            background:url("/assest/image/fotter.jpg");
+            border-top:1px solid black;
+            height: 70vh;
+            width:100vw;
+            background-size: cover;
+            background-position: center;
+            top:101px;
+        }
+        footer>div>h2{
+            color: white;
+            margin-left: 42px;
+            margin-top: 16px;
+        }
+        footer>div>nav>ul{
+            display: block;
+            list-style-type: disc;
+            margin-top: -25px;
+            margin-left: 80px;
+
+        }
+footer>div>nav>ul>li{
+    display: inline-block;
+    position:relative;
+    font-size:20px;
+
+}
+footer>div>nav>ul>li:nth-child(1){
+    left: 115px;
+    top: 48px;
+}
+       footer>div>nav>ul>li:nth-child(2){
+            left: 250px;
+            top: 48px;
+        }
+        footer>div>nav>ul>li:nth-child(3){
+            right: -65px;
+            top: 160px;
+        }
+        footer>div>nav>ul>li:nth-child(4){
+            left: -630px;
+            top: 155px;
+        }
+        footer>div>nav>ul>li>a{
+            color: black;
+            font-weight: 600;
+        }
+        footer>div>.email{
+            position: absolute;
+            border: 2px solid white;
+            width: 38%;
+            height: 12%;
+            bottom: 20%;
+            right: 0%;
+            left: 30%;
+        }
+        footer>div>.email>a{
+            color: white;
+            font-weight:400;
+            font-size: 25px;
+            align-items: center;
+            position: relative;
+            top: 5px;
+        }
+        footer>div>.email>a>img{
+            position: relative;
+            top: 5px;
+        }
+        footer>div>#contact{
+            position: absolute;
+            left: 480px;
+            bottom:120px;
+            font-family: 'Glory', sans-serif;
+color: white;
+        }
+        footer>div>section{
+            border-top:3px solid white;
+            margin-top: 260px;
+        }
+        footer>div>section>div{
+            border-radius: 100%;
+            background-color: white;
+            width: 1.5vw;
+            height: 1.5vw;
+            position: relative;
+            top: 3px;
+            left: 2px;
+            border: 1px solid black;
+        }
+        footer>div>section>div>h4{
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            right: 0px;
+            left: 2px;
+        }
+        footer>div>section>.allRR{
+            position: absolute;
+            left:20px;
+            bottom:24px;
+        }
+        footer>div>section>.designerName{
+            position: absolute;
+            right: 20px;
+bottom:25px;       }
     </style>
 </head>
 <body>
@@ -1328,7 +1461,7 @@ padding-top: 25px;
 <section id="Education">
     <div><h2>Education</h2></div>
     <div>
-        <p> Bsc(Hons). in Computer Science</p>
+        <p class="colorAnimate"> Bsc(Hons). in Computer Science</p>
         <a href="https://www.ijse.lk/">IJSE-Institute of Software Engineering </a>
         <p id="year"><i class="fa-solid fa-calendar-days"></i> 2022-Present</p>
         <p> Currently Learning</p>
@@ -1336,25 +1469,25 @@ padding-top: 25px;
     <div>
         <a href="https://www.ijse.lk/" target="_blank">
             <abbr title="Institute of Software enginering">
-                <img src="assest/image/ijse.png" width="200">
+                <img  class="eduIcon" src="assest/image/ijse.png" width="200">
             </abbr>
         </a>
     </div>
     <div>
         <a href="https://en.wikipedia.org/wiki/Rajapaksa_Central_College" target="_blank">
             <abbr title="H/Rajapaksha Central College-Weeraketiya">
-                <img src="assest/image/OIP.jpg" width="100" height="110">
+                <img class="eduIcon" src="assest/image/OIP.jpg" width="100" height="110">
             </abbr>
         </a>
     </div>
     <div>
-        <p>Advance Level (Commerce Scheme)</p>
+        <p class="colorAnimate">Advance Level (Commerce Scheme)</p>
         <a href="https://en.wikipedia.org/wiki/Rajapaksa_Central_College"> H/Rajapaksha Central College,Weraketiya </a>
         <p><i class="fa-solid fa-calendar-days"></i> 2018 - 2020</p>
         <p> GCE A/L : Passed(BBB)</p>
     </div>
     <div>
-        <p>Oridenary Level</p>
+        <p class="colorAnimate">Oridenary Level</p>
         <a href="https://en.wikipedia.org/wiki/Rajapaksa_Central_College"> H/Rajapaksha Central
             College,Weraketiya </a>
         <p><i class="fa-solid fa-calendar-days"></i>  2012 - 2017</p>
@@ -1363,7 +1496,7 @@ padding-top: 25px;
     <div>
         <a href="https://en.wikipedia.org/wiki/Rajapaksa_Central_College">
             <abbr title="H/Rajapaksha Central College-Weeraketiya">
-                <img src="assest/image/rcc.png" width="100" height="110">
+                <img class="eduIcon" src="assest/image/rcc.png" width="100" height="110">
             </abbr>
         </a>
     </div>
@@ -1492,7 +1625,7 @@ padding-top: 25px;
         </a>
         <a href="assignment/css/case02.html" target="_blank">
 
-            <div class="asign2">
+            <div class="assign2">
                 <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
 
                 <h3>CSS-Basic 02</h3>
@@ -1517,7 +1650,7 @@ padding-top: 25px;
         </a>
 
         <a href="assignment/css/case05.html" target="_blank">
-            <div class="asign6">
+            <div class="assign6">
                 <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
                 <h3>CSS-Basic 05</h3>
                 <h5>View</h5>
@@ -1531,24 +1664,65 @@ padding-top: 25px;
             </div>
         </a>
     </section>
-    <div id="navNum">
-        <h2 class="num">01</h2>
-        <h2 class="num">02</h2>
-        <h2 class="num">03</h2>
-        <h2 class="num">04</h2>
-        <h2 class="num">05</h2>
-        <h2 class="num">06</h2>
-        <h2 class="num">07</h2>
-        <h2 class="num">08</h2>
-        <h2 class="num">09</h2>
-        <h2 class="num">10</h2>
-        <h2 class="num">11</h2>
-        <h2 class="num">12</h2>
-        <h2 class="num">13</h2>
-        <h2 class="num">14</h2>
-        <h2 class="num">15</h2>
+    <div  class="navDiv" id="navNum">
+        <h2 for="assign" class="num">01</h2>
+        <h2 for="assign2" class="num">02</h2>
+        <h2 for="assign3" class="num">03</h2>
+        <h2 for="assign4" class="num">04</h2>
+        <h2 for="assign5" class="num">05</h2>
+        <h2 for="assign6" class="num">06</h2>
+
     </div>
 </section>
+<footer>
+    <div>
+    <h2>Let's Talk</h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/nimesha-madhubhashini-2b0741264/" target="_blank">
+                    <img alt="Linkedin" src="assest/image/linkedin.png" width="20">
+                    nimesha-madhubhashini-2b0741264
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/Madu.Gunasekara" target="_blank">
+                    <img alt="FaceBook" src="assest/image/facebook.png" width="20">
+                    Madu Gunasekara
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/nimeshaMadubashini" target="_blank">
+                    <img alt="Github" src="assest/image/github.png" width="20">
+                    nimesha-madubashini
+                </a>
+            </li>
+
+            <li>
+                <a href="tel:+94775523140" target="_blank">
+                    <img alt="whatsapp" src="assest/image/whatsapp.png" width="20">
+                    +94775523140
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+    <h3 id="contact">Contact me</h3>
+    <div class="email">
+        <a href="mailto:nimeshamadubashini040@gmail.com">
+            <img alt="gmail" src="assest/image/icons8-gmail-logo-48.png" width="25">
+            nimeshamadubashini040@gmail.com
+        </a>
+    </div>
+    <section>
+        <div>
+            <h4>C</h4>
+        </div>
+        <h5 class="allRR">2023 All Rights Reserved</h5>
+        <h5 class="designerName">Design By Nimesha Madubashini</h5>
+    </section>
+    </div>
+</footer>
 
 
 </body>

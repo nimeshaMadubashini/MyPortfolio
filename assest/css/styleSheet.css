@@ -1,18 +1,11 @@
-#assignmet{
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    top:90px;
-    border-top: 1px solid black;
-    background:url("/assest/image/assignment.jpg");
-    background-size: cover;
-    background-position: center;
-}
+
 #assignmet>section{
-position: relative;
+    position: relative;
     display: flex;
     justify-content:space-between;
-    overflow: scroll;
+    overflow: hidden;
+
+
 }
 #assignmet>section>a>div{
     width: 35.353vw;
@@ -21,7 +14,11 @@ position: relative;
     align-items: center;
     position: relative;
     left: 0px;
-border: 1px solid black;
+    perspective:400px;
+   /* animation-name:flow;
+    animation-duration:0.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;*/
 }
 #assignmet>section>a>div>h3{
     position: relative;
@@ -33,6 +30,37 @@ border: 1px solid black;
     top: -26px;
     left: -14px;
 }
-#assignmet>
+#assignmet>.navDiv{
+    display: flex;
+    justify-content: space-around;
+    line-height:17px;
+    position: absolute;
+    right:100px;
+    left: 0px;
+    bottom: 120px;
 
+}
+#assignmet>section>a>div>img{
+    transform:rotateY(334deg);
+    transition:all 0.3s;
+}
+#assignmet>section>a>div>img:hover{
+    transform:scale(1.2) ;
+}
 
+@keyframes letter-change-color {
+    from{
+        color: black;
+    }
+    to{
+        color: #0b7285;
+    }
+}
+@keyframes lineanimate {
+    from{
+       height:  0px;
+    }
+    to{
+        height: 423px;
+    }
+}
