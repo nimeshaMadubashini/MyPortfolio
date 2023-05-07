@@ -3,10 +3,16 @@
     position: relative;
     display: flex;
     justify-content:space-between;
-    overflow: hidden;
-
+    overflow: scroll;
+    /*animation-name:flow;
+    animation-duration:0.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;*/
 
 }
+
+
+
 #assignmet>section>a>div{
     width: 35.353vw;
     display: flex;
@@ -19,6 +25,12 @@
     animation-duration:0.5s;
     animation-timing-function: ease-out;
     animation-iteration-count: 1;*/
+}
+.assign:checked~.num1{
+    margin-left: 0;
+}
+.assign2:checked~.num2{
+    margin-left: -100%;
 }
 #assignmet>section>a>div>h3{
     position: relative;
@@ -38,6 +50,8 @@
     right:100px;
     left: 0px;
     bottom: 120px;
+    overflow: scroll;
+    cursor: pointer;
 
 }
 #assignmet>section>a>div>img{
@@ -95,8 +109,8 @@ img:hover{
     25%{
         color: #332f2b;
         transform:rotate(0deg);
-        margin-left: 36px
-
+        margin-left: 36px;
+        animation-delay: 2s;
     }
     50%{
         color: crimson;
@@ -109,7 +123,9 @@ color: #228be6;
 }
 }
 @keyframes anima {
-
+/*0%{
+    animation-delay:20S;
+}*/
     40% {
         transform: translate(50px, 0) scale(.7);
         opacity: 1;
@@ -117,6 +133,7 @@ color: #228be6;
     }
     60% {
         color: wheat;
+        animation-delay: 4s;
     }
     80% {
         transform: translate(0) scale(2);
@@ -125,5 +142,11 @@ color: #228be6;
     100% {
         transform: translate(0) scale(1);
         opacity: 1;
+    }
+}
+/*All header color*/
+@keyframes hovebefor {
+    to{
+        width: 100%;
     }
 }

@@ -509,13 +509,13 @@ animation-iteration-count: infinite;
             color: #302b63;
             opacity: 0;
             transform: translate(-155px,0) scale(0.4);
-            animation: anima 3s forwards ;
+            animation: anima 2s forwards running ;
 
 
 
         }
         .webkit span:nth-child(2){
-            animation-delay: 0.05s;
+            animation-delay: 0.5s;
         }
         .webkit span:nth-child(3){
             animation-delay: 0.1s;
@@ -590,6 +590,14 @@ animation-iteration-count: infinite;
             bottom: 0px;
             right: 0px;
             left: 490px;
+        }
+        .homeFive>img{
+            animation: rotate 15s linear infinite;
+            animation-play-state: running;
+
+        }
+        .homeFive>img:hover{
+            animation-play-state: paused;
         }
 
         .homesix {
@@ -1048,7 +1056,7 @@ transition-timing-function: ease;
             position: absolute;
             left: 1px;
             top: 0px;
-            width: 28%;
+            width: 35%;
             color: whitesmoke;
             background: linear-gradient(to left, #91EAE4, #86A8E7);
         }
@@ -1066,7 +1074,18 @@ transition-timing-function: ease;
             border-top: 2px solid white;
             border-bottom: 2px solid white;
             transform: scale3d(1, 1, 1);
+            transition: all .5s ease-in;
         }
+        #Skill>section:first-of-type>div:hover{
+            cursor: pointer;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            transform: scale3d(1.02,1.02, 1.02);
+            /*
+            transition: all 0.2s ease-in;
+            */
+        }
+
         #Skill>section:nth-of-type(2) {
             display: flex;
             justify-content: center;
@@ -1111,7 +1130,7 @@ padding-right:25px;
     position:relative;
     border-top:2px solid black;
     width: 100vw;
-    height: 163vh;
+    height: 100vh;
     top:80px;
     background: url("/assest/image/3257525.jpg");
 background-position: center;
@@ -1126,7 +1145,64 @@ background-position: center;
             background: linear-gradient(to left, #91EAE4, #86A8E7);
             text-align: left;
         }
-#gallery>section{
+        #gallery>section{
+            width: 100vw;
+            height: 100vh;
+            /*
+            background-color: #228be6;
+            */
+            display: flex;
+            box-sizing: border-box;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider{
+            position: relative;
+            width:200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            animation: rotate 30s linear infinite;
+            animation-play-state: running;
+
+        }
+        .slider:hover{
+            animation-play-state: paused;
+        }
+        @keyframes rotate {
+            0%{
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            100%{
+                transform: perspective(1000px) rotateY(360deg);
+            }
+        }
+        .slider span{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i)*45deg)) translateZ(350px);
+            -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,#0004);
+        }
+        .slider span img{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: 2s;
+            cursor: pointer;
+        }
+        .slider span:hover img{
+            transform: translateY(-50px) scale(1.2);
+        }
+/*#gallery>section{
     position: relative;
     width:800px;
     height:750px;
@@ -1143,7 +1219,7 @@ background-position: center;
     grid-row:1/3;
     grid-column: 1/2;
     border-radius: 10px;
-    background: url("/assest/image/WhatsApp Image 2023-02-21 at 22.42.44.jpeg");
+    background: url("/assest/image/galerypic3.jpeg");
     background-size: cover;
     background-position: center;
 
@@ -1153,7 +1229,7 @@ background-position: center;
             grid-column: 1/2;
             background-color: #228be6;
             border-radius: 10px;
-            background: url("/assest/image/WhatsApp Image 2023-02-04 at 19.59.10.jpeg");
+            background: url("/assest/image/galerypic1.jpeg");
             background-size: cover;
             background-position: center;
 
@@ -1163,7 +1239,7 @@ background-position: center;
             grid-column: 2/3;
             background-color: #228be6;
             border-radius: 10px;
-            background: url("/assest/image/WhatsApp_Image_2023-02-19_at_11.06.20__1_-removebg-preview (1).png");
+            background: url("/assest/image/galerypic6.png");
             background-size: cover;
             background-position: center;
             margin-top: 45px;
@@ -1185,7 +1261,7 @@ background-position: center;
             grid-column: 3/4;
             background-color: #228be6;
             border-radius: 10px;
-            background: url("/assest/image/WhatsApp Image 2023-02-21 at 22.42.46.jpeg");
+            background: url("/assest/image/galerypic5.jpeg");
             background-size: cover;
             background-position: center;
 
@@ -1195,10 +1271,11 @@ background-position: center;
             grid-column: 3/4;
             background-color: #228be6;
             border-radius: 10px;
-            background: url("/assest/image/WhatsApp Image 2023-02-21 at 22.42.45 (1).jpeg");
+            background: url("/assest/image/galerypic4.jpeg");
             background-size: cover;
             background-position: center;
-        }
+        }*/
+
 #project{
     position: relative;
     width: 100vw;
@@ -1218,6 +1295,7 @@ background-size: cover;
     background: linear-gradient(to left, #91EAE4, #86A8E7);
     text-align: left;
 }
+
         #project>div:nth-child(2)>div:nth-child(1){
             border:1px solid black;
             position: absolute;
@@ -1258,6 +1336,16 @@ padding-top: 25px;
             position: relative;
             top:10px;
             font-family: Gadugi;
+        }
+        #assignmet>div:nth-child(1){
+            position: absolute;
+            left: 1px;
+            top: 0px;
+            width: 18%;
+            color: whitesmoke;
+            background: linear-gradient(to left, #91EAE4, #86A8E7);
+            text-align: left;
+
         }
         #assignmet {
             position: relative;
@@ -1375,6 +1463,25 @@ color: white;
             position: absolute;
             right: 20px;
 bottom:25px;       }
+        /*All section heder letter color*/
+        .colorletter>h2{
+            position:relative;
+            font-family: Arial;
+            font-size: 30px;
+            color: white;
+            -webkit-text-stroke: 1px   #dcdcdc;
+        }
+        .colorletter>h2:before{
+            color:crimson ;
+            white-space: nowrap;
+            content: attr(data-text);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 0px;
+            animation: hovebefor 1.5s infinite ;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
@@ -1532,7 +1639,7 @@ bottom:25px;       }
         <div></div>
     </div>
     <div class="aboutfour">
-        <div><h2>About me</h2></div>
+        <div class="colorletter"><h2  data-text="About Me">About Me</h2></div>
         <aside>
 
             <p> My name is Nimesha ,21,still an undergrad in <abbr
@@ -1553,7 +1660,7 @@ bottom:25px;       }
 </section>
 <!--education-->
 <section id="Education">
-    <div><h2>Education</h2></div>
+    <div class="colorletter"><h2 data-text="Education">Education</h2></div>
     <div>
         <p class="colorAnimate"> Bsc(Hons). in Computer Science</p>
         <a href="https://www.ijse.lk/">IJSE-Institute of Software Engineering </a>
@@ -1602,7 +1709,7 @@ bottom:25px;       }
 </section>
 <!--skill-->
 <section id="Skill">
-    <div>    <h2>Languages,Skill & Tools</h2></div>
+    <div class="colorletter">    <h2 data-text="Languages,Skill & Tools">Languages,Skill & Tools</h2></div>
     <section class="skillOne">
         <!-- java-->
         <div>
@@ -1658,27 +1765,24 @@ bottom:25px;       }
 </section>
 <!--Galery-->
 <section id="gallery">
-       <div> <h3>Gallery</h3></div>
+       <div class="colorletter" > <h2 data-text="Gallery">Gallery</h2></div>
     <section>
-
-           <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="slider">
+            <span style="--i:1;"><img src="/assest/image/galerypic1.jpeg" alt=""></span>
+            <span style="--i:2;"><img src="/assest/image/galery.png" alt=""></span>
+            <span style="--i:3;"><img src="/assest/image/galerypic3.jpeg" alt=""></span>
+            <span style="--i:4;"><img src="/assest/image/galerypic4.jpeg" alt=""></span>
+            <span style="--i:5;"><img src="/assest/image/galerypic5.jpeg" alt=""></span>
+            <span style="--i:6;"><img src="/assest/image/galerypic6.png" alt=""></span>
+            <span style="--i:7;"><img src="/assest/image/pic2.jpeg" alt=""></span>
+            <span style="--i:8;"><img src="/assest/image/pic6.png" alt=""></span>
+        </div>
 
         </section>
 </section>
 
 <section id="project">
-        <div><h2>Project</h2></div>
+        <div class="colorletter"><h2 data-text="Project">Project</h2></div>
         <div>
 
             <div><img src="assest/image/Screenshot (50).png" alt="" width="300"></div>
@@ -1708,7 +1812,7 @@ bottom:25px;       }
 
 </section>
 <section id="assignmet">
-    <div><h2>Assignment</h2></div>
+    <div class="colorletter"><h2 data-text="Assignment">Assignment</h2></div>
     <section>
         <a href="assignment/css/case01.html" target="_blank">
         <div class="assign">
@@ -1759,12 +1863,12 @@ bottom:25px;       }
         </a>
     </section>
     <div  class="navDiv" id="navNum">
-        <h2 for="assign" class="num">01</h2>
-        <h2 for="assign2" class="num">02</h2>
-        <h2 for="assign3" class="num">03</h2>
-        <h2 for="assign4" class="num">04</h2>
-        <h2 for="assign5" class="num">05</h2>
-        <h2 for="assign6" class="num">06</h2>
+        <h2 for="assign" class="num1">01</h2>
+        <h2 for="assign2" class="num2">02</h2>
+        <h2 for="assign3" class="num3">03</h2>
+        <h2 for="assign4" class="num4">04</h2>
+        <h2 for="assign5" class="num5">05</h2>
+        <h2 for="assign6" class="num6">06</h2>
 
     </div>
 </section>
