@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="/assest/css/normalize.css">
+
+    <link rel="stylesheet" href="/assets/fonts-awesome/css/all.min.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        section{
+            width:100vw;
+            height: 100vh;
+        }
+        section>div{
+            position: relative;
+            border-radius: 10px;
+            width:15vw;
+            height:15vh;
+            top: 3vh;
+            left: 1vw;
+            background-color: #185abc;
+            animation-name: changecolor;
+            animation-duration:5s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+        @keyframes changecolor {
+
+            25%{
+                transform: rotate(180deg);
+                background-color: yellow;
+                top: 3vh;
+                left: 85vw;
+            }
+            50%{
+                transform: rotate(360deg);
+                background-color: red;
+
+                top: 80vh;
+                left:85vw;
+            }
+            75%{
+                background-color: deeppink;
+                transform: rotate(180deg);
+                top: 80vh;
+                left:3vw;
+            }
+
+           100% {
+                background-color: orange;
+                bottom: 80vh;
+                left: 1vw;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div>  </div>
+</section>
+</body>
+</html>
