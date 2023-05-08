@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="/assest/css/normalize.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+       section{
+           height: 450px;
+           width: 1000px;
+           position: absolute;
+           top:0px;
+           right:0;
+           bottom: 0;
+           left: 0;
+           margin: auto;
+           border:1px solid;
+           display: flex;
+           overflow: hidden;
+       }
+       section>div{
+           position: relative;
+           height:450px;
+           width: 1000px;
+           display: inline-block;
+           animation-name:slide-image ;
+           animation-iteration-count: infinite;
+           animation-fill-mode: forwards;
+           animation-direction: alternate;
+           animation-duration: 10s;
+           flex-shrink: 0;
+       }
+       section>div:nth-child(1){
+           background: url("/assest/image/case/lone-tree.jpg");
+           background-size: cover;
+           background-position: center;
+       }
+        section>div:nth-child(2){
+            background: url("/assest/image/case/slide1.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        section>div:nth-child(3){
+            background: url("/assest/image/case/slide2.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        section>div:nth-child(4){
+            background: url("/assest/image/case/slide3.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        @keyframes slide-image {
+            0% {
+                transform: translateX(0px);
+            }
+            25% {
+                transform: translateX(0px);
+
+            }
+            30% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(-100%);
+
+            }
+            55% {
+                transform: translateX(-200%);
+            }
+            75% {
+                transform: translateX(-200%);
+
+            }
+            80% {
+                transform: translateX(-300%);
+            }
+            100% {
+                transform: translateX(-300%);
+
+            }
+        }
+
+    </style>
+</head>
+<body>
+<section>
+     <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+
+</body>
+</html>
