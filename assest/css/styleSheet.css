@@ -6,16 +6,6 @@
 
 
 
-/*#home .homeOne {
-    position: absolute;
-    width: 60%;
-    height: 70%;
-    top: 0px;
-    left: 0px;
-    background-color: #1a73e8;
-    background: url("/assest/image/homeOne.jpg");
-    background-size: cover;
-}*/
 
 
 
@@ -25,16 +15,15 @@
 
 
 
-
-#assignmet>section{
+/*#assignmet>section{
     position: relative;
     display: flex;
     justify-content:space-between;
     overflow: scroll;
-    /*animation-name:flow;
+    !*animation-name:flow;
     animation-duration:0.5s;
     animation-timing-function: ease-out;
-    animation-iteration-count: 1;*/
+    animation-iteration-count: 1;*!
 
 }
 
@@ -48,10 +37,10 @@
     position: relative;
     left: 0px;
     perspective:400px;
-   /* animation-name:flow;
+   !* animation-name:flow;
     animation-duration:0.5s;
     animation-timing-function: ease-out;
-    animation-iteration-count: 1;*/
+    animation-iteration-count: 1;*!
 }
 .assign:checked~.num1{
     margin-left: 0;
@@ -87,7 +76,7 @@
 }
 #assignmet>section>a>div>img:hover{
     transform:scale(1.2) ;
-}
+}*/
 img{
     transition:0.3s;
     transition-timing-function: ease;
@@ -128,27 +117,27 @@ img:hover{
 }
 /*home*/
 @keyframes changecolor {
-    0%{
-        color:white;
-
-
+    0% {
+        color: white;
     }
-    25%{
+    25% {
         color: #332f2b;
-        transform:rotate(0deg);
+        transform: rotate(0deg);
         margin-left: 36px;
         animation-delay: 2s;
     }
-    50%{
+    50% {
         color: crimson;
-        transform:rotate(91deg);
+        transform: rotate(91deg);
         margin-left: 292px
 
     }
-  75%{
-color: #228be6;
+    75% {
+        color: #228be6;
+    }
 }
-}
+
+
 @keyframes anima {
 /*0%{
     animation-delay:20S;
