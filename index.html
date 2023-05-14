@@ -879,7 +879,7 @@
             padding-right: 24px;
             position: absolute;
             top: 4px;
-            right: 145px
+            right: 200px
         }
 
         .mark4 > div:nth-child(even) {
@@ -910,8 +910,8 @@
             transition: .3s;
             padding-right: 24px;
             position: absolute;
-            top: 54px;
-            right: 145px
+            top: 62px;
+            right: 200px
         }
 
         .mark5 > div:nth-child(even) {
@@ -942,8 +942,8 @@
             transition: .3s;
             padding-right: 24px;
             position: absolute;
-            top: 104px;
-            right: 145px
+            top: 120px;
+            right: 200px
         }
 
         .mark6 > div:nth-child(even) {
@@ -1058,11 +1058,11 @@
         body > #home > div:nth-child(3) > div:nth-child(2) {
             border-radius: 10px;
             background: linear-gradient(to top, #4e54c8, #8f94fb);
-            width: 28%;
+            width: 22%;
             height: 20%;
             position: relative;
-            margin-top: 73px;
-            margin-left: 297px;
+            margin-top: 85px;
+            margin-left: 500px;
         }
 
         body > #home > div:nth-child(3) > div:nth-child(2) > div {
@@ -1075,6 +1075,7 @@
             text-decoration: none;
             color: whitesmoke;
             margin-left: 10px;
+            font-size: 20px;
         }
 
         body > #home > div:nth-child(3) > div:nth-child(2) > p {
@@ -1088,21 +1089,21 @@
 
         .homeFive {
             width: 17%;
-            height: 35%;
+            height: 49%;
             position: absolute;
             top: 80px;
             bottom: 0px;
             right: 0px;
-            left: 490px;
-        }
-
-        .homeFive > img {
+            left: 600px;
+            background-image: url("assest/image/pic5.png");
+            background-size: cover;
             animation: rotate 15s linear infinite;
             animation-play-state: running;
-
         }
 
-        .homeFive > img:hover {
+
+
+        .homeFive :hover {
             animation-play-state: paused;
         }
 
@@ -1113,7 +1114,7 @@
             top: 110px;
             bottom: 0px;
             right: 0px;
-            left: 400px;
+            left: 500px;
             border: 5px solid black;
         }
 
@@ -1301,31 +1302,32 @@
 
         #AboutMe > .aboutfour > aside {
             position: absolute;
-            top: 40px;
+            top: 50px;
             left: 2px;
-            font-size: 25.8px;
-            font-family: monospace;
+            font-size: 30px;
+            font-family: 'Space Mono', monospace;
+            font-weight: 500;
         }
 
         #AboutMe > #name {
             position: absolute;
             color: black;
             font-family: monospace;
-            font-size: 35px;
-            left: 170px;
+            font-size: 40px;
+            left: 200px;
             bottom: -2px;
         }
 
         .oboutTwo > p {
             font-family: monospace;
-            font-size: 27px;
+            font-size: 35px;
             color: crimson;
         }
 
         .typeWritter {
             position: absolute;
             font-family: monospace;
-            font-size: 27px;
+            font-size: 35px;
             color: crimson;
             bottom: 0px;
             left: 2px;
@@ -1338,7 +1340,7 @@
             bottom: 0px;
             right: -12px;
             width: 104%;
-            height: 30px;
+            height: 35px;
             color: crimson;
             background-color: #86A8E7;
             font-size: 27px;
@@ -2099,13 +2101,7 @@
 
         }
 
-      /*  @media all and (max-width: 320px) {
-            footer {
-                height: 91px;
-                width: 108px;
-                background-size: cover;
-                background-position: center;
-            }*/
+
 
             /*All section heder letter color*/
             .colorletter > h2 {
@@ -2128,6 +2124,15 @@
                 overflow: hidden;
             }
         @media all and (max-width: 320px) {
+            ::-webkit-scrollbar {
+                width: 0px;
+            }
+
+
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
             header {
                 height: 19px;
 
@@ -2181,7 +2186,6 @@
                 height: 12px;
                 padding-top: 4px;
                 width: 11px;
-
             }
             .menu > div {
                 width: 12px;
@@ -2225,12 +2229,11 @@
 /*home*/
             #home {
                 position: relative;
-                width: 105px;
+                width: 107px;
                 height: 168px;
                 margin: 0px;
                 z-index: 2;
                 top: 19px;
-                border: 1px solid black;
 
             }
 
@@ -2275,7 +2278,7 @@
 
             .homeTwo {
                 position: absolute;
-                width:30px;
+                width:32px;
                 height:117px;
                 top: 0px;
                 right: 0px;
@@ -2333,10 +2336,218 @@
 
             }
             body > #home > .homeTwo > nav>ul>li>a>img{
-                width: 10px;
+                width: 8px;
             }
             body > #home > .homeTwo > nav>ul>li>a{
                 padding-top: 10px;
+                position:absolute;
+                left: -6px;
+            }
+            /*
+            body > #home > .homeTwo > nav>ul>li:nth-child(2){
+                top: 5px;
+            }
+            body > #home > .homeTwo > nav>ul>li:nth-child(3){
+                top: 10px;
+            } body > #home > .homeTwo > nav>ul>li:nth-child(4){
+                  top: 15px;
+              } body > #home > .homeTwo > nav>ul>li:nth-child(5){
+                    top: 20px;
+                }
+            */
+
+            .homeFour{
+                position: absolute;
+                width: 29%;
+                height: 30.5%;
+                bottom: 0px;
+                right: 0px;
+            }
+            .homeThree{
+                position:absolute;
+                width: 72%;
+                height: 30.5%;
+                bottom: 0px;
+                left: 0px;
+                background-size:cover;
+            }
+            .webkit {
+                position: absolute;
+                top: -1%;
+                left: 49%;
+                width: 86%;
+                transform: translate(-51%, -50%);
+                height: 20%;
+            }
+
+            .webkit span {
+                font-size: 5px;
+                opacity: 0;
+                transform: translate(-155px, 0) scale(0.4);
+                animation: anima 2s forwards running;
+
+
+            }
+            .sp{
+                position: relative;
+                bottom: 8px;
+            }
+
+            .webkit span:nth-child(2) {
+                animation-delay: 0.5s;
+            }
+
+            .webkit span:nth-child(3) {
+                animation-delay: 0.1s;
+            }
+
+            .webkit span:nth-child(4) {
+                animation-delay: 0.15s;
+            }
+
+            .webkit span:nth-child(5) {
+                animation-delay: 0.2s;
+            }
+
+            .webkit span:nth-child(6) {
+                animation-delay: 0.25s;
+            }
+
+            .webkit span:nth-child(7) {
+                animation-delay: 0.3s;
+            }
+
+            .webkit span:nth-child(8) {
+                animation-delay: 0.35s;
+            }
+
+            .webkit span:nth-child(9) {
+                animation-delay: 0.4s;
+            }
+
+            .webkit span:nth-child(10) {
+                animation-delay: 0.45s;
+            }
+
+            .webkit span:nth-child(11) {
+                animation-delay: 0.5s;
+            }
+
+            .webkit span:nth-child(12) {
+                animation-delay: 0.55s;
+            }
+
+            .webkit span:nth-child(13) {
+                animation-delay: 0.6s;
+            }
+
+            .webkit span:nth-child(14) {
+                animation-delay: 0.65s;
+            }
+
+            .webkit span:nth-child(15) {
+                animation-delay: 0.7s;
+            }
+
+            .webkit span:nth-child(16) {
+                animation-delay: 0.75s;
+            }
+
+            .webkit span:nth-child(17) {
+                animation-delay: 0.8s;
+            }
+            .mark6 > div {
+                width: 12px;
+                height: 2px;
+                background-color: white;
+                margin: 6px 0;
+            }
+
+            .mark6 {
+                position: absolute;
+                top: -13px;
+                left: 0px;
+            }
+            .mark4 > div {
+                width: 12px;
+                height: 2px;
+                background-color: white;
+                margin: 6px 0;
+            }
+
+            .mark4 {
+                position: absolute;
+                top: 3px;
+                left: 0px;
+            }
+            .mark5 > div {
+                width: 12px;
+                height: 2px;
+                background-color: white;
+                margin: 6px 0;
+            }
+
+            .mark5 {
+                position: absolute;
+                top: 19px;
+                left: 0px;
+            }
+            body > #home > div:nth-child(3) > div:nth-child(2) {
+                border-radius: 4px;
+                width: 43px;
+                height: 10px;
+                position: absolute;
+                top: 29px;
+                left: 31px;
+                margin: auto;
+            }
+            body > #home > div:nth-child(3) > div:nth-child(2) > div {
+                position: absolute;
+                bottom: -4px;
+                right: 2px;
+            }
+
+            body > #home > div:nth-child(3) > div:nth-child(2) > p > a {
+                font-size: 5px;
+                position: relative;
+                bottom: 13px;
+                right: 8px;
+            }
+
+            body > #home > div:nth-child(3) > div:nth-child(2) > p {
+                padding-top: 6px;
+            }
+            .cv{
+                width: 8px;
+            }
+            .homeFive {width: 51px;
+                height: 65px;
+                position: absolute;
+                top: 25px;
+                bottom: 0px;
+                right: 0px;
+                left: 40px;
+                background-position: center;
+                background-size: cover;
+                background-image: url("assest/image/pic5.png");
+                animation: rotate 15s linear infinite;
+                animation-play-state: running;
+
+            }
+
+            .homeFive:hover {
+                animation-play-state: paused;
+            }
+
+            .homesix {
+                width: 42px;
+                height: 51px;
+                position: absolute;
+                top: 42px;
+                bottom: 0px;
+                right: 0px;
+                left: 34px;
+                border: 1px solid black;
             }
         }
         @media all and (min-width: 321px) and (max-width: 375px) {
@@ -2783,31 +2994,31 @@
             <ul>
                 <li>
                     <a href="https://www.linkedin.com/in/nimesha-madhubhashini-2b0741264/" target="_blank">
-                        <img alt="Linkedin" src="assest/image/linkedin.png" width="30">
+                        <img alt="Linkedin" src="assest/image/linkedin.png" width="40">
                     </a>
                 </li>
                 <br>
                 <li>
                     <a href="tel:+94775523140" target="_blank">
-                        <img alt="whatsapp" src="assest/image/whatsapp.png" width="30">
+                        <img alt="whatsapp" src="assest/image/whatsapp.png" width="40">
                     </a>
                 </li>
                 <br>
                 <li>
                     <a href="https://github.com/nimeshaMadubashini" target="_blank">
-                        <img alt="Github" src="assest/image/github.png" width="30">
+                        <img alt="Github" src="assest/image/github.png" width="40">
                     </a>
                 </li>
                 <br>
                 <li>
                     <a href="tel:+94775523140" target="_blank">
-                        <img alt="Telegram" src="assest/image/telegram.png" width="30">
+                        <img alt="Telegram" src="assest/image/telegram.png" width="40">
                     </a>
                 </li>
                 <br>
                 <li>
                     <a href="https://www.facebook.com/Madu.Gunasekara" target="_blank">
-                        <img alt="FaceBook" src="assest/image/facebook.png" width="30">
+                        <img alt="FaceBook" src="assest/image/facebook.png" width="40">
                     </a>
                 </li>
             </ul>
@@ -2823,18 +3034,18 @@
             <span>a</span>
             <span>r</span>
             <span>e</span>
-            <span style="margin-left: 10px"> E</span>
-            <span>n</span>
-            <span>g</span>
-            <span>i</span>
-            <span>n</span>
-            <span>e</span>
-            <span>e</span>
-            <span>r</span>
+            <span class="sp" style="margin-left: 10px"> E</span>
+            <span  class="sp">n</span>
+            <span class="sp">g</span>
+            <span class="sp">i</span>
+            <span class="sp">n</span>
+            <span class="sp">e</span>
+            <span class="sp">e</span>
+            <span class="sp">r</span>
         </div>
         <div>
             <p><a href="assest/image/Nimesha.pdf.pdf" download="cv.pdf">Download CV</a></p>
-            <div><img src="assest/image/cvdwnld.png" width="28px"></div>
+            <div><img class="cv" src="assest/image/cvdwnld.png" width="28px"></div>
         </div>
     </div>
     <div class="homeFour">
@@ -2856,7 +3067,7 @@
     </div>
     <div class="homesix"></div>
     <div class="homeFive">
-        <img src="assest/image/pic5-removebg-preview.png" width="100%" height="140%">
+
     </div>
 </section>
 <!--aboutme-->
@@ -3029,7 +3240,6 @@
 
     </section>
 </section>
-
 <section id="project">
     <div class="colorletter"><h2 data-text="Project">Project</h2></div>
     <div>
