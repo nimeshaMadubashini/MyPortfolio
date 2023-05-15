@@ -1688,9 +1688,6 @@
         #gallery > section {
             width: 100vw;
             height: 100vh;
-            /*
-            background-color: #228be6;
-            */
             display: flex;
             box-sizing: border-box;
             overflow: hidden;
@@ -1912,7 +1909,7 @@
             height: 100vh;
             top: 101px;
             border-top: 1px solid black;
-            background: url("/assest/image/abstract-blue-draw.jpg");
+            background: url("assest/image/watercolor-splash-background (2).jpg");
             background-size: cover;
             background-position: center;
         }
@@ -1923,6 +1920,9 @@
             justify-content: space-between;
             overflow: scroll;
             top: 65px;
+height: 300px;
+            width: 1200px;
+
             /*animation-name:flow;
             animation-duration:0.5s;
             animation-timing-function: ease-out;
@@ -1932,13 +1932,14 @@
 
 
         #assignmet > section > a > div {
-            width: 35.353vw;
+            width: 19.353vw;
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
             left: 0px;
             perspective: 400px;
+            top: 37px;
             /* animation-name:flow;
              animation-duration:0.5s;
              animation-timing-function: ease-out;
@@ -1947,13 +1948,13 @@
 
         #assignmet > section > a > div > h3 {
             position: relative;
-            top: -28px;
+            bottom: -2px;
             left: -15px;
         }
 
         #assignmet > section > a > div > h5 {
             position: relative;
-            top: -26px;
+            bottom: -4px;
             left: -14px;
         }
 
@@ -2945,7 +2946,7 @@
             #Skill {
                 position: relative;
                 width: 107px;
-                height: 190px;
+                height: 217px;
                 margin: 0px;
                 top: 31px;
                 border-top: 1px solid black;
@@ -3037,27 +3038,124 @@
             }
 
 
-            #Skill > .skillThree {
-                display: flex;
-                align-items: center;
-                margin-top: 51px;
-                padding-left: 250px;
+            #Skill > .skillThree{
+            display: flex;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            overflow-x: scroll;
+            margin-right: 4px;
+            padding-left: 0px;
+            bottom: -14px;
+                       width: 99px;
+            height: 70px;
+
             }
 
             #Skill > .skillThree > img:nth-child(1) {
-                padding-right: 25px;
+                padding: 0px;
+                position: absolute;
+                left: 20px;
+                margin: auto;
+                width: 60px;
             }
 
             #Skill > .skillThree > img:nth-child(2) {
-                padding-right: 25px;
-            }
+                padding: 0px;
+                position: absolute;
+                left: 83px;
+                margin: auto;
+                width: 60px;          }
 
             #Skill > .skillThree > img:nth-child(3) {
-                padding-right: 25px;
-            }
+                padding: 0px;
+                position: absolute;
+                right: 81px;
+                margin: auto;
+                width: 60px;            }
 .lernmore{
     visibility: hidden;
 }
+            #gallery {
+                position: relative;
+                border-top: 1px solid black;
+                width: 107px;
+                height: 190px;
+                top: 34px;
+            }
+
+            #gallery > div:nth-child(1) {
+                position: absolute;
+                left: 1px;
+                top: 0px;
+                width: 31%;
+
+            }
+
+            #gallery > section {
+                width: 106px;
+                height: 152px;
+                display: flex;
+                box-sizing: border-box;
+                overflow: hidden;
+                align-items: center;
+                justify-content: center;
+                margin-top: 23px;
+            }
+
+            .slider {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                transform-style: preserve-3d;
+                animation: rotate 30s linear infinite;
+                animation-play-state: running;
+            }
+
+            .slider:hover {
+                animation-play-state: paused;
+            }
+
+            @keyframes rotate {
+                0% {
+                    transform: perspective(1000px) rotateY(0deg);
+                }
+                100% {
+                    transform: perspective(1000px) rotateY(360deg);
+                }
+            }
+
+            .slider span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform-origin: center;
+                transform-style: preserve-3d;
+                transform: rotateY(calc(var(--i) * 45deg)) translateZ(112px);
+                -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+
+            }
+
+            .slider span img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 86%;
+                height: 97%;
+                border-radius: 10px;
+                object-fit: cover;
+                transition: 2s;
+                cursor: pointer;
+
+            }
+
+            .slider span:hover img {
+                transform: translateY(-50px) scale(1.1);
+            }
+
         }
 
         @media all and (min-width: 321px) and (max-width: 375px) {
@@ -3818,7 +3916,7 @@
     <section>
         <a href="assignment/css/case01.html" target="_blank">
             <div class="assign">
-                <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
+                <img src="assest/image/cssss5-removebg-preview.png" alt="" width="175" height="185">
                 <h3>CSS-Basic 01</h3>
                 <h5>View</h5>
             </div>
@@ -3826,7 +3924,7 @@
         <a href="assignment/css/case02.html" target="_blank">
 
             <div class="assign2">
-                <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
+                <img src="assest/image/cssss5-removebg-preview.png" alt="" width="175" height="185">
 
                 <h3>CSS-Basic 02</h3>
                 <h5>View</h5>
@@ -3835,7 +3933,7 @@
         <a href="assignment/css/case03.html" target="_blank">
 
             <div class="assign3">
-                <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
+                <img src="assest/image/cssss5-removebg-preview.png" alt="" width="175" height="185">
 
                 <h3>CSS-Basic 03</h3>
                 <h5>View</h5>
@@ -3843,7 +3941,8 @@
         </a>
         <a href="assignment/css/case04.html" target="_blank">
             <div class="assign4">
-                <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
+                <img src="assest/image/cssss5-removebg-preview.png" alt="" width="175" height="185">
+
                 <h3>CSS-Basic 04</h3>
                 <h5>View</h5>
             </div>
@@ -3851,18 +3950,62 @@
 
         <a href="assignment/css/case05.html" target="_blank">
             <div class="assign6">
-                <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
+                <img src="assest/image/cssss5-removebg-preview.png" alt="" width="175" height="185">
                 <h3>CSS-Basic 05</h3>
                 <h5>View</h5>
             </div>
         </a>
         <a href="assignment/css/case06.html" target="_blank">
             <div class="assign6">
-                <img src="assest/image/cssblue-removebg-preview.png" alt="" width="573">
+                <img src="assest/image/cssss5-removebg-preview.png" alt="" width="175" height="185">
                 <h3>CSS-Basic 06</h3>
                 <h5>View</h5>
             </div>
         </a>
+        <a href="assignment/Transitions/caseOne.html" target="_blank">
+            <div class="assign6">
+                <img src="assest/image/cssss6-removebg-preview.png" alt="" width="175" height="185">
+                <h3>CSS-Transition 01</h3>
+                <h5>View</h5>
+            </div>
+        </a>
+        <a href="assignment/Transitions/caeTwo.html" target="_blank">
+            <div class="assign6">
+                <img src="assest/image/cssss6-removebg-preview.png" alt="" width="175" height="185">
+                <h3>CSS-Transition 02</h3>
+                <h5>View</h5>
+            </div>
+        </a>
+        <a href="assignment/Animation/CaseThree.html" target="_blank">
+            <div class="assign6">
+                <img src="assest/image/cssss7-removebg-preview.png" alt="" width="175" height="185">
+                <h3>CSS-Animation 01</h3>
+                <h5>View</h5>
+            </div>
+        </a>
+        <a href="assignment/Animation/caseFour.html" target="_blank">
+            <div class="assign6">
+                <img src="assest/image/cssss7-removebg-preview.png" alt="" width="175" height="185">
+                <h3>CSS-Animation 02</h3>
+                <h5>View</h5>
+            </div>
+        </a>
+        <a href="assignment/Animation/caseFive.html" target="_blank">
+            <div class="assign6">
+                <img src="assest/image/cssss7-removebg-preview.png" alt="" width="175" height="185">
+                <h3>CSS-Animation 03</h3>
+                <h5>View</h5>
+            </div>
+        </a>
+        <a href="assignment/Animation/caseSix.html" target="_blank">
+            <div class="assign6">
+                <img src="assest/image/cssss7-removebg-preview.png" alt="" width="175" height="185">
+                <h3>CSS-Animation 04</h3>
+                <h5>View</h5>
+            </div>
+        </a>
+
+
     </section>
     <div class="navDiv" id="navNum">
         <h2 for="assign" class="num1">01</h2>
@@ -3871,6 +4014,13 @@
         <h2 for="assign4" class="num4">04</h2>
         <h2 for="assign5" class="num5">05</h2>
         <h2 for="assign6" class="num6">06</h2>
+        <h2 for="assign" class="num1">07</h2>
+        <h2 for="assign2" class="num2">08</h2>
+        <h2 for="assign3" class="num3">09</h2>
+        <h2 for="assign4" class="num4">10</h2>
+        <h2 for="assign5" class="num5">11</h2>
+        <h2 for="assign6" class="num6">12</h2>
+
 
     </div>
 </section>
