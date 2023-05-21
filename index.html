@@ -7062,7 +7062,7 @@ height: 300px;
             #nav_Check:checked ~ .menu > div:last-child {
                 transform: translateY(-4px) rotate(-45deg);
             }
-            #home {
+   /*         #home {
                 position: relative;
                 width: 256px;
                 height: 168px;
@@ -7223,9 +7223,9 @@ height: 300px;
 
             }
             @keyframes anima {
-                /*0%{
+                !*0%{
                     animation-delay:20S;
-                }*/
+                }*!
                 40% {
                     transform: translate(20px, 0) scale(.7);
                     opacity: 1;
@@ -7521,7 +7521,7 @@ height: 300px;
                 font-size: 10px;
             }
 
-            /*Education*/
+            !*Education*!
             #Education {
                 position: relative;
                 width: 256px;
@@ -7724,7 +7724,7 @@ height: 300px;
                 top: 0px;
                 width: 70%;
             }
-/*
+!*
             .skillOne {
                 justify-content: space-evenly;
                 margin-top: 17px;
@@ -7746,10 +7746,10 @@ height: 300px;
                 border-bottom: 0px solid white;
                 transform: scale3d(1, 1, 1);
                 transition: all .5s ease-in;
-            }*/
-           /* #Skill > section:first-of-type > div>p{
+            }*!
+           !* #Skill > section:first-of-type > div>p{
                 visibility: hidden;
-            }*/
+            }*!
             .skillOne {
                 display: flex;
                 justify-content: space-around;
@@ -7778,9 +7778,9 @@ height: 300px;
                 border-top: 2px solid black;
                 border-bottom: 2px solid black;
                 transform: scale3d(1.02, 1.02, 1.02);
-                /*
+                !*
                 transition: all 0.2s ease-in;
-                */
+                *!
             }
             #Skill > section:first-of-type > div:nth-child(1)>img{
                 width: 28px;
@@ -7797,7 +7797,7 @@ height: 300px;
                 width: 28px;
                 position: relative;
                 right: 10px;
-                /* height: 27px; */
+                !* height: 27px; *!
                 top: 2px;            }
             #Skill > section:first-of-type > div .language{
                 font-size: 7px;
@@ -7950,7 +7950,7 @@ height: 300px;
             .slider span:hover img {
                 transform: translateY(-20px) scale(1.1);
             }
-            /*project*/
+            !*project*!
             #project {
                 position: relative;
                 width: 256px;
@@ -7972,11 +7972,11 @@ height: 300px;
             }
 
             #project > div:nth-child(2) > div:nth-child(1) {
-                /*   border: 1px solid black;
+                !*   border: 1px solid black;
                    position: absolute;
                    top: 50px;
                    left: 10px;
-                   width: 300px;*/
+                   width: 300px;*!
                 border: 1px solid black;
                 position: absolute;
                 top: 30px;
@@ -8248,6 +8248,1150 @@ height: 300px;
                 width: 74px;
                 height: 0px;
 
+            }*/
+            #home {
+                position: relative;
+                width: 100%;
+                height: 295px;
+                margin: 0px;
+                z-index: 2;
+                top: 19px;
+
+            }
+
+            .homeOne {
+                position: absolute;
+                width: 441px;
+                height: 187px;
+                top: 0px;
+                left: 0px
+            }
+
+            body > #home > div:nth-child(1) > h1 {
+                width: 30px;
+                rotate: x;
+                font-size: 22px;
+                margin-top: 15px;
+                transform: rotate(90deg);
+                padding-left: 0px;
+                margin-left: 0px;
+                animation-name: changecolor;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes changecolor {
+                0% {
+                    color: white;
+                }
+                25% {
+                    color: #332f2b;
+                    transform: rotate(0deg);
+                    margin-left: 20px;
+                }
+                50% {
+                    color: crimson;
+                    transform: rotate(91deg);
+                    margin-left: 38px
+
+                }
+                75% {
+                    color: #228be6;
+                }
+            }
+
+            .homeTwo {
+                position: absolute;
+                width: 324px;
+                height: 187px;
+                top: 0px;
+                right: 0px;
+            }
+
+            body > #home > div:nth-child(1) > p {
+                font-size: 23px;
+                position: absolute;
+                bottom: 0px;
+                left: 5px;
+                font-family: monospace;
+            }
+
+            .mark > div {
+                width: 33px;
+                height: 2px;
+                margin: 6px 0;
+            }
+
+            .mark {
+                padding-right: 103px;
+                position: absolute;
+                top: -2px
+            }
+
+            .mark2 > div {
+                width: 33px;
+                height: 2px;
+                margin: 6px 0;
+            }
+
+            .mark2 {
+                padding: 3px 20px;
+                padding-right: -8px;
+                position: absolute;
+                top: -2px;
+                right: 34px;
+            }
+
+            .mark3 > div {
+                width: 33px;
+                height: 2px;
+                margin: 6px 0;
+            }
+
+            .mark3 {
+                padding: 3px 10px;
+                padding-right: -8px;
+                position: absolute;
+                top: -2px;
+                right: -5px;
+            }
+
+            body > #home > .homeTwo > nav {
+                padding-top: 0px;
+                right: 28px;
+                top: 0px;
+                bottom: 0px;
+                display: flex;
+
+            }
+            body > #home > .homeTwo > nav > ul > li{
+                margin-top: 10px;
+            }
+            body > #home > .homeTwo > nav > ul > li > a > img {
+                width: 20px;
+
+            }
+
+            body > #home > .homeTwo > nav > ul > li > a {
+                padding-top: 10px;
+                position: absolute;
+                left: -18px;
+            }
+
+
+            .homeFour {
+                position: absolute;
+                width: 42.5%;
+                height: 36.5%;
+                bottom: 0px;
+                right: 0px;
+            }
+
+            .homeThree {
+                position: absolute;
+                width: 442px;
+                height: 37%;
+                bottom: 0px;
+                left: 0px;
+                background-size: cover;
+            }
+
+            .webkit {
+                position: absolute;
+                top: 35%;
+                width: 224px;
+                transform: translate(-50%, -50%);
+                height: 52%;
+            }
+
+            .webkit span {
+                font-size: 14px;
+                opacity: 0;
+                transform: translate(-100px, 0) scale(0.4);
+                animation: anima 2s forwards running;
+
+
+            }
+            @keyframes anima {
+                /*0%{
+                    animation-delay:20S;
+                }*/
+                40% {
+                    transform: translate(20px, 0) scale(.7);
+                    opacity: 1;
+                    color: #302b63;
+                }
+                60% {
+                    color: wheat;
+                    animation-delay: 4s;
+                }
+                80% {
+                    transform: translate(0) scale(2);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translate(0) scale(1);
+                    opacity: 1;
+                }
+            }
+            /* .sp {
+                 position: relative;
+                 bottom: 8px;
+             }*/
+
+
+
+            .mark6 > div {
+                width: 27px;
+                height: 2px;
+                background-color: white;
+                margin: 6px 0;
+            }
+
+            .mark6 {
+                position: absolute;
+                top: -5px;
+                left: 135px;
+            }
+
+            .mark4 > div {
+                width: 27px;
+                height: 2px;
+                background-color: white;
+                margin: 6px 0;
+            }
+
+            .mark4 {
+                position: absolute;
+                top: 28px;
+                left: 136px;
+            }
+
+            .mark5 > div {
+                width: 27px;
+                height: 2px;
+                background-color: white;
+                margin: 6px 0;
+            }
+
+            .mark5 {
+                position: absolute;
+                top: 64px;
+                left: 137px;
+            }
+
+            body > #home > div:nth-child(3) > div:nth-child(2) {
+                border-radius: 4px;
+                width: 117px;
+                height: 21px;
+                position: absolute;
+                top: 50px;
+                left: 304px;
+                margin: auto;
+            }
+
+            body > #home > div:nth-child(3) > div:nth-child(2) > div {
+                position: absolute;
+                bottom: -4px;
+                right: 2px;
+            }
+
+            body > #home > div:nth-child(3) > div:nth-child(2) > p > a {
+                font-size: 11px;
+                position: relative;
+                bottom: 8px;
+                right: 2px;
+            }
+
+            body > #home > div:nth-child(3) > div:nth-child(2) > p {
+                padding-top: 6px;
+            }
+
+            .cv {
+                width: 20px;
+            }
+
+            .homeFive {
+                width: 94px;
+                height: 122px;
+                position: absolute;
+                top: 41px;
+                bottom: 0px;
+                right: 0px;
+                left: 369px;
+                background-position: center;
+                background-size: cover;
+                background-image: url("assest/image/pic5.png");
+                animation: rotate 15s linear infinite;
+                animation-play-state: running;
+
+            }
+
+            .homeFive:hover {
+                animation-play-state: paused;
+            }
+
+            .homesix {
+                width: 85px;
+                height: 113px;
+                position: absolute;
+                top: 58px;
+                bottom: 0px;
+                right: 0px;
+                left: 339px;
+                border: 2px solid black;
+            }
+
+            #AboutMe {
+                position: relative;
+                width: 100%;
+                height: 310px;
+                margin: 0px;
+                top: 23px;
+                border-top: 1px solid black;
+            }
+
+            .aboutOne {
+                position: absolute;
+                width: 42%;
+                height: 85%;
+            }
+
+            .aboutOne > div:nth-child(1) {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 53%;
+                height: 82%;
+            }
+
+            .aboutOne > div:nth-child(2) {
+                position: absolute;
+                top: 29px;
+                right: 1px;
+                width: 164px;
+                height: 220px;
+            }
+
+            body > #AboutMe > .oboutTwo {
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+                background-color: #86A8E7;
+                width: 78%;
+                height: 45%;
+            }
+
+            body > #AboutMe > .oboutThree {
+                position: absolute;
+                right: 0px;
+                top: 0px;
+
+                width: 58%;
+                height: 55%;
+            }
+
+            #AboutMe > .oboutThree > div {
+                position: absolute;
+                width: 30%;
+                top: 0px;
+                right: 0px;
+                height: 10%;
+            }
+
+            .mark7 > div {
+                width: 30px;
+                height: 2px;
+            }
+
+            .mark7 {
+                position: absolute;
+                top: -7px;
+                left: -2px
+            }
+
+
+            .mark8 > div {
+                width: 30px;
+                height: 2px;
+
+            }
+
+            .mark8 {
+                position: absolute;
+                top: -7px;
+                left: 44px
+            }
+
+
+            .mark9 > div {
+                width: 30px;
+                height: 2px;
+                background-color: #12b886;
+                margin: 6px 0;
+            }
+
+            .mark9 {
+                position: absolute;
+                top: -7px;
+                left: 83px
+            }
+
+
+            #AboutMe > .aboutfour {
+                position: absolute;
+                top: 37px;
+                width: 52%;
+                height: 74%;
+                left: 324px;
+                border-bottom: 0.1px solid black;
+                border-top: 0.1px solid black;
+                border-right: 0.1px solid black;
+            }
+
+            #AboutMe > .aboutfour > div {
+                position: absolute;
+                left: 1px;
+                top: 0px;
+                width: 92px;
+            }
+
+            .colorletter > h2 {
+                position: relative;
+                font-family: Arial;
+                font-size: 10px;
+                color: white;
+                -webkit-text-stroke: 0px #dcdcdc;
+            }
+
+
+            #AboutMe > .aboutfour > aside {
+                position: absolute;
+                top: 27px;
+                left: 2px;
+                font-size: 15px;
+                font-family: 'Space Mono', monospace;
+                font-weight: 500;
+            }
+
+            #AboutMe > #name {
+                position: absolute;
+                color: black;
+                font-family: monospace;
+                font-size: 28px;
+                left: 82px;
+                bottom: -1px;
+            }
+
+            .oboutTwo > p {
+                font-family: monospace;
+                font-size: 19px;
+                color: crimson;
+            }
+
+            .typeWritter {
+                position: absolute;
+                font-family: monospace;
+                font-size: 6.25px;
+                color: crimson;
+                bottom: 0px;
+                left: 2px;
+                letter-spacing: 1px;
+            }
+
+            .typeWritter::after {
+                position: absolute;
+                bottom: 3px;
+                right: -12.5px;
+                width: 106%;
+                height: 21px;
+                color: crimson;
+                font-size: 17px;
+            }
+
+            /*Education*/
+            #Education {
+                position: relative;
+                width: 100%;
+                height: 311px;
+                margin: 0px;
+                top: 27px;
+                border-top: 1px solid black;
+            }
+
+            #Education > div:nth-child(1) {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                width: 20%;
+            }
+
+            #Education > div:nth-child(2) {
+                position: absolute;
+                top: 13%;
+                left: 10%;
+                width: 31%;
+            }
+
+            #Education > div:nth-child(2) > p:nth-child(1) {
+                font-size: 16px;
+            }
+
+            #Education > div:nth-child(2) > #year {
+                margin-bottom: 0px;
+                margin-top: 20px;
+                font-size: 10.25px;
+            }
+
+            #Education > div:nth-child(2) > p:nth-child(4) {
+                font-size: 9px;
+                margin-top: 4px;
+            }
+
+            #rccflag {
+                width: 61px;
+                height: 74px;
+                position: absolute;
+            }
+
+            #Education > div:nth-child(2) > a {
+                text-decoration: none;
+                font-size: 10.75px;
+                position: absolute;
+                top: 21px;
+            }
+
+            #Education > div:nth-child(3) {
+                position: absolute;
+                top: 5%;
+                left: 63%;
+            }
+
+            #ijsed {
+                width: 142px;
+            }
+
+            #Education > div:nth-child(4) {
+                position: absolute;
+                top: 41%;
+                left: 16%;
+            }
+
+            #Education > div:nth-child(5) {
+                position: absolute;
+                top: 41%;
+                left: 58%;
+                width: 41%;
+            }
+            #Education > div:nth-child(5) > a {
+                text-decoration: none;
+                font-size: 11.75px;
+                position: absolute;
+                top: 21px;
+            }
+            #Education > div:nth-child(5) > p:nth-child(1) {
+                font-size: 16px;
+
+            }
+
+            #Education > div:nth-child(5) > p:nth-child(3) {
+                margin-top: 23px;
+                font-size: 10.7px;
+            }
+            #Education > div:nth-child(5) > p:nth-child(4) {
+                font-size: 10px;
+                margin-top: 0px;
+                margin-left: 1px;
+            }
+            #Education > div:nth-child(6) {
+                position: absolute;
+                top: 72%;
+                left: 10%;
+                width: 44.5%;
+            }
+            #Education > div:nth-child(6) > a {
+                text-decoration: none;
+                font-size: 11px;
+                position: absolute;
+                top: 19px;
+            }
+            #Education > div:nth-child(6) > p:nth-child(1) {
+                font-size: 16px;
+            }
+
+            #Education > div:nth-child(6) > p:nth-child(3) {
+                margin-top: 19px;
+                font-size: 11.7px;
+
+            }
+
+            #Education > div:nth-child(6) > p:nth-child(4) {
+                font-size: 11.5px;
+                margin-top: 0px;
+            }
+
+
+
+            #Education > div:nth-child(7) {
+                position: absolute;
+                top: 73%;
+                left: 67%;
+            }
+
+            #rccbatch {
+                width: 65px;
+                height: 68px;
+            }
+
+
+
+            #Education > .dot1 {
+                position: absolute;
+                right: 0px;
+                left: 49.5%;
+                top: 14%;
+                border-radius: 100%;
+                width: 7px;
+                height: 7px;
+            }
+
+            #Education > div:nth-child(9) {
+                position: absolute;
+                right: 0px;
+                left: 49.5%;
+                top: 44%;
+                width: 7px;
+                height: 7px;
+            }
+
+            #Education > div:nth-child(10) {
+                position: absolute;
+                right: 0px;
+                left: 49.5%;
+                top: 72%;
+                width: 7px;
+                height: 7px;
+            }
+
+            .line {
+                position: absolute;
+                height: 250px;
+                width: 0;
+                left: 0px;
+                right: 0;
+                top: 45px;
+                margin: auto;
+                animation-name: lineanimate;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate-reverse;
+            }
+            @keyframes lineanimate {
+                from{
+                    height:  0px;
+                }
+                to{
+                    height: 250px;
+                }
+            }
+            #Skill {
+                position: relative;
+                width: 100%;
+                height: 253px;
+                margin: 0px;
+                top: 32px;
+                border-top: 1px solid black;
+            }
+
+            .colorletter h2{
+                font-size: 16px;
+            }
+            #Skill > div:nth-child(1) {
+                position: absolute;
+                left: 1px;
+                top: 0px;
+                width: 45%;
+            }
+
+            .skillOne {
+                justify-content: space-evenly;
+                margin-top: 30px;
+                flex-wrap: wrap;
+                width: 95%;
+                position: relative;
+                left: 0;
+
+            }
+
+            #Skill > section:first-of-type > div {
+                width: 71px;
+                height: 67px;
+                z-index: 1;
+                position: relative;
+                background: #ececec;
+                margin-bottom: 5px;
+                border-top: 0px solid white;
+                border-bottom: 0px solid white;
+                transform: scale3d(1, 1, 1);
+                transition: all .5s ease-in;
+            }
+            #Skill > section:first-of-type > div>p{
+                visibility: hidden;
+            }
+            .lernmore{
+                visibility: hidden;
+            }
+            #Skill > section:first-of-type > div:hover {
+                cursor: pointer;
+                border-top: 2px solid black;
+                border-bottom: 2px solid black;
+                transform: scale3d(1.02, 1.02, 1.02);
+                /*
+                transition: all 0.2s ease-in;
+                */
+            }
+            #Skill > section:first-of-type > div:nth-child(1)>img{
+                width: 30px;
+            }
+            #Skill > section:first-of-type > div:nth-child(2)>img{
+                width: 30px;
+                height: 34px;
+            }
+            #Skill > section:first-of-type > div:nth-child(3)>img{
+                width: 37px;
+                height: 33px;
+
+            }
+
+            #Skill > section:nth-of-type(2) {
+                top: 13px;
+                right: -76px;
+                width: 223px;
+                margin-bottom: 23px;
+                flex-wrap: wrap;
+            }
+            #Skill > section:nth-of-type(2)>img{
+                width: 24px;
+                height: 25px;
+            }
+
+            #Skill > h3 {
+                font-family: 'Raleway', sans-serif;
+                text-align: center;
+                margin-top: 1px;
+                font-size: 8px;
+            }
+
+
+
+
+            #Skill > .skillThree{
+                display: flex;
+                position: absolute;
+                left: 0px;
+                right: 65px;
+                margin: auto;
+                overflow-x: scroll;
+                margin-right: 51px;
+                padding-left: 0px;
+                bottom: -1px;
+                width: 219px;
+                height: 87px;
+
+            }
+
+            #Skill > .skillThree > img:nth-child(1) {
+                padding: 0px;
+                position: absolute;
+                left: 0px;
+                margin: auto;
+                width: 74px;
+
+            }
+
+            #Skill > .skillThree > img:nth-child(2) {
+                padding: 0px;
+                position: absolute;
+                left: 83px;
+                margin: auto;
+                width: 74px;         }
+
+            #Skill > .skillThree > img:nth-child(3) {
+                padding: 0px;
+                position: absolute;
+                right: -21px;
+                margin: auto;
+                width: 74px;           }
+
+            #gallery {
+                position: relative;
+                border-top: 1px solid black;
+                width: 100%;
+                height: 209px;
+                top: 36px;
+            }
+
+            #gallery > div:nth-child(1) {
+                position: absolute;
+                left: 1px;
+                top: 0px;
+                width: 31%;
+
+            }
+
+            #gallery > section {
+                width: 318px;
+                height: 181px;
+                display: flex;
+                box-sizing: border-box;
+                overflow: hidden;
+                align-items: center;
+                justify-content: center;
+                margin-top: 23px;
+                margin-left: 33px;
+
+            }
+
+            .slider {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                transform-style: preserve-3d;
+                animation: rotate 30s linear infinite;
+                animation-play-state: running;
+            }
+
+            .slider:hover {
+                animation-play-state: paused;
+            }
+
+            @keyframes rotate {
+                0% {
+                    transform: perspective(1000px) rotateY(0deg);
+                }
+                100% {
+                    transform: perspective(1000px) rotateY(360deg);
+                }
+            }
+
+            .slider span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform-origin: center;
+                transform-style: preserve-3d;
+                transform: rotateY(calc(var(--i) * 45deg)) translateZ(150px);
+                -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+
+            }
+
+            .slider span img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 106%;
+                height: 115%;
+                border-radius: 10px;
+                object-fit: cover;
+                transition: 2s;
+                cursor: pointer;
+
+            }
+
+            .slider span:hover img {
+                transform: translateY(-20px) scale(1.1);
+            }
+
+            /*project*/
+            #project {
+                position: relative;
+                width: 100%;
+                height: 153px;
+                top: 40px;
+                border-top: 1px solid black;
+
+            }
+
+            #project > div:nth-child(1) {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                width: 21%;
+
+            }
+
+
+            #project > div:nth-child(2) > div:nth-child(1) {
+                /*   border: 1px solid black;
+                   position: absolute;
+                   top: 50px;
+                   left: 10px;
+                   width: 300px;*/
+                border: 1px solid black;
+                position: absolute;
+                top: 30px;
+                left: 125px;
+                width: 86px;
+                height: 45px;
+            }
+            #project > div:nth-child(2) > div:nth-child(1)>img{
+                width: 86px;
+                height: 45px;
+            }
+
+            #project > div:nth-child(2) > div:nth-child(2) {
+                border: 1px solid black;
+                position: absolute;
+                top: 72px;
+                left: 173px;
+                width: 86px;
+                height: 45px;
+            }
+            #project > div:nth-child(2) > div:nth-child(2)>img{
+                width: 86px;
+                height: 45px;
+            }
+            #project > article {
+                position: absolute;
+                top: 9px;
+                left: 100px;
+                font-size: 13px;
+                width: 170px;
+                height: 40px;
+            }
+            #project > article>h4{
+                position: absolute;
+                top: 2px;
+                font-size: 12px;
+            }
+            #project > article > div:nth-child(2) {
+                visibility: hidden;
+
+            }
+
+            #project > article > div:nth-child(3) {
+                visibility: hidden;
+
+            }
+
+            #project > article > a {
+                position: absolute;
+                top: 114px;
+                font-family: Gadugi;
+                font-size: 7.75px;
+            }
+            #assignmet > div:nth-child(1) {
+                position: absolute;
+                left: 1px;
+                top: 0px;
+                width: 26%;
+
+
+            }
+
+            #assignmet {
+                position: relative;
+                width: 100%;
+                height: 175px;
+                top: 44px;
+
+            }
+
+            #assignmet > section {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                overflow: scroll;
+                top: 25px;
+                height: 127px;
+                width: 297px;
+                left: 43px;
+            }
+
+            #assignmet > section > a > div {
+                width: 24.353vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                left: 0px;
+                perspective: 400px;
+                top: 11px;
+            }
+
+            #assignmet > section > a > div > h3 {
+                position: relative;
+                bottom: -1px;
+                left: -8px;
+                font-size: 8px;
+            }
+
+            #assignmet > section > a > div > h5 {
+                position: relative;
+                bottom: -1px;
+                left: -11px;
+                font-size: 6px;
+            }
+
+            #assignmet > .navDiv {
+                display: flex;
+                justify-content: space-around;
+                line-height: 16px;
+                position: absolute;
+                left: 60px;
+                bottom: 12px;
+                overflow: hidden;
+                cursor: pointer;
+                width: 243px;
+
+            }
+            #assignmet > .navDiv>h2{
+                font-size: 9.5px;
+            }
+            #assignmet > section > a > div > img {
+                transform: rotateY(365deg);
+                transition: all 0.3s;
+                width: 75px;
+                height: 80px;
+            }
+
+            #assignmet > section > a > div > img:hover {
+                transform: scale(1.05);
+            }
+
+            footer {
+                position: relative;
+                border-top: 1px solid black;
+                height: 160px;
+                width: 100%;
+                top: 48px;
+            }
+
+            footer > div > h2 {
+
+                color: white;
+                margin-left: 5px;
+                margin-top: 4px;
+                font-size: 12px;
+            }
+
+
+            footer > div > nav > ul {
+
+                margin-top: -47px;
+                margin-left: 0px;
+
+            }
+
+            footer > div > nav > ul > li {
+                display: inline-block;
+                position: relative;
+                font-size: 22px;
+
+            }
+
+            footer .linkeIn {
+                left: 22px;
+                top: 48px;
+            }
+
+            footer .Facebook {
+                left: 75px;
+                top: 48px;
+            }
+
+            footer .whatapp {
+                right: -22px;
+                top: 50px;
+            }
+
+            footer .github {
+                left: -23px;
+                top: 73px;
+            }
+
+            footer > div > nav > ul > li > a {
+                color: black;
+                font-weight: 600;
+                font-size: 10px;
+            }
+            footer > div > nav > ul > li > a>img{
+                width: 10px;
+            }
+            footer > div > .email {
+                position: absolute;
+                border: 1px solid white;
+                width: 130px;
+                bottom: 32%;
+                right: 0%;
+                left: 108px;
+                height: 16px;
+            }
+
+            footer > div > .email > a {
+                font-size: 7px;
+                position: absolute;
+                top: -2px;
+                left: 7px;
+            }
+
+            footer > div > .email > a > img {
+                position: relative;
+                top: 3px;
+                width: 10px;
+                left: -2px;
+            }
+
+            footer > div > #contact {
+                position: absolute;
+                left: 148px;
+                bottom: 75px;
+                font-size: 8px;
+            }
+
+            footer > div > section {
+                border-top: 1px solid white;
+                margin-top: 106px;
+            }
+
+            footer > div > section > div {
+                border-radius: 100%;
+                width: 7px;
+                height: 7px;
+                position: relative;
+                top: 2px;
+                left: 3px;
+                border: 0px ;
+
+            }
+
+            footer > div > section > div > h4 {
+                position: absolute;
+                top: 0px;
+                bottom: 0px;
+                right: 0px;
+                left: 1px;
+                font-size: 6px;
+            }
+
+            footer > div > section > .allRR {position: absolute;
+                position: absolute;
+                left: 14px;
+                bottom: 29px;
+                font-size: 7px;
+                height: 0px;
+                width: 155px;
+            }
+
+            footer > div > section > .designerName {
+                position: absolute;
+                right: 17px;
+                bottom: 28px;
+                font-size: 7px;
+                width: 104px;
+                height: 0px;
             }
         }
 
