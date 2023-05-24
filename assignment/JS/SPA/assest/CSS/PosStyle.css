@@ -1,0 +1,30 @@
+#itemformpic{
+    background: url("/assignment/JS/SPA/assest/black-friday-concept-with-cart-basket.jpg");
+    background-position: center;
+    background-size: cover;
+}
+#customerPic{
+    background: url('/assignment/JS/SPA/assest/imag1.jpg');
+     background-size: cover;
+    background-position: center ;
+}
+#oderspic{
+    background: url('/assignment/JS/SPA/assest/hands-working-digital-device-network-graphic-overlay.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#oderspic2{
+    background: url('/assignment/JS/SPA/assest/laptop-shopping-bags-online-shopping-concept.jpg');
+     background-size: cover;
+    background-position: center;
+}
+#home1pic{
+    background-image: url('/assignment/JS/SPA/assest/3d-hand-making-cashless-payment-from-smartphone.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#home2pic{
+    background-color: #8bb9fe;
+    background-size: cover;
+    background-position: center;
+}
