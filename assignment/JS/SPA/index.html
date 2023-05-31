@@ -71,7 +71,7 @@
         <p class="fs-2 text-center fw-semibold">Customer Form</p>
         <section style="border: 1px solid black" class="col-4 p-3 mb-2 bg-primary-subtle text-emphasis-primary border
     border-light-subtle rounded-3 shadow p-3 mb-5 bg-body-tertiary rounded w-25 m-auto mt-4 m">
-            <form class="row g-3">
+            <form class="row g-3" id="form1">
                 <div class="col-12">
                     <label for="cid" class="form-label">Customer Id</label>
                     <input type="text" class="form-control " id="cid">
@@ -81,8 +81,8 @@
                     <input type="text" class="form-control " id="Name">
                 </div>
                 <div class="col-12">
-                    <label for="dId" class="form-label">Customer Address</label>
-                    <input type="text" class="form-control " id="dId">
+                    <label for="CAdd" class="form-label">Customer Address</label>
+                    <input type="text" class="form-control " id="CAdd">
                 </div>
                 <div class="col-12">
                     <label for="slry" class="form-label">Customer Salary</label>
@@ -90,9 +90,9 @@
                 </div>
 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary  m-auto " >Add </button>
-                    <button type="submit" class="btn btn-dark  m-auto " >Update </button>
-                    <button type="submit" class="btn btn-danger  m-auto " >Delete </button>
+                    <button id="addbuton"type="button" class="btn btn-primary  m-auto " >Add </button>
+                    <button type="button" id="edit" class="btn btn-dark  m-auto " >Update </button>
+                    <button type="button" id="delete" class="btn btn-danger  m-auto " >Delete </button>
 
 
                 </div>
@@ -100,7 +100,7 @@
         </section>
         <section id="customerPic" class="col-7  me-4 ">
 
-            <table class="mt-4 table table-hover table-borderless table-striped text-center w-100  rounded-3">
+            <table id="storelist" class="mt-4 table table-hover table-borderless table-striped text-center w-100  rounded-3">
                 <thead class="bg-primary">
                 <tr>
                     <th  scope="col">ID</th>
@@ -109,7 +109,8 @@
                     <th scope="col">Salary</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody></tbody>
+               <!-- <tbody>
                 <tr>
                     <th scope="row">O001</th>
                     <td></td>
@@ -145,7 +146,7 @@
                     <td></td>
 
                 </tr>
-                </tbody>
+                </tbody>-->
             </table>
             <div class="row w-50">
 
@@ -586,6 +587,65 @@
         document.getElementById("oders").style.display='none';
         document.getElementById("viewOders").style.display='inline-block';
 
+    });
+
+    document.getElementById("addbuton").addEventListener('click',function (){
+        var cid=document.getElementById("cid").value;
+        var Name=document.getElementById("Name").value;
+        var CAdd=document.getElementById("CAdd").value;
+        var slry=document.getElementById("slry").value;
+
+        var tr=document.createElement('tr');
+        var td1=tr.appendChild(document.createElement('td'));
+        var td2=tr.appendChild(document.createElement('td'));
+        var td3=tr.appendChild(document.createElement('td'));
+        var td4=tr.appendChild(document.createElement('td'));
+td1.innerHTML=cid;
+td2.innerHTML=Name;
+td3.innerHTML=CAdd;
+td4.innerHTML=slry;
+document.getElementById("storelist").appendChild(tr);
+showRow();
+resetForm();
+    });
+    function resetForm(){
+        document.getElementById("cid").value="";
+        document.getElementById("Name").value="";
+        document.getElementById("CAdd").value="";
+        document.getElementById("slry").value="";
+
+    }
+    var table = document.getElementById("storelist"), rIndex;
+
+    function showRow() {
+        for (var i = 1; i < table.rows.length; i++) {
+            table.rows[i].onclick = function () {
+                //index row
+                rIndex = this.rowIndex;
+                document.getElementById("cid").value = this.cells[0].innerHTML;
+                document.getElementById("Name").value = this.cells[1].innerHTML;
+                document.getElementById("CAdd").value = this.cells[2].innerHTML;
+                document.getElementById("slry").value = this.cells[3].innerHTML;
+            }
+        }
+    }
+    document.getElementById("edit").addEventListener('click',function () {
+
+        var cid=document.getElementById("cid").value,
+            Name= document.getElementById("Name").value,
+        CAdd= document.getElementById("CAdd").value,
+            slry= document.getElementById("slry").value;
+
+        table.rows[rIndex].cells[0].innerHTML=cid;
+        table.rows[rIndex].cells[1].innerHTML=Name;
+        table.rows[rIndex].cells[2].innerHTML=CAdd;
+        table.rows[rIndex].cells[3].innerHTML=slry;
+
+resetForm();
+    });
+    document.getElementById("delete").addEventListener('click',function () {
+        table.deleteRow(rIndex);
+        resetForm();
     });
 </script>
 </body>
