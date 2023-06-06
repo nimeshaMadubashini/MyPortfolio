@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="../../../assest/css/normalize.css">
+  <script src="../../../assest/js/bootstrap.bundle.js"></script>
+
+
+  <style>
+    section:nth-child(1){
+      width: 100vw;
+      height: 100vh;
+      background-color:#5c636a;
+    }
+    section>#knight{
+      width: 900px;
+      height: 120px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin:auto;
+      border-top: 2px solid #babbbc;
+      border-bottom: 2px solid #babbbc;
+        display: flex;
+
+    }
+    #btn1{
+        background-color: whitesmoke;
+        width: 100px;
+        height: 40px;
+        position: absolute;
+        left: 0;
+        right: 102px;
+        top: 250px;
+        bottom: 0;
+        margin:auto;
+        border-radius: 10px;
+        border: 2px solid blue;
+    }
+    #btn2{
+        background-color: whitesmoke;
+        width: 100px;
+        height: 40px;
+        position: absolute;
+        left: 102px;
+        right: 0;
+        top: 250px;
+        bottom: 0;
+        margin:auto;
+        border-radius: 10px;
+        border: 2px solid red;
+    }
+    section>#knight>div{
+        height: 90px;
+        border: 1px solid white;
+        flex-grow: 1;
+        margin-top: 14px;
+    }
+  </style>
+
+</head>
+<body>
+<section>
+<section id="knight">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+
+
+</section>
+  <button id="btn1">Start</button>
+    <button type="button" id="btn2">Stop</button>
+
+</section>
+<script src="../../../assest/js/jquery-3.7.0.min.js"></script>
+<script>
+  let leftColors = ['white', 'white', 'white', 'white', 'white', 'white', '#d3c5c5', '#be7474', '#cd4a4a', '#b83030', '#c52525', '#dc1e1e'];
+  let rightColors = ['white', 'white', 'white', 'white', 'white', 'white', '#dc1e1e', '#c52525', '#b83030', '#cd4a4a', '#be7474', '#d3c5c5'];
+  let intrvl;
+  let initArr = [];
+  let sound=new Audio("/assignment/JS/KNIGHT/assest/knightlight.mpeg")
+  var count=0;
+  function animate(){
+    count++;
+    if(count<=leftColors.length){
+      initArr=leftColors;
+      initArr.unshift(initArr.pop())
+    }else {
+      if(count>=(leftColors.length*2)){
+        count=0;
+      }
+      initArr=rightColors;
+      initArr.push(initArr.shift())
+    }
+  }
+
+  function knightRiderSet(){
+    $("#knight").empty();
+    for (let i=0;i<(initArr.length)/2;i++){
+      $("#knight").append(`<div style="background-color: ${initArr[i]}"></div>`)
+    }
+animate();
+  }
+$("#btn1").on("click",function () {
+  clearInterval(intrvl)
+  intrvl=setInterval(knightRiderSet,100);
+  sound.play();
+});
+  $("#btn2").on("click",function () {
+    clearInterval(intrvl)
+  });
+</script>
+</body>
+</html>
