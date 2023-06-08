@@ -19,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
+
     <style>
 
         ::-webkit-scrollbar {
@@ -1838,7 +1839,7 @@
             position: relative;
             display: flex;
             justify-content: space-between;
-            overflow: scroll;
+            overflow: hidden;
             top: 65px;
 height: 300px;
             width: 1200px;
@@ -1886,7 +1887,7 @@ height: 300px;
             right: 100px;
             left: 0px;
             bottom: 120px;
-            overflow: scroll;
+            overflow: hidden;
             cursor: pointer;
 
         }
@@ -8950,8 +8951,8 @@ height: 300px;
 </section>
 <section id="assignmet">
     <div class="colorletter"><h2 data-text="Assignment">Assignment</h2></div>
-    <section>
-        <a href="assignment/css/case01.html" target="_blank">
+    <section class="scr">
+        <a id="as1" href="assignment/css/case01.html" target="_blank">
             <div class="assign">
                 <img src="assest/image/cssss5-removebg-preview.png" alt="" width="175" height="185">
                 <h3>CSS-Basic 01</h3>
@@ -8984,7 +8985,6 @@ height: 300px;
                 <h5>View</h5>
             </div>
         </a>
-
         <a href="assignment/css/case05.html" target="_blank">
             <div class="assign6">
                 <img src="assest/image/cssss5-removebg-preview.png" alt="" width="175" height="185">
@@ -9000,21 +9000,21 @@ height: 300px;
             </div>
         </a>
         <a href="assignment/Transitions/caseOne.html" target="_blank">
-            <div class="assign6">
+            <div class="assign7">
                 <img src="assest/image/cssss6-removebg-preview.png" alt="" width="175" height="185">
                 <h3>CSS-Transition 01</h3>
                 <h5>View</h5>
             </div>
         </a>
         <a href="assignment/Transitions/caeTwo.html" target="_blank">
-            <div class="assign6">
+            <div class="assign8">
                 <img src="assest/image/cssss6-removebg-preview.png" alt="" width="175" height="185">
                 <h3>CSS-Transition 02</h3>
                 <h5>View</h5>
             </div>
         </a>
         <a href="assignment/Animation/CaseThree.html" target="_blank">
-            <div class="assign6">
+            <div class="assign9">
                 <img src="assest/image/cssss7-removebg-preview.png" alt="" width="175" height="185">
                 <h3>CSS-Animation 01</h3>
                 <h5>View</h5>
@@ -9041,6 +9041,28 @@ height: 300px;
                 <h5>View</h5>
             </div>
         </a>
+        <a href="assignment/JS/SPA/index.html" target="_blank">
+            <div class="assign">
+                <img src="assest/image/js3-removebg-preview.png" alt="" width="175" height="185">
+                <h3>JS-SPA </h3>
+                <h5>View</h5>
+            </div>
+        </a>
+        <a href="assignment/JS/QUE/que.html" target="_blank">
+            <div class="assign6">
+                <img src="assest/image/js3-removebg-preview.png" alt="" width="175" height="185">
+                <h3>JS-QUE</h3>
+                <h5>View</h5>
+            </div>
+        </a>
+        <a href="assignment/JS/KNIGHT/index.html" target="_blank">
+            <div class="assign6">
+                <img src="assest/image/js3-removebg-preview.png" alt="" width="175" height="185">
+                <h3>JS-KNIGHT</h3>
+                <h5>View</h5>
+            </div>
+        </a>
+
 
 
     </section>
@@ -9051,12 +9073,15 @@ height: 300px;
         <h2 for="assign4" class="num4">04</h2>
         <h2 for="assign5" class="num5">05</h2>
         <h2 for="assign6" class="num6">06</h2>
-        <h2 for="assign" class="num1">07</h2>
-        <h2 for="assign2" class="num2">08</h2>
-        <h2 for="assign3" class="num3">09</h2>
-        <h2 for="assign4" class="num4">10</h2>
-        <h2 for="assign5" class="num5">11</h2>
-        <h2 for="assign6" class="num6">12</h2>
+        <h2 for="assign" class="num7">07</h2>
+        <h2 for="assign2" class="num8">08</h2>
+        <h2 for="assign3" class="num9">09</h2>
+        <h2 for="assign4" class="num10">10</h2>
+        <h2 for="assign5" class="num11">11</h2>
+        <h2 for="assign6" class="num12">12</h2>
+        <h2 for="assign4" class="num13">13</h2>
+        <h2 for="assign5" class="num14">14</h2>
+        <h2 for="assign6" class="num15">15</h2>
 
 
     </div>
@@ -9113,5 +9138,67 @@ height: 300px;
 <!--
 <section></section>
 -->
+<script src="../../../assest/js/jquery-3.7.0.min.js"></script>
+<script>
+    $(".num1").click(function () {
+        $(".scr").scrollLeft(50);
+    });
+    $(".num2").click(function () {
+        $(".scr").scrollLeft(300);
+    });
+    $(".num3").click(function () {
+        $(".scr").scrollLeft(550);
+    });
+    $(".num4").click(function () {
+        $(".scr").scrollLeft(800);
+    });
+    $(".num5").click(function () {
+        $(".scr").scrollLeft(1050);
+    });
+    $(".num6").click(function () {
+        $(".scr").scrollLeft(1300);
+    });
+    $(".num7").click(function () {
+        $(".scr").scrollLeft(1550);
+    });
+    $(".num8").click(function () {
+        $(".scr").scrollLeft(1800);
+    });
+    $(".num9").click(function () {
+        $(".scr").scrollLeft(2050);
+    });
+    $(".num10").click(function () {
+        $(".scr").scrollLeft(2300);
+    });
+    $(".num11").click(function () {
+        $(".scr").scrollLeft(2550);
+    });
+    $(".num12").click(function () {
+        $(".scr").scrollLeft(2800);
+    });
+    $(".num13").click(function () {
+        $(".scr").scrollLeft(3050);
+    });
+    $(".num14").click(function () {
+        $(".scr").scrollLeft(3300);
+    });
+    $(".num15").click(function () {
+        $(".scr").scrollLeft(3550);
+    });
+   /* var num1=$(".num1");
+    var num2=$(".num2");
+    let arr=[num1,num2] ;
+    for(let i=0;i<arr.length;i++){
+        var num=50
+
+        $(arr[i]).click(function () {
+
+            $(".scr").scrollLeft(num);
+
+        })
+        var scoroll=250;
+        num+=scoroll;
+    }*/
+</script>
 </body>
 </html>
