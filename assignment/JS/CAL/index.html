@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../assest/css/normalize.css">
+    <link rel="stylesheet" href="../../../assest/css/bootstrap.css">
+    <script src="../../../assest/js/bootstrap.bundle.js"></script>
+<style>
+    section:nth-child(1){
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-color:#332f2b;
+    }
+    #main{
+        position: absolute;
+        width:325px;
+        height: 500px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+    }
+
+
+#dis {
+    width: 100%;
+    height: 80px;
+    margin-left: 0px;
+background-color: white;
+}
+
+button{
+    outline: none;
+    box-shadow: none;
+height: 80px;
+color: white;
+    font-size: 35px;
+
+}
+
+</style>
+</head>
+<body>
+<section>
+    <section id="main">
+        <div class="row " >
+            <input type="text" id="dis" class="col" value="" style="font-size: 30px;text-align: right">
+        </div>
+        <div class="row " style=" column-gap: 0px ;margin-top: 1px">
+            <button id="c1" class="col-6   rounded border border-1  " style=background-color:red;">C</button>
+            <button  class="col-6 shadow-sm   rounded border border-1 back  " style=background-color:#4d5154;"><</button>
+        </div>
+        <div class="row " style="margin-top: 1px">
+            <button id="b2" class="col-3 shadow-sm   rounded border border-1  cal-btn" style="background-color:#4d5154;">7</button>
+            <button id="b3" class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">8</button>
+            <button id="b4" class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">9</button>
+            <button id="b5" class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">x</button>
+        </div>
+        <div class="row" style=" margin-top: 1px  ; ">
+
+            <button  class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">4</button>
+            <button  class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">5</button>
+            <button  class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">6</button>
+            <button  class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">-</button>
+        </div>
+        <div class="row  " style=" margin-top: 1px ; ">
+            <button  class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">1</button>
+            <button  class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">2</button>
+            <button  class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">3</button>
+            <button  class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">+</button>
+        </div>
+        <div class="row" style="margin-top: 1px ; ">
+            <button id="b14" class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">0</button>
+            <button id="b15" class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">.</button>
+            <button id="b16" class="col-3 shadow-sm   rounded border border-1  cal-btn" style=background-color:#4d5154;">/</button>
+            <button id="b17" class="col-3 shadow-sm   rounded border border-1 equal" style=background-color:black;">=</button>
+        </div>
+
+    </section>
+    </section>
+<script src="../../../assest/js/jquery-3.7.0.min.js"></script>
+<script>
+$("#c1").click(function () {
+    $("#dis").val("");
+})
+$(".cal-btn").on('click',function () {
+    $("#dis").val($("#dis").val()+$(this).html());
+});
+$(".equal").on('click',function () {
+    ex= $("#dis").val();
+    if(ex.includes('x')){
+        ex=ex.replace('x','*')
+    }
+    $("#dis").val( eval(ex) );
+});
+$(".back").on('click',function () {
+    bk= $("#dis").val();
+    $("#dis").val( bk.substring(0,bk.length-1) );
+});
+
+</script>
+</body>
+</html>
