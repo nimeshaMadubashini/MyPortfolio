@@ -551,8 +551,33 @@ function bindTrEvent() {
         let cusAdd = $("#CAdd").val("");
         let cusSalary = $("#slry").val("");
     }
+    $("#delete").on('click',function () {
+        let cusId = $("#cid").val();
+let consent=confirm("Do You Want to delete?");
+if(consent){
+    let response=deleteCustomer(cusId);
+    if (response){
+        alert("Customer Delete");
+        loadCustomer();
+        clearForm();
+    }else {
+        alert("Customer Not remove");
+    }
 
+}
 
+    });
+
+function deleteCustomer(id) {
+    for (let i=0;i<customerArray.length;i++){
+        if(customerArray[i].id==id){
+            customerArray.splice(i,1);
+            loadCustomer();
+            return true
+        }
+        return false;
+    }
+}
     /*item*/
 
     var itemArry=[];
@@ -569,6 +594,7 @@ var itemObj={
 };
 itemArry.push(itemObj);
 loadItemTable();
+clear();
 bindTrEventItem();
     });
     $("#loadItem").click(function () {
@@ -594,19 +620,22 @@ bindTrEventItem();
       let qty=  $("qtyi").val("");
     }*/
     function bindTrEventItem() {
-        $(".itemTbody").on('click','tr',function () {
+        $('.itemTbody').on('click','tr',function () {
             let id=$(this).children(":eq(0)").text();
             let name=$(this).children(":eq(1)").text();
             let price=$(this).children(":eq(2)").text();
             let qty=$(this).children(":eq(3)").text();
-            $("Itemid").val(id);
-            $("Iname").val(name);
-            $("price").val(price);
-            $("qtyi").val(qty);
+            $("#Itemid").val(id);
+            $("#Iname").val(name);
+            $("#price").val(price);
+            $("#qtyi").val(qty);
         });
     }
     function clear() {
-let
+let itemid=$("#Itemid").val("");
+let itemname=$("#Iname").val("");
+let itemPrice=$("#price").val("");
+let itemqty=$("#qtyi").val("");
     }
 $("#code").on('click',function () {
     for(var item of itemArry){
