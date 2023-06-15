@@ -213,7 +213,7 @@
                     <th scope="col">Item Qty</th>
                 </tr>
                 </thead>
-                <tbody id="itemTbody">
+                <tbody class="itemTbody">
 
                 </tbody>
             </table>
@@ -515,14 +515,24 @@
         customerArray.push(customerObj);
         loadCustomer();
         clearForm();
+        bindTrEvent();
     });
     $("#loadAll").on('click', function () {
         loadCustomer();
     });
-    $("#cusTableBody>tr").on('click',function () {
 
-    })
-
+function bindTrEvent() {
+    $("#cusTableBody").on('click','tr' ,function () {
+        let id=$(this).children(":eq(0)").text();
+        let name=$(this).children(":eq(1)").text();
+        let add=$(this).children(":eq(2)").text();
+        let slry=$(this).children(":eq(3)").text();
+        $("#cid").val(id);
+        $("#Name").val(name);
+        $("#CAdd").val(add);
+        $("#slry").val(slry);
+    });
+}
     function loadCustomer() {
         $("#cusTableBody").empty();
         for (var cus of customerArray) {
@@ -557,16 +567,15 @@ var itemObj={
     price:itemPrice,
     qty:itemqty
 };
-console.log(itemObj)
 itemArry.push(itemObj);
 loadItemTable();
-clearitemForm();
+bindTrEventItem();
     });
     $("#loadItem").click(function () {
         loadItemTable();
     })
     function loadItemTable() {
-        $("#itemTbody").empty();
+        $(".itemTbody").empty();
         for (var item of itemArry){
             console.log(item);
             var row=`<tr>
@@ -575,14 +584,29 @@ clearitemForm();
 <td>${item.price}</td>
 <td>${item.qty}</td>
 </tr>`
-            $("#itemTbody").append(row);
+            $(".itemTbody").append(row);
         }
     }
-    function clearitemForm() {
-         $("Itemid").val("");
-       $("Iname").val("");
-        $("price").val("");
-        $("qtyi").val("");
+   /* function clearitemForm() {
+      let id=  $("Itemid").val("");
+     let name=  $("Iname").val("");
+      let price= $("price").val("");
+      let qty=  $("qtyi").val("");
+    }*/
+    function bindTrEventItem() {
+        $(".itemTbody").on('click','tr',function () {
+            let id=$(this).children(":eq(0)").text();
+            let name=$(this).children(":eq(1)").text();
+            let price=$(this).children(":eq(2)").text();
+            let qty=$(this).children(":eq(3)").text();
+            $("Itemid").val(id);
+            $("Iname").val(name);
+            $("price").val(price);
+            $("qtyi").val(qty);
+        });
+    }
+    function clear() {
+let
     }
 $("#code").on('click',function () {
     for(var item of itemArry){
