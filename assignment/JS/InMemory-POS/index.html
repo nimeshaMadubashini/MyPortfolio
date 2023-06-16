@@ -6,6 +6,8 @@
     <script src="../../../assest/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="../../../assest/css/bootstrap.css">
     <link rel="stylesheet" href="assest/CSS/PosStyle.css">
+
+
 </head>
 
 <body>
@@ -80,27 +82,33 @@
                 <div class="col-12">
                     <label for="cid" class="form-label">Customer Id</label>
                     <input type="text" class="form-control " id="cid">
+                    <span class="control-error" id="lblcusid" ></span>
                 </div>
                 <div class="col-12">
                     <label for="Name" class="form-label">Customer Name</label>
                     <input type="text" class="form-control " id="Name">
+                    <span class="control-error" id="lblcusname"></span>
                 </div>
                 <div class="col-12">
                     <label for="CAdd" class="form-label">Customer Address</label>
                     <input type="text" class="form-control " id="CAdd">
+                    <span class="control-error" id="lblcusaddress"></span>
                 </div>
                 <div class="col-12">
                     <label for="slry" class="form-label">Customer Salary</label>
                     <input type="number" class="form-control " id="slry">
+                    <span class="control-error" id="lblcussalary"></span>
                 </div>
 
                 <div class="col-12">
-                    <button id="addbuton" type="button" class="btn btn-primary  m-auto ">Add</button>
+                    <button id="addCustomer" type="button" class="btn btn-primary  m-auto ">Add</button>
                     <button type="button" id="edit" class="btn btn-dark  m-auto ">Update</button>
                     <button type="button" id="delete" class="btn btn-danger  m-auto ">Delete</button>
 
 
                 </div>
+                <div id="notification"></div>
+
             </form>
         </section>
         <section id="customerPic" class="col-7  me-4 ">
@@ -116,43 +124,7 @@
                 </tr>
                 </thead>
                 <tbody id="cusTableBody"></tbody>
-                <!-- <tbody>
-                 <tr>
-                     <th scope="row">O001</th>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                 </tr>
-                 <tr>
-                     <th scope="row">O002</th>
-                     <td></td>
-                     <td></td>
-                     <td></td>
 
-                 </tr>
-                 <tr>
-                     <th scope="row">O003</th>
-
-                     <td></td>
-                     <td></td>
-                     <td></td>
-
-                 </tr>
-                 <tr>
-                     <th scope="row">O004</th>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-
-                 </tr>
-                 <tr>
-                     <th scope="row">O005</th>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-
-                 </tr>
-                 </tbody>-->
             </table>
             <div class="row w-50">
 
@@ -445,6 +417,13 @@
 </section>
 
 <script src="assest/js/jquery-3.7.0.min.js"></script>
+<script src="controller/customerController.js"></script>
+<script src="controller/itemController.js"></script>
+<script src="db/DB.js"></script>
+<script src="model/customer.js"></script>
+<script src="utill/notification.js"></script>
+
+<script src="model/item.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("home").style.display = 'inline-block';
@@ -498,8 +477,11 @@
         document.getElementById("viewOders").style.display = 'inline-block';
 
     });
-    var customerArray = [];
-
+ /*   var customerArray = [];
+    var customerIdPattern = /^C\d{2}-\d{2}$/;
+    var namePattern = /^[A-Za-z\s]+$/;
+    var salaryPattern = /^\d+(\.\d{1,2})?$/;
+    var addressPattern = /^[A-Za-z0-9\s]+$/;
     $("#addbuton").on('click', function () {
         let cusId = $("#cid").val();
         let cusName = $("#Name").val();
@@ -512,11 +494,34 @@
             add: cusAdd,
             salary: cusSalary
         };
-        customerArray.push(customerObj);
-        loadCustomer();
-        clearForm();
-        bindTrEvent();
+        if (customerIdPattern.test(cusId)) {
+            if (namePattern.test(cusName)) {
+                if (addressPattern.test(cusAdd)) {
+                    if (salaryPattern.test(cusSalary)) {
+                        customerArray.push(customerObj);        loadCustomer();
+                        clearForm();
+                        bindTrEvent();
+                }else {
+                        alert('Invalid Customer salary type! ');
+                        $("#slry").css('border-color', 'red').blur();
+                    }
+            }else {
+                    alert('Invalid Customer Address type! ');
+                    $("#CAdd").css('border-color', 'red').blur();
+
+                }
+        }else {
+                alert('Invalid Customer Name type! ');
+                $("#Name").css('border-color', 'red').blur();
+            }
+
+        }else {
+            alert('Invalid Customer Id type! ');
+            $("#cid").css('border-color', 'red').blur();
+        }
+
     });
+
     $("#loadAll").on('click', function () {
         loadCustomer();
     });
@@ -536,10 +541,10 @@ function bindTrEvent() {
     function loadCustomer() {
         $("#cusTableBody").empty();
         for (var cus of customerArray) {
-            /*
+            /!*
             As String
                     var tableRow="<tr><td>"+cus.id+"</td><td>"+cus.name+"</td><td>"+cus.add+"</td><td>"+cus.salary+"</td></tr>"
-            */
+            *!/
             var tableRow = `<tr><td>${cus.id}</td><td>${cus.name}</td><td>${cus.add}</td><td>${cus.salary}</td></tr>`
             $("#cusTableBody").append(tableRow);
         }
@@ -609,6 +614,50 @@ alert("No Serch id")
             let cusId = $("#cid").val();
 updateCus(cusId);
         });
+    $("#cid, #Name,#CAdd,#slry").on('keydown',function (e) {
+        if(e.key=='Tab'){
+            e.preventDefault();
+        }
+    });
+    $("#cid").on("keydown", function(e){
+        var customerIdPattern = /^C\d{2}-\d{2}$/;
+
+        let id=$("#cid").val();
+        if(e.key == 'Enter'){
+            if(customerIdPattern.test(id)){
+                $("#Name").focus();
+            }else{
+                alert('Invalid Customer ID! Pattern should be C00-01');
+                $("#cid").css('border-color', 'red').blur();
+            }
+        }
+    });
+    $("#Name").on("keydown", function(e){
+        if(e.key == 'Enter'){
+            if(!namePattern.test(id)) {
+                $("#CAdd").focus();
+            }else{
+                alert('Invalid Customer Name! ');
+                $("#Name").css('border-color', 'red').blur();
+            }
+        }
+    }); $("#CAdd").on("keydown", function(e){
+        if(e.key == 'Enter') {
+            if (!addressPattern.test(id)) {
+                $("#slry").focus();
+            } else {
+                alert('Invalid Customer Name! ');
+                $("#CAdd").css('border-color', 'red').blur();
+            }
+        }
+    });
+    $("#slry").on("keydown", function(e){
+        if(e.key == 'Enter'){
+            $("#addbuton").focus();
+        }
+    });*/
+
+
     /*item*/
 
     var itemArry=[];

@@ -1,0 +1,3 @@
+ customerDb=[];
+itemDb=[];
+
