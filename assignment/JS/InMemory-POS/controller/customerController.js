@@ -1,179 +1,169 @@
-const CUS_ID_REGEX = /^(C00-)[0-9]{2}$/;
-const CUS_NAME_REGEX = /^[A-Za-z ]{5,}$/;
-const CUS_ADDRESS_REGEX = /^[A-Za-z0-9 ]{8,}$/;
-const CUS_SALARY_REGEX = /^[0-9]{2,}([.]{1}[0-9]{2})?$/;
 
-let cusValidationArr = [];
-cusValidationArr.push({reg: CUS_ID_REGEX, field: $('#cid'), error: 'Customer Id Patter is Not Valid :C00-01'});
-cusValidationArr.push({reg: CUS_NAME_REGEX, field: $('#Name'), error: 'Customer Name  is Not Valid :A a-Z z 5>'});
-cusValidationArr.push({reg: CUS_ADDRESS_REGEX, field: $('#CAdd'), error: 'Customer Address Patter is Not Valid '});
-cusValidationArr.push({reg: CUS_SALARY_REGEX, field: $('#slry'), error: 'Customer Salary Patter is No Valid '});
+//load all existing customers
+function updateCus(id) {
+    if (searchCustomer(id) == undefined) {
+        alert("No Serch id")
+    } else {
+        let consent = confirm("Do You Want to Update?")
+        if (consent) {
+            let customer = searchCustomer(id);
+            let cusId = $("#cid").val();
+            let cusName = $("#Name").val();
+            let cusAdd = $("#CAdd").val();
+            let cusSalary = $("#slry").val();
+            customer.id = cusId;
+            customer.name = cusName;
+            customer.add = cusAdd;
+            customer.salary = cusSalary;
+            getAllCustomers();
+            clearCusData();
+        }
 
-function saveCustomer(id, name, address, salary) {
-    customerObj = new Object({
-        cusId: id,
-        cusName: name,
-        cusAdd: address,
-        cusSalary: salary
-    });
-    customerDb.push(customerObj)
-}
 
-function loadAllCustomer() {
-    $("#cusTableBody").empty();
-    for (var cus of customerDb) {
-        var tblRow = `<tr><td>${cus.cusId}</td><td>${cus.cusName}</td><td>${cus.cusAdd}</td><td>${cus.cusSalary}</td></tr>`
-        $("#cusTableBody").append(tblRow);
     }
 }
+$("#btnUpdateCustomer").click(function () {
+    let cusId = $("#cid").val();
+    updateCus(cusId);
+});
+$("#btndeleteCustomer").on('click',function () {
+    let cusId = $("#cid").val();
+    let consent=confirm("Do You Want to delete?");
+    if(consent){
+        let response=deleteCustomer(cusId);
+        if (response){
+            alert("Customer Delete");
+            getAllCustomers();
+            clearCusData();
+        }else {
+            alert("Customer Not remove");
+        }
 
-var counter = 1;
-
-function generateNextCustomerID() {
-    var customerID = 'C00-' + padNumber(counter, 2);
-    counter++;
-    return customerID;
-}
-
-function padNumber(number, length) {
-    var str = String(number);
-    while (str.length < length) {
-        str = '0' + str;
     }
-    return str;
-}
 
-var customerId = generateNextCustomerID();
-$("#cid").val(customerId);
+});
 
-
-/*Add Customer*/
+function deleteCustomer(id) {
+    for (let i=0;i<customerDb.length;i++){
+        if(customerDb[i].id==id){
+            customerDb.splice(i,1);
+            getAllCustomers();
+            return true
+        }
+        return false;
+    }
+};
+//add customer event
 $("#addCustomer").click(function () {
-    saveCustomer($("#cid").val(), $("#Name").val(), $("#CAdd").val(), $("#slry").val())
-    showNotification('Customer Save Successful..!', 'success');
-    loadAllCustomer();
-    clearform();
-});
+        saveCustomer();
 
-/*load All Customer*/
+
+
+});
+getAllCustomers();
+
+//get all customer event
 $("#loadAll").click(function () {
-    loadAllCustomer();
+    getAllCustomers();
 });
 
+//bind tr events for getting back data of the rows to text fields
+function bindTrEvents() {
+    $('#cusTableBody>tr').click(function () {
+        //get the selected rows data
+        let id = $(this).children().eq(0).text();
+        let name = $(this).children().eq(1).text();
+        let address = $(this).children().eq(2).text();
+        let salary = $(this).children().eq(3).text();
+
+        //set the selected rows data to the input fields
+        $("#cid").val(id);
+        $("#Name").val(name);
+        $("#CAdd").val(address);
+        $("#slry").val(salary);
+    })
+}
+
+//delete btn event
+
+//clear btn event
 
 
-function clearform() {
+
+
+// CRUD operation Functions
+function saveCustomer() {
+    let customerID = $("#cid").val();
+    //check customer is exists or not?
+    if (searchCustomer(customerID.trim()) == undefined) {
+        //if the customer is not available then add him to the array
+        let customerName = $("#Name").val();
+        let customerAddress = $("#CAdd").val();
+        let customerSalary = $("#slry").val();
+        //by using this one we can create a new object using
+        //the customer model with same properties
+        let newCustomer = Object.assign({}, customerObj);
+        newCustomer.id = customerID;
+        newCustomer.name = customerName;
+        newCustomer.address = customerAddress;
+        newCustomer.salary = customerSalary;
+        //add customer record to the customer array (DB)
+        customerDb.push(newCustomer);
+        clearCusData();
+        getAllCustomers();
+
+    } else {
+        alert("Customer already exits.!");
+        clearCusData();
+    }
+}
+
+function getAllCustomers() {
+    //clear all tbody data before add
+    $("#cusTableBody").empty();
+
+    //get all customers
+    for (let i = 0; i < customerDb.length; i++) {
+        let id = customerDb[i].id;
+        let name = customerDb[i].name;
+        let address = customerDb[i].address;
+        let salary = customerDb[i].salary;
+
+        let row = `<tr>
+                     <td>${id}</td>
+                     <td>${name}</td>
+                     <td>${address}</td>
+                     <td>${salary}</td>
+                    </tr>`;
+
+        // //and then append the row to tableBody
+        $("#cusTableBody").append(row);
+
+        //invoke this method every time
+        // we add a row // otherwise click
+        //event will not work
+        bindTrEvents();
+    }
+}
+
+
+
+function searchCustomer(id) {
+    return customerDb.find(function (customer) {
+        //if the search id match with customer record
+        //then return that object
+        return customer.id == id;
+    });
+}
+
+function clearCusData() {
     let id = $("#cid").val("");
     let name = $("#Name").val("");
     let add = $("#CAdd").val("");
     let slry = $("#slry").val("");
-    var customerId = generateNextCustomerID();
-    $("#cid").val(customerId);
     $("#cid").css("border", "none");
     $("#Name").css("border", "none");
     $("#CAdd").css("border", "none");
     $("#slry").css("border", "none");
-
-}
-
-$("#cid,#Name,#CAdd,#slry").keydown(function (e) {
-    if (e.key == "Tab") {
-        e.preventDefault();
-    }
-});
-
-$("#cid,#Name,#CAdd,#slry").keyup(function () {
-    checkValidationsOfAll();
-});
-
-$("#cid").keydown(function (e) {
-    if (e.key == "Enter" && check(CUS_ID_REGEX, $("#cid"))) {
-        $("#Name").focus();
-    }
-
-
-});
-
-$("#Name").keydown(function (e) {
-    if (e.key == "Enter" && check(CUS_NAME_REGEX, $("#Name"))) {
-        $("#CAdd").focus();
-    }
-});
-
-$("#CAdd").keydown(function (e) {
-    if (e.key == "Enter" && check(CUS_ADDRESS_REGEX, $("#CAdd"))) {
-        $("#slry").focus();
-
-    }
-});
-
-$("#slry").keydown(function (e) {
-    if (e.key == "Enter" && check(CUS_SALARY_REGEX, $("#slry"))) {
-        let con = confirm("Do yo want to add this customer ?")
-        if (con) {
-            saveCustomer($("#cid").val(), $("#Name").val(), $("#CAdd").val(), $("#slry").val());
-
-            loadAllCustomer();
-            clearform();
-        }
-    }
-});
-
-
-function checkValidationsOfAll() {
-    let countOfError = 0;
-    for (let validation of cusValidationArr) {
-        if (validation.reg.test(validation.field.val())) {
-            textSuccess(validation.field, "");
-        } else {
-            countOfError = countOfError + 1;
-            setTextError(validation.field, validation.error);
-        }
-    }
-    setButton(countOfError);
-}
-
-function textSuccess(textField, error) {
-    if (textField.val().length <= 0) {
-        defaultTxt(textField, "");
-    } else {
-        textField.css("border", "2px solid green");
-        textField.parent().children('span').text(error);
-
-    }
-}
-
-function defaultTxt(txtField, error) {
-    txtField.css("border", "1px solid #ced4da");
-    txtField.parent().children('span').text(error);
-
-}
-
-function setTextError(textField, error) {
-    if (textField.val().length <= 0) {
-        defaultTxt(textField, "");
-    } else {
-        textField.css("border", "2px solid red");
-        textField.parent().children('span').text(error);
-    }
-}
-
-function setButton(value) {
-    if (value > 0) {
-        $("#addCustomer").attr('disabled', true);
-    } else {
-        $("#addCustomer").attr('disabled', false);
-
-    }
-}
-
-function check(regex, textField) {
-    let inputvalue = textField.val();
-    return regex.test(inputvalue) ? true : false;
-}
-/*search customer*/
-function searchCustomer(cusId) {
-return customerDb.find(function (customer){
-    return customer.cusId==cusId;
-});
+$("#cid").focus();
 }

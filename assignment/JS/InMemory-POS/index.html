@@ -102,8 +102,8 @@
 
                 <div class="col-12">
                     <button id="addCustomer" type="button" class="btn btn-primary  m-auto ">Add</button>
-                    <button type="button" id="edit" class="btn btn-dark  m-auto ">Update</button>
-                    <button type="button" id="delete" class="btn btn-danger  m-auto ">Delete</button>
+                    <button type="button" id="btnUpdateCustomer" class="btn btn-dark  m-auto ">Update</button>
+                    <button type="button" id="btndeleteCustomer" class="btn btn-danger  m-auto ">Delete</button>
 
 
                 </div>
@@ -148,26 +148,34 @@
     border-light-subtle rounded-3 shadow p-3 mb-5 bg-body-tertiary rounded w-25 m-auto mt-4 m">
             <form class="row g-3">
                 <div class="col-12">
-                    <label for="Itemid" class="form-label">Item Code</label>
-                    <input type="text" class="form-control " id="Itemid">
+                    <label for="txtItemId" class="form-label">Item Code</label>
+                    <input type="text" class="form-control " id="txtItemId">
+                    <span class="control-error" id="lblItemId" ></span>
+
                 </div>
                 <div class="col-12">
-                    <label for="Iname" class="form-label">Item Name</label>
-                    <input type="text" class="form-control " id="Iname">
+                    <label for="txtItemName" class="form-label">Item Name</label>
+                    <input type="text" class="form-control " id="txtItemName">
+                    <span class="control-error" id="lblItemName" ></span>
+
                 </div>
                 <div class="col-12">
-                    <label for="price" class="form-label">Item Price</label>
-                    <input type="number" class="form-control " id="price">
+                    <label for="txtItemPrice" class="form-label">Item Price</label>
+                    <input type="number" class="form-control " id="txtItemPrice">
+                    <span class="control-error" id="lblItemPrice" ></span>
+
                 </div>
                 <div class="col-12">
-                    <label for="qtyi" class="form-label">Item Qty</label>
-                    <input type="number" class="form-control " id="qtyi">
+                    <label for="txtItemQty" class="form-label">Item Qty</label>
+                    <input type="number" class="form-control " id="txtItemQty">
+                    <span class="control-error" id="lblItemQty" ></span>
+
                 </div>
 
                 <div class="col-12">
-                    <button type="button" id="add1" class="btn btn-primary  m-auto ">Add</button>
-                    <button type="submit" class="btn btn-dark  m-auto ">Update</button>
-                    <button type="submit" class="btn btn-danger  m-auto ">Delete</button>
+                    <button type="button" id="btnAddItem" class="btn btn-primary  m-auto ">Add</button>
+                    <button type="submit" id="btnUpdateItem" class="btn btn-dark  m-auto ">Update</button>
+                    <button type="submit" id="btnDeleteItem" class="btn btn-danger  m-auto ">Delete</button>
 
 
                 </div>
@@ -176,16 +184,16 @@
         <section id="itemformpic" class="col-7  me-4 ">
 
             <table id="storeList1"
-                   class="mt-4 table table-hover table-borderless table-striped text-center w-100  rounded-3">
+                   class="mt-4 table table-hover table-borderless table table-striped text-center w-100  rounded-3">
                 <thead class="bg-primary">
-                <tr>
+                <tr >
                     <th scope="col">Item Code</th>
                     <th scope="col">Item Name</th>
                     <th scope="col">Item Price</th>
                     <th scope="col">Item Qty</th>
                 </tr>
                 </thead>
-                <tbody class="itemTbody">
+                <tbody class="itemTbody" >
 
                 </tbody>
             </table>
@@ -218,43 +226,44 @@
                 class="col-7 p-3 mb-2 bg-primary-subtle text-emphasis-primary border border-light-subtle rounded-3 shadow p-3 mb-5 bg-body-tertiary rounded w-50 m-auto mt-4 m">
             <form class="row g-3">
                 <div class="col-md-6">
-                    <label for="Oid" class="form-label">Oder Id</label>
-                    <input type="text" class="form-control" id="Oid">
+                    <label for="OderId" class="form-label">Oder Id</label>
+                    <input type="text" class="form-control" id="OderId">
                 </div>
                 <div class="col-md-6">
-                    <label for="Odate" class="form-label">Oder Date</label>
-                    <input type="date" class="form-control" id="Odate">
+                    <label for="OderDate" class="form-label">Oder Date</label>
+                    <input type="date" class="form-control" id="OderDate">
                 </div>
                 <div class="col-md-6">
-                    <label for="OcusId" class="form-label">Customer Id</label>
-                    <input type="text" class="form-control" id="OcusId">
-                </div>
-                <div class="col-md-6">
-                    <label for="OCusName" class="form-label">Customer Name</label>
-                    <input type="text" class="form-control" id="OCusName">
-                </div>
-                <div class="col-md-3">
-                    <label for="code" class="form-label">Code</label>
-                    <select id="code" class="form-select">
-                        <option id="d" selected>Choose...</option>
-                        <option>...</option>
+                    <label for="OderCusId" class="form-label">Customer Id</label>
+                    <select id="OderCusId" class="form-select">
+                        <option id="d1" selected>Select Customer Id</option>
                     </select>
                 </div>
-                <div class="col-md-3">
-                    <label for="dec" class="form-label">Description</label>
-                    <input type="text" class="form-control" id="dec">
+                <div class="col-md-6">
+                    <label for="OderCusName" class="form-label">Customer Name</label>
+                    <input type="text" class="form-control" id="OderCusName">
                 </div>
-                <div class="col-md-3">
-                    <label for="qtyhl" class="form-label">Unit price</label>
-                    <input type="number" class="form-control" id="qtyhl">
+                <div class="col-md-6">
+                    <label for="OderItemCode" class="form-label">Code</label>
+                    <select id="OderItemCode" class="form-select">
+                        <option id="d" selected>Select Item Code</option>
+                    </select>
                 </div>
-                <div class="col-md-2">
-                    <label for="qtyh" class="form-label">Qty. On Hand</label>
-                    <input type="number" class="form-control" id="qtyh">
+                <div class="col-md-6">
+                    <label for="OderDec" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="OderDec">
                 </div>
-                <div class="col-md-1">
-                    <label for="qty" class="form-label">Qty</label>
-                    <input type="number" class="form-control" id="qty">
+                <div class="col-md-4">
+                    <label for="unitPrice" class="form-label">Unit price</label>
+                    <input type="number" class="form-control" id="unitPrice">
+                </div>
+                <div class="col-md-4">
+                    <label for="QtyOnHand" class="form-label">Qty. On Hand</label>
+                    <input type="number" class="form-control" id="QtyOnHand">
+                </div>
+                <div class="col-md-4">
+                    <label for="OderQty" class="form-label">Qty</label>
+                    <input type="number" class="form-control" id="OderQty">
                 </div>
 
                 <div class="col-12">
@@ -264,7 +273,7 @@
         </section>
         <section id="oderspic" class="col-5 mt-4 me-4 border border-primary rounded-3">
 
-            <div class="row px-lg-0 px-sm-5 px-xxl-3 mt-2">
+            <div class="row px-lg-0 px-sm-5 px-xxl-3 mt-4">
                 <div class="col-5">
                     <div class="mb-2 ">
                         <label for="total" class="form-label fs-5">Total(RS)</label>
@@ -277,8 +286,8 @@
                     </div>
                 </div>
 
-                <div class="row px-lg-0 px-sm-5 px-xxl-4">
-                    <div class="col-5">
+                <div class="row px-lg-0 px-sm-5 px-xxl-4" style="margin-left: 1px">
+                    <div class="col-5" >
                         <div class="mb-2">
                             <label for="subTotal" class="form-label fs-5">Sub Total(RS)</label>
                         </div>
@@ -294,20 +303,20 @@
                 <div class="row gx-3 mt-4">
                     <div class="col">
                         <div class="mb-3">
-                            <label for="cash" class="form-label">Cash</label>
+                            <label for="cash" class="form-label " style="font-size:18px;font-weight:600">Cash</label>
                             <input type="text" class="form-control" id="cash" placeholder="0000.00">
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3 mb-xxl-4">
-                            <label for="discount" class="form-label">Discount</label>
+                            <label for="discount" class="form-label" style="font-size:18px;font-weight:600; color:firebrick">Discount</label>
                             <input type="number" class="form-control" id="discount" placeholder="10">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3 mb-xl-5 mb-xxl-4">
-                        <label for="balance" class="form-label">Balance</label>
+                        <label for="balance" class="form-label"  style="font-size:18px;font-weight:600">Balance</label>
                         <input type="text" class="form-control" id="balance" placeholder="0000.00">
                     </div>
                     <div class="mt-1 d-grid col-6 mt-xl-2 mx-auto">
@@ -422,6 +431,9 @@
 <script src="db/DB.js"></script>
 <script src="model/customer.js"></script>
 <script src="utill/notification.js"></script>
+<script src="controller/validation/customerFormValidation.js"></script>
+<script src="controller/validation/itemFormValidation.js"></script>
+<script src="controller/placeOder.js"></script>
 
 <script src="model/item.js"></script>
 <script>
@@ -477,189 +489,9 @@
         document.getElementById("viewOders").style.display = 'inline-block';
 
     });
- /*   var customerArray = [];
-    var customerIdPattern = /^C\d{2}-\d{2}$/;
-    var namePattern = /^[A-Za-z\s]+$/;
-    var salaryPattern = /^\d+(\.\d{1,2})?$/;
-    var addressPattern = /^[A-Za-z0-9\s]+$/;
-    $("#addbuton").on('click', function () {
-        let cusId = $("#cid").val();
-        let cusName = $("#Name").val();
-        let cusAdd = $("#CAdd").val();
-        let cusSalary = $("#slry").val();
-
-        let customerObj = {
-            id: cusId,
-            name: cusName,
-            add: cusAdd,
-            salary: cusSalary
-        };
-        if (customerIdPattern.test(cusId)) {
-            if (namePattern.test(cusName)) {
-                if (addressPattern.test(cusAdd)) {
-                    if (salaryPattern.test(cusSalary)) {
-                        customerArray.push(customerObj);        loadCustomer();
-                        clearForm();
-                        bindTrEvent();
-                }else {
-                        alert('Invalid Customer salary type! ');
-                        $("#slry").css('border-color', 'red').blur();
-                    }
-            }else {
-                    alert('Invalid Customer Address type! ');
-                    $("#CAdd").css('border-color', 'red').blur();
-
-                }
-        }else {
-                alert('Invalid Customer Name type! ');
-                $("#Name").css('border-color', 'red').blur();
-            }
-
-        }else {
-            alert('Invalid Customer Id type! ');
-            $("#cid").css('border-color', 'red').blur();
-        }
-
-    });
-
-    $("#loadAll").on('click', function () {
-        loadCustomer();
-    });
-
-function bindTrEvent() {
-    $("#cusTableBody").on('click','tr' ,function () {
-        let id=$(this).children(":eq(0)").text();
-        let name=$(this).children(":eq(1)").text();
-        let add=$(this).children(":eq(2)").text();
-        let slry=$(this).children(":eq(3)").text();
-        $("#cid").val(id);
-        $("#Name").val(name);
-        $("#CAdd").val(add);
-        $("#slry").val(slry);
-    });
-}
-    function loadCustomer() {
-        $("#cusTableBody").empty();
-        for (var cus of customerArray) {
-            /!*
-            As String
-                    var tableRow="<tr><td>"+cus.id+"</td><td>"+cus.name+"</td><td>"+cus.add+"</td><td>"+cus.salary+"</td></tr>"
-            *!/
-            var tableRow = `<tr><td>${cus.id}</td><td>${cus.name}</td><td>${cus.add}</td><td>${cus.salary}</td></tr>`
-            $("#cusTableBody").append(tableRow);
-        }
-    }
-
-    function clearForm() {
-        let cusId = $("#cid").val("");
-        let cusName = $("#Name").val("");
-        let cusAdd = $("#CAdd").val("");
-        let cusSalary = $("#slry").val("");
-    }
-    $("#delete").on('click',function () {
-        let cusId = $("#cid").val();
-let consent=confirm("Do You Want to delete?");
-if(consent){
-    let response=deleteCustomer(cusId);
-    if (response){
-        alert("Customer Delete");
-        loadCustomer();
-        clearForm();
-    }else {
-        alert("Customer Not remove");
-    }
-
-}
-
-    });
-
-function deleteCustomer(id) {
-    for (let i=0;i<customerArray.length;i++){
-        if(customerArray[i].id==id){
-            customerArray.splice(i,1);
-            loadCustomer();
-            return true
-        }
-        return false;
-    }
-};
-    function searchCustomer(id) {
-      return   customerArray.find(function (customer) {
-            return customer.id = id;
-        });
-     }
-    function updateCus(id) {
-        if (searchCustomer(id) == undefined) {
-alert("No Serch id")
-        } else {
-            let consent = confirm("Do You Want to Update?")
-            if (consent) {
-                let customer = searchCustomer(id);
-                let cusId = $("#cid").val();
-                let cusName = $("#Name").val();
-                let cusAdd = $("#CAdd").val();
-                let cusSalary = $("#slry").val();
-                customer.id = cusId;
-                customer.name = cusName;
-                customer.add = cusAdd;
-                customer.salary = cusSalary;
-                loadCustomer();
-                clearForm();
-            }
-
-
-        }
-    }
-        $("#edit").click(function () {
-            let cusId = $("#cid").val();
-updateCus(cusId);
-        });
-    $("#cid, #Name,#CAdd,#slry").on('keydown',function (e) {
-        if(e.key=='Tab'){
-            e.preventDefault();
-        }
-    });
-    $("#cid").on("keydown", function(e){
-        var customerIdPattern = /^C\d{2}-\d{2}$/;
-
-        let id=$("#cid").val();
-        if(e.key == 'Enter'){
-            if(customerIdPattern.test(id)){
-                $("#Name").focus();
-            }else{
-                alert('Invalid Customer ID! Pattern should be C00-01');
-                $("#cid").css('border-color', 'red').blur();
-            }
-        }
-    });
-    $("#Name").on("keydown", function(e){
-        if(e.key == 'Enter'){
-            if(!namePattern.test(id)) {
-                $("#CAdd").focus();
-            }else{
-                alert('Invalid Customer Name! ');
-                $("#Name").css('border-color', 'red').blur();
-            }
-        }
-    }); $("#CAdd").on("keydown", function(e){
-        if(e.key == 'Enter') {
-            if (!addressPattern.test(id)) {
-                $("#slry").focus();
-            } else {
-                alert('Invalid Customer Name! ');
-                $("#CAdd").css('border-color', 'red').blur();
-            }
-        }
-    });
-    $("#slry").on("keydown", function(e){
-        if(e.key == 'Enter'){
-            $("#addbuton").focus();
-        }
-    });*/
-
 
     /*item*/
-
+/*
     var itemArry=[];
     $("#add1").click(function () {
         let itemId=$("#Itemid").val();
@@ -693,12 +525,12 @@ bindTrEventItem();
             $(".itemTbody").append(row);
         }
     }
-   /* function clearitemForm() {
+   /!* function clearitemForm() {
       let id=  $("Itemid").val("");
      let name=  $("Iname").val("");
       let price= $("price").val("");
       let qty=  $("qtyi").val("");
-    }*/
+    }*!/
     function bindTrEventItem() {
         $('.itemTbody').on('click','tr',function () {
             let id=$(this).children(":eq(0)").text();
@@ -716,13 +548,9 @@ let itemid=$("#Itemid").val("");
 let itemname=$("#Iname").val("");
 let itemPrice=$("#price").val("");
 let itemqty=$("#qtyi").val("");
-    }
-$("#code").on('click',function () {
-    for(var item of itemArry){
-        var id=`<option>${item.id}</option>`;
-        $("#code").append(id);
-    }
-})
+    }*/
+
+
 </script>
 </body>
 </html>

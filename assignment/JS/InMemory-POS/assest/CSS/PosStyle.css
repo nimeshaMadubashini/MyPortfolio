@@ -1,5 +1,5 @@
 #itemformpic{
-    background: url("/assignment/JS/InMemory-POS/assest/black-friday-concept-with-cart-basket.jpg");
+    background: url("/assignment/JS/InMemory-POS/assest/itemm.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -9,7 +9,7 @@
     background-position: center ;
 }
 #oderspic{
-    background: url('/assignment/JS/SPA/assest/hands-working-digital-device-network-graphic-overlay.jpg');
+    background: url('/assignment/JS/InMemory-POS/assest/oder.jpg');
     background-size: cover;
     background-position: center;
 }

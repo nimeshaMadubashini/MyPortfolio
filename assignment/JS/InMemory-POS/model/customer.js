@@ -1,6 +1,6 @@
 let customerObj = {
-    cusId:"",
-    cusName:"",
-    cusAdd:"",
-    cusSalary:""
+    id:"",
+    name:"",
+    address:"",
+    salary:0
 };
