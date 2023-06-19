@@ -20,6 +20,7 @@ $("#cid,#Name,#CAdd,#slry").keyup(function () {
     checkValidationsOfAll();
 });
 
+
 $("#cid").keydown(function (e) {
     if (e.key == "Enter" && check(CUS_ID_REGEX, $("#cid"))) {
         $("#Name").focus();
