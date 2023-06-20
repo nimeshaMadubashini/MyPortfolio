@@ -2,5 +2,5 @@ let itemObj = {
     itemId:"",
     itemName:"",
     itemPrice:"",
-    itemQty:""
+    itemQty:0
 };

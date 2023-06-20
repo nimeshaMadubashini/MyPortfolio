@@ -63,3 +63,17 @@ $("#OderItemCode").keydown(function (e) {
     let id = $("#OderItemCode").val();
     searchItem(id);
 });
+
+$("#cash").on("input", function() {
+    var cashValue = $(this).val();
+    var subtotalValue = parseFloat($("#subTotal").val());
+
+    if (cashValue !== "" && parseFloat(cashValue) < subtotalValue) {
+        $(this).addClass("is-invalid");
+    } else {
+        $(this).removeClass("is-invalid");
+    }
+});
+$("#btnCart").onclick(function () {
+
+})

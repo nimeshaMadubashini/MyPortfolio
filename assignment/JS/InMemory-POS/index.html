@@ -267,7 +267,7 @@
                 </div>
 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Add to cart</button>
+                    <button type="button" id="btnCart" class="btn btn-primary">Add to cart</button>
                 </div>
             </form>
         </section>
@@ -281,8 +281,7 @@
                 </div>
                 <div class="col">
                     <div class="mb-2">
-                        <input type="number" readonly class="form-control p-1 fs-6 fw-bolder " id="total"
-                               value="00000.00">
+                        <input type="number" readonly class="form-control p-1 fs-6 fw-bolder " id="total">
                     </div>
                 </div>
 
@@ -294,8 +293,7 @@
                     </div>
                     <div class="col">
                         <div class="mb-2">
-                            <input type="number" readonly class="form-control p-1 fs-6 fw-bolder " id="subTotal"
-                                   value="00000.00">
+                            <input type="number" readonly class="form-control p-1 fs-6 fw-bolder " id="subTotal">
                         </div>
                     </div>
                 </div>
@@ -304,7 +302,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="cash" class="form-label " style="font-size:18px;font-weight:600">Cash</label>
-                            <input type="text" class="form-control" id="cash" placeholder="0000.00">
+                            <input type="number" class="form-control" id="cash" >
                         </div>
                     </div>
                     <div class="col">
@@ -317,7 +315,7 @@
                 <div class="row">
                     <div class="mb-3 mb-xl-5 mb-xxl-4">
                         <label for="balance" class="form-label"  style="font-size:18px;font-weight:600">Balance</label>
-                        <input type="text" class="form-control" id="balance" placeholder="0000.00">
+                        <input type="text" class="form-control" id="balance">
                     </div>
                     <div class="mt-1 d-grid col-6 mt-xl-2 mx-auto">
                         <button type="button" class="btn btn-success">Purchase</button>
@@ -424,7 +422,6 @@
 
     </section>
 </section>
-
 <script src="assest/js/jquery-3.7.0.min.js"></script>
 <script src="controller/customerController.js"></script>
 <script src="controller/itemController.js"></script>
@@ -433,8 +430,7 @@
 <script src="utill/notification.js"></script>
 <script src="controller/validation/customerFormValidation.js"></script>
 <script src="controller/validation/itemFormValidation.js"></script>
-<script src="controller/placeOder.js"></script>
-
+<script src="controller/placeOderController.js"></script>
 <script src="model/item.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -490,65 +486,7 @@
 
     });
 
-    /*item*/
-/*
-    var itemArry=[];
-    $("#add1").click(function () {
-        let itemId=$("#Itemid").val();
-        let itemname=$("#Iname").val();
-        let itemPrice=$("#price").val();
-        let itemqty=$("#qtyi").val();
-var itemObj={
-    id:itemId,
-    name:itemname,
-    price:itemPrice,
-    qty:itemqty
-};
-itemArry.push(itemObj);
-loadItemTable();
-clear();
-bindTrEventItem();
-    });
-    $("#loadItem").click(function () {
-        loadItemTable();
-    })
-    function loadItemTable() {
-        $(".itemTbody").empty();
-        for (var item of itemArry){
-            console.log(item);
-            var row=`<tr>
-<td>${item.id}</td>
-<td>${item.name}</td>
-<td>${item.price}</td>
-<td>${item.qty}</td>
-</tr>`
-            $(".itemTbody").append(row);
-        }
-    }
-   /!* function clearitemForm() {
-      let id=  $("Itemid").val("");
-     let name=  $("Iname").val("");
-      let price= $("price").val("");
-      let qty=  $("qtyi").val("");
-    }*!/
-    function bindTrEventItem() {
-        $('.itemTbody').on('click','tr',function () {
-            let id=$(this).children(":eq(0)").text();
-            let name=$(this).children(":eq(1)").text();
-            let price=$(this).children(":eq(2)").text();
-            let qty=$(this).children(":eq(3)").text();
-            $("#Itemid").val(id);
-            $("#Iname").val(name);
-            $("#price").val(price);
-            $("#qtyi").val(qty);
-        });
-    }
-    function clear() {
-let itemid=$("#Itemid").val("");
-let itemname=$("#Iname").val("");
-let itemPrice=$("#price").val("");
-let itemqty=$("#qtyi").val("");
-    }*/
+
 
 
 </script>

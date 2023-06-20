@@ -1,3 +1,3 @@
  customerDb=[];
 itemDb=[];
-
+placeOderDB=[];
