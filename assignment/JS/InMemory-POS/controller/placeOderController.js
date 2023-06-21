@@ -157,102 +157,74 @@ function generateOrderId() {
 
     return nextId;
 }
-/*/!*function addToCart() {
-    let oderId=$("#OderId").val();
-    let date=$("#OderDate").val();
-    let cusId=$("#OderCusId").val();
-    let cusname=$("#OderCusName").val();
-    let itemid=$("#OderItemCode").val();
-    let itemName=$("#OderDec").val();
-    let unitPrice=$("#unitPrice").val();
-    let qtyOnHand=$("#QtyOnHand").val();
-    let qty=$("#OderQty").val();
-    let total=unitPrice*qty;
-    let total1=$("#total").val(total);
-    let newOder = Object.assign({}, cartObj);
-    newOder.OderId = oderId;
-    newOder.OdDate = date;
-    newOder.odCusId = cusId;
-    newOder.odCusName = cusname;
-    newOder.OdItemId=itemid;
-    newOder.OdItemName=itemName;
-    newOder.OdItemPrice=unitPrice;
-    newOder.OdItemQty=qtyOnHand;
-    newOder.oderQty=qty;
-    newOder.total=total1;
-    placeOderDB.push(newOder);*!/
-    loadcartData();
-/!*if( placeOderDB.push(newOder)){
-    for( let oder of placeOderDB){
-        let row=`<tr>
-<td>${oder.OderId}</td>
-<td>${oder.OdItemId}</td>
-<td>${oder.OdItemName}</td>
-<td>${oder.OdItemPrice}</td>
-<td>${oder.oderQty}</td>
-<td>${oder.total}</td>
-</tr>`;
-        $("#cartTBody").append(row);
-    }
-}else {
-    alert("not adde")
-}*!/
 
-}*/
-function addToCart() {
+
+$("#btnCart").click(function () {
+addItemsToTable();
+})
+
+function addItemsToTable() {
     let oderId = $("#OderId").val();
     let date = $("#OderDate").val();
     let cusId = $("#OderCusId").val();
     let cusname = $("#OderCusName").val();
-    let itemid = $("#OderItemCode").val();
-    let itemName = $("#OderDec").val();
-    let unitPrice = $("#unitPrice").val();
+    let itemCode = $('#OderItemCode').val();
+    let description = $('#OderDec').val();
+    let unitPrice = parseFloat($('#unitPrice').val());
+    let quantity = parseInt($('#OderQty').val());
     let qtyOnHand = $("#QtyOnHand").val();
-    let qty = $("#OderQty").val();
-    let total = unitPrice * qty;
-$("#total").val(total);
 
-    let existingOder = placeOderDB.find(oder => oder.OdItemId === itemid);
-    if (existingOder) {
-        existingOder.oderQty = parseInt(existingOder.oderQty) + parseInt(qty);
-        existingOder.total = parseFloat(existingOder.total) + parseFloat(total);
-        $("#total").val(existingOder.total);
+    // Check if the quantity is available
+    let item = itemDb.find(i => i.itemId === itemCode);
+    if (item && quantity <= item.itemQty) {
+        let total = unitPrice * quantity;
 
-    }else {
-        let newOder = {
-            OderId: oderId,
-            OdDate: date,
-            odCusId: cusId,
-            odCusName: cusname,
-            OdItemId: itemid,
-            OdItemName: itemName,
-            OdItemPrice: unitPrice,
-            OdItemQty: qtyOnHand,
-            oderQty: qty,
-            total: total
-        };
-        placeOderDB.push(newOder);
+        // Check if the item already exists in the table
+        let existingItem = placeOderDB.find(i => i.OdItemId === itemCode);
+        if (existingItem) {
+            existingItem.quantity += quantity;
+            existingItem.total += total;
+        } else {
+            placeOderDB.push({
+                OderId: oderId,
+                OdDate: date,
+                odCusId: cusId,
+                odCusName: cusname,
+                OdItemId: itemCode,
+                OdItemName: description,
+                OdItemPrice: unitPrice,
+                OdItemQty: qtyOnHand,
+                oderQty: quantity,
+                total: total
+            });
+        }
+
+        // Update the table
+        updateTable();
+        calculateTotal();
+    } else {
+        alert('Insufficient quantity!');
     }
-
-    loadcartData();
 }
-
-$("#btnCart").click(function () {
-addToCart();
-
-})
-function loadcartData() {
+function updateTable() {
     $("#cartTBody").empty();
     for (let oder of placeOderDB) {
         let row = `<tr>
 <td>${oder.OderId}</td>
 <td>${oder.OdItemId}</td>
 <td>${oder.OdItemName}</td>
-<td>${oder.OdItemPrice}</td>
 <td>${oder.oderQty}</td>
-<td>${oder.total}</td>
+<td>${oder.OdItemPrice.toFixed(2)}</td>
+<td>${oder.total.toFixed(2)}</td>
 </tr>`;
         $("#cartTBody").append(row);
 
     }
+}
+function calculateTotal() {
+    let total = 0;
+    for (let item of placeOderDB) {
+        total += item.total;
+    }
+    $('#total').val(total.toFixed(2));
 }
