@@ -111,7 +111,7 @@ function saveCustomer() {
         customerDb.push(newCustomer);
         clearCusData();
         getAllCustomers();
-
+loadAllCusId();
     } else {
         alert("Customer already exits.!");
         clearCusData();

@@ -3,7 +3,7 @@ const ITEM_NAME_REGEX = /^[A-Za-z ]{3,}$/;
 const ITEM_QTY_REGEX = /^[0-9]+$/;
 const ITEM_PRICE_REGEX = /^[0-9]{2,}([.][0-9]{2})?$/;
 
-let ItemValidationArr = [];
+let ItemValidationArr =[];
 ItemValidationArr.push({reg: ITEM_CODE_REGEX, field: $('#txtItemId'), error: 'Item Id Patter is Not Valid :I00-01'});
 ItemValidationArr.push({reg: ITEM_NAME_REGEX, field: $('#txtItemName'), error: 'Item Name  is Not Valid :A a-Z z 5>'});
 ItemValidationArr.push({reg: ITEM_PRICE_REGEX, field: $('#txtItemPrice'), error: 'Item price  is No Valid '});

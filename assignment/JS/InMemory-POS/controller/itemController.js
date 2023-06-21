@@ -143,6 +143,7 @@ function saveItem() {
         itemDb.push(newItem);
         clearItemData();
         getAllItem();
+        loadAllItemId();
     } else {
         alert("Item already exits.!");
         clearItemData();

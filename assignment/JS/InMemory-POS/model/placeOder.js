@@ -5,6 +5,7 @@ let placeOderObj = {
     odCusName:"",
     OdItemId:"",
     OdItemName:"",
-    OdItemPrice:"",
-    OdItemQty:0
+    OdItemPrice:0,
+    OdItemQty:0,
+    oderQty:0
 };

@@ -1,6 +1,6 @@
 let itemObj = {
     itemId:"",
     itemName:"",
-    itemPrice:"",
+    itemPrice:0,
     itemQty:0
 };
