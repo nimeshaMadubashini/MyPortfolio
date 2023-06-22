@@ -303,12 +303,13 @@
                         <div class="mb-3">
                             <label for="cash" class="form-label " style="font-size:18px;font-weight:600">Cash</label>
                             <input type="number" class="form-control" id="cash" >
+                            <span class="control-error" id="lblCash" ></span>
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3 mb-xxl-4">
                             <label for="discount" class="form-label" style="font-size:18px;font-weight:600; color:firebrick">Discount</label>
-                            <input type="number" class="form-control" id="discount" placeholder="10">
+                            <input type="number" class="form-control" id="discount" >
                         </div>
                     </div>
                 </div>
@@ -318,7 +319,7 @@
                         <input type="text" class="form-control" id="balance">
                     </div>
                     <div class="mt-1 d-grid col-6 mt-xl-2 mx-auto">
-                        <button type="button" class="btn btn-success">Purchase</button>
+                        <button type="button" id="placeOder" class="btn btn-success">Purchase</button>
                     </div>
                 </div>
 

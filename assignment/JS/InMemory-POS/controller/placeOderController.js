@@ -95,15 +95,14 @@ $("#OrderQty").on('input', function () {
     $("#total").val(total);
 });
 */
+$(document).ready(function () {
+    generateOrderId();
+    let OdId = generateOrderId();
+    $("#OderId").val(OdId);
+})
 fillCurrentDate();
-let OdId = generateOrderId();
-$("#OderId").val(OdId);
-/*$("#OrderQty").on('input', function () {
-    let unitPrice = parseFloat($("#unitPrice").val());
-    let qty = parseFloat($("#OrderQty").val());
-    let total = unitPrice * qty;
-    $("#total").text(total.toFixed(2)); // Display the total in the separate element
-});*/
+
+
 function loadAllCusId() {
         $("#OderCusId").empty();
         for (let cus of customerDb){
@@ -143,20 +142,7 @@ function fillCurrentDate() {
     $('#OderDate').val(currentDate);
 
 }
-generateOrderId();
-function generateOrderId() {
-    let existingOrderIds = []; // Replace with your actual existing order IDs
 
-    let maxId = existingOrderIds.reduce(function (max, orderId) {
-        let orderIdNumber = parseInt(orderId.split('-')[1]);
-        return orderIdNumber > max ? orderIdNumber : max;
-    }, 0);
-
-    let nextIdNumber = maxId + 1;
-    let nextId = 'OID-' + nextIdNumber.toString().padStart(3, '0');
-
-    return nextId;
-}
 
 
 $("#btnCart").click(function () {
@@ -164,7 +150,7 @@ addItemsToTable();
 })
 
 function addItemsToTable() {
-    let oderId = $("#OderId").val();
+    let oderId =generateOrderId();
     let date = $("#OderDate").val();
     let cusId = $("#OderCusId").val();
     let cusname = $("#OderCusName").val();
@@ -204,6 +190,7 @@ function addItemsToTable() {
         calculateTotal();
     } else {
         alert('Insufficient quantity!');
+
     }
 }
 function updateTable() {
@@ -227,4 +214,132 @@ function calculateTotal() {
         total += item.total;
     }
     $('#total').val(total.toFixed(2));
+    $('#subTotal').val(total.toFixed(2));
+
+}
+/*let disTOGave=0;
+$('#discount').on('keyup',function (){
+    let dis=$('#discount').val();
+    let tot=$('#total').val();
+    var totMin=0;
+    let subTot=0;
+
+    console.log(dis+"=="+tot);
+    totMin=parseFloat(tot)*(dis/100);
+    console.log("dis Dis: "+totMin)
+
+    subTot=tot-totMin;
+    disTOGave=totMin;
+
+    $('#subTotal').val(subTot);
+    balance();
+
+});
+$("#cash").on("keydown", function() {
+    var cashValue = parseFloat($(this).val());
+    var subtotalValue = parseFloat($("#subTotal").val());
+    if (cashValue !== "" && cashValue < subtotalValue) {
+        $("#cash").css("border", "2px solid red");
+        $("#lblCash").text("Insufficient credit");
+    } else {
+        $("#cash").css("border", "");
+        $("#lblCash").text("");
+    }
+    $('#balance').val(cashValue - subtotalValue);});*/
+
+let disTOGave = 0;
+
+$('#discount').on('keyup', function() {
+    let dis = parseFloat($('#discount').val());
+    let tot = parseFloat($('#total').val());
+
+    console.log(dis + "==" + tot);
+
+    let totMin = tot * (dis / 100);
+    console.log("Discount Amount: " + totMin);
+
+    let subTot = tot - totMin;
+    disTOGave = totMin;
+
+    $('#subTotal').val(subTot);
+    updateBalance();
+});
+
+$("#cash").on("keyup", function() {
+    var cashValue = parseFloat($(this).val());
+    var subtotalValue = parseFloat($("#subTotal").val());
+
+    if (isNaN(cashValue) || cashValue > subtotalValue) {
+        $("#cash").css("border", "2px solid red");
+        $("#lblCash").text("Insufficient credit");
+    } else {
+        $("#cash").css("border", "");
+        $("#lblCash").text("");
+    }
+
+    updateBalance();
+});
+
+function updateBalance() {
+    var cashValue = parseFloat($("#cash").val());
+    var subtotalValue = parseFloat($("#subTotal").val());
+
+    var balance = cashValue - (subtotalValue - disTOGave);
+    $('#balance').val(balance.toFixed(2));
+}
+function clearAll() {
+    $("#OderDate").val("");
+    $("#OderCusId").val("");
+    $("#OderCusName").val("");
+    $("#OderItemCode").val("");
+    $("#OderDec").val("");
+    $("#unitPrice").val("");
+    $("#OderQty").val("");
+    $("#QtyOnHand").val("");
+    $("#balance").val("");
+    $("#subTotal").val("");
+    $("#total").val("");
+    $("#discount").val("");
+    $("#cash").val("");
+    $("#cash").css("border" ,"");
+    $("lblCash").val("");
+}
+
+$("#placeOder").click(function () {
+    let oderId = generateOrderId();
+    let cusName = $("#OderCusName").val();
+    let date = $("#OderDate").val();
+    let discount = $("#discount").val();
+    let cost = $("#subTotal").val();
+
+    placeOderDB.push({
+        OderId: oderId,
+        odCusName: cusName,
+        OdDate: date,
+        discount: discount,
+        odCost: cost
+    });
+    $("#OderId").val(oderId);
+    clearAll();
+    clearTable();
+    generateOrderId();
+});
+
+function generateOrderId() {
+    let existingOrderIds = placeOderDB.map(function (order) {
+        return order.OderId;
+    });
+
+    let maxId = existingOrderIds.reduce(function (max, orderId) {
+        let orderIdNumber = parseInt(orderId.split('-')[1]);
+        return orderIdNumber > max ? orderIdNumber : max;
+    }, 0);
+
+    let nextIdNumber = maxId + 1;
+    let nextId = 'ODI-' + nextIdNumber.toString().padStart(3, '0');
+
+    return nextId;
+}
+function clearTable() {
+    $("#cartTBody").empty();
 }
