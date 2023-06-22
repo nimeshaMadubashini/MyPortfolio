@@ -351,11 +351,11 @@
     <section>
         <div class="container-fluid mt-4 ">
             <form class="d-flex" role="search">
-                <select id="code1" class="form-select w-25 ">
+                <select id="loadOderId" class="form-select w-25 ">
                     <option selected>Select Order Id</option>
                     <option>...</option>
                 </select>
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-outline-success" id="OdIdSearch" type="button">Search</button>
             </form>
         </div>
     </section>
@@ -406,7 +406,7 @@
 
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="odersTBody">
 
 
                 </tbody>
@@ -429,11 +429,16 @@
 <script src="controller/itemController.js"></script>
 <script src="db/DB.js"></script>
 <script src="model/customer.js"></script>
+<script src="model/placeOder.js"></script>
 <script src="utill/notification.js"></script>
+<script src="model/cart.js"></script>
+
 <script src="controller/validation/customerFormValidation.js"></script>
 <script src="controller/validation/itemFormValidation.js"></script>
 <script src="controller/placeOderController.js"></script>
+<script src="controller/viewOrderController.js"></script>
 <script src="model/item.js"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("home").style.display = 'inline-block';
@@ -496,6 +501,7 @@
         }
     });
 */
+
 
 
 </script>

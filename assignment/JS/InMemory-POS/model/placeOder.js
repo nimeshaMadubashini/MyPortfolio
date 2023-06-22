@@ -1,6 +1,6 @@
 let placeOderObj = {
-    OderId:"",
-    odCusName:"",
+    OdId:"",
+    oderCusName:"",
     odDate:"",
     discount:0,
     odCost:0
