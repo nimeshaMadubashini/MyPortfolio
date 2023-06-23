@@ -10,29 +10,58 @@ function searchOderDetail(id) {
     let oder = placeOderDB2.find(ode => ode.OdId == id);
 
     if (oder) {
-        // Set the input values based on the found order object
         $("#id").val(oder.OdId);
-        $("#date").val(oder.odDate);
-        $("#cusId").val(oder.oderCusName);
-        $("#CusName").val(oder.discount);
-        $("#dis").val(oder.odCost.toFixed(2));
-
+        $("#cname").val(oder.oderCusName);
+        $("#OdDate").val(oder.odDate);
+        $("#dis").val(oder.discount);
+        $("#cost").val(oder.odCost);
         // Clear and populate the table with the order data
-        $("#odersTBody").empty();
-        let row = `<tr>
-            <td>${oder.OdId}</td>
-            <td>${oder.oderCusName}</td>
-            <td>${oder.odDate}</td>
-            <td>${oder.discount}</td>
-            <td>${oder.odCost.toFixed(2)}</td>
-        </tr>`;
-        $("#odersTBody").append(row);
+
     }
 }
 
 
 $("#OdIdSearch").click(function () {
-    let id= $("#loadOderId>option").val();
+    let id= $("#loadOderId").val();
 searchOderDetail(id);
 })
 
+function deleteOders(id) {
+    for (let i = 0; i < placeOderDB2.length; i++) {
+        if (placeOderDB2[i].OdId == id) {
+            placeOderDB2.splice(i, 1);
+            loadviewTable();
+            return true;
+        }
+    }
+    return false;
+}
+
+$("#btndeleteOD").on('click',function () {
+    let id = $("#id").val();
+    let consent=confirm("Do You Want to delete?");
+    if(consent){
+        let response=deleteOders(id);
+        if (response){
+            alert("Order Delete");
+            loadviewTable();
+            loadAllOderId();
+            clear();
+            generateNextOrderId();
+        }else {
+            alert("Order Not remove");
+        }
+
+    }
+
+});
+function clear() {
+    $("#id").val("");
+    $("#cname").val("");
+    $("#OdDate").val("");
+    $("#dis").val("");
+    $("#cost").val("");
+}
+$("#btnclear").click(function () {
+    clear();
+})

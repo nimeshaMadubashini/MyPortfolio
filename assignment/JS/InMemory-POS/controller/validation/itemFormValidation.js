@@ -51,11 +51,9 @@ $("#txtItemPrice").keydown(function (e) {
 
 $("#txtItemQty").keydown(function (e) {
     if (e.key == "Enter" && checkItemRegex(ITEM_QTY_REGEX, $("#txtItemQty"))) {
-        let con = confirm("Do yo want to add this customer ?")
+        let con = confirm("Do yo want to add this item ?")
         if (con) {
-            saveItem()
-            getAllItem();
-            clearItemData();
+            saveItem($("#OderId").val(), $("#OderDec").val(), $("#unitPrice").val(), $("#OderQty").val())
         }
     }
 });
