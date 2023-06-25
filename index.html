@@ -9169,7 +9169,8 @@ height: 300px;
         $("#project").css("display", "none");
         $("#Skill").css("display", "none");
         $("#Education").css("display", "none");
-
+        $("#loading").fadeOut();
+        $("#loading-img").delay(150).fadeOut('slow');
     });
 
     $(window).on("load", function () {
@@ -9233,10 +9234,10 @@ height: 300px;
     });
 
 
-    $(window).load(function () {
+   /* $(window).load(function () {
         $("#loading").fadeOut();
         $("#loading-img").delay(150).fadeOut('slow');
-    },5000);
+    },5000);*/
 /*$(document).ready(function () {
     let loader = document.getElementById("loader");
     window.addEventListener("load", function () {
