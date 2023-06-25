@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head >
     <meta charset="UTF-8">
     <title>Portfolio | Nimesha Madubashini</title>
     <meta name="viewport" content="width=device-width initial-scale=1">
@@ -8623,7 +8623,15 @@ height: 300px;
     </style>
 </head>
 <body>
-<header>
+<div id="container">
+    <div id="loading">
+        <span id="loading-img">Loading...</span>
+    </div>
+</div>
+<!--<div id="loader">
+    <div></div>
+</div>-->
+<header style="display: none" >
     <div class="logo">
         <h1>Prot<span>folio</span></h1>
     </div>
@@ -9150,6 +9158,31 @@ height: 300px;
 -->
 <script src="assest/js/jquery-3.7.0.min.js"></script>
 <script>
+    $(document).ready(function () {
+        $("#loading").css("display", "block");
+        $("header").css("display", "none");
+        $("footer").css("display", "none");
+        $("#home").css("display", "none");
+        $("#AboutMe").css("display", "none");
+        $("#gallery").css("display", "none");
+        $("#assignmet").css("display", "none");
+        $("#project").css("display", "none");
+        $("#Skill").css("display", "none");
+        $("#Education").css("display", "none");
+
+    });
+
+    $(window).on("load", function () {
+        $("header, footer").css("display", "block");
+        $("#home").css("display", "block");
+        $("#AboutMe").css("display", "block");
+        $("#gallery").css("display", "block");
+        $("#assignmet").css("display", "block");
+        $("#project").css("display", "block");
+        $("#Skill").css("display", "block");
+        $("#Education").css("display", "block");
+        $("#container").css("display", "none");
+    });
     $(".num1").click(function () {
         $(".scr").scrollLeft(50);
     });
@@ -9198,20 +9231,20 @@ height: 300px;
     $(".num16").click(function () {
         $(".scr").scrollLeft(3800);
     });
-   /* var num1=$(".num1");
-    var num2=$(".num2");
-    let arr=[num1,num2] ;
-    for(let i=0;i<arr.length;i++){
-        var num=50
 
-        $(arr[i]).click(function () {
 
-            $(".scr").scrollLeft(num);
+    $(window).load(function () {
+        $("#loading").fadeOut();
+        $("#loading-img").delay(150).fadeOut('slow');
+    },5000);
+/*$(document).ready(function () {
+    let loader = document.getElementById("loader");
+    window.addEventListener("load", function () {
+        console.log("This message will print just after fully loading the website")
+        loader.style.display = 'none';
+    });
+});*/
 
-        })
-        var scoroll=250;
-        num+=scoroll;
-    }*/
 </script>
 </body>
 </html>
