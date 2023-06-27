@@ -370,7 +370,7 @@ function generateNextOrderId() {
     }, 0);
 
     let nextIdNumber = maxId + 1;
-    let nextId = 'ODI-' + nextIdNumber.toString().padStart(3, '0');
+    let nextId = 'OID-' + nextIdNumber.toString().padStart(3, '0');
 
     $("#OderId").val(nextId);
     $('#OderId').css("border","2px solid green");
