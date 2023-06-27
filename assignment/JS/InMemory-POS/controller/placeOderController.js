@@ -284,7 +284,7 @@ function clearAll() {
     $("#OderCusName").css("border", "");
 }
 
-$("#placeOder").click(function () {
+/*$("#placeOder").click(function () {
     let OIDRegex = /^(OID-)[0-9]{1,3}$/
     let con = confirm("Do yo want to add this Oder ?")
 if (con){
@@ -317,6 +317,43 @@ if (con){
     alert("can not placeOder")
 }
 
+});*/
+$("#placeOder").click(function () {
+    let OIDRegex = /^(OID-)[0-9]{1,3}$/;
+    let con = confirm("Do you want to add this Order?");
+
+    if (con) {
+        let oderId = $("#OderId").val();
+        let cusName = $("#OderCusName").val();
+        let date = $("#OderDate").val();
+        let discount = $("#discount").val();
+        let cost = $("#subTotal").val();
+
+        if (oderId !== "") {
+            if (OIDRegex.test(oderId)) {
+                placeOderDB2.push({
+                    OdId: oderId,
+                    oderCusName: cusName,
+                    OdDate: date,
+                    discount: discount,
+                    odCost: cost
+                });
+
+                clearAll();
+                clearTable();
+                generateNextOrderId();
+                loadAllOderId();
+                loadviewTable();
+                fillCurrentDate();
+            } else {
+                alert("Invalid Order ID");
+            }
+        } else {
+            alert("Enter Order ID");
+        }
+    } else {
+        alert("Cannot place Order");
+    }
 });
 
 function clearTable() {
@@ -370,3 +407,17 @@ function loadviewTable() {
 
 
 }
+$("#OderId").keyup(function () {
+    let OIDRegex = /^(OID-)[0-9]{1,3}$/;
+    let oderId = $(this).val(); // Get the value of the OderId field
+
+    if (OIDRegex.test(oderId)) {
+        $('#OderId').css("border","2px solid green");
+
+        console.log("Valid OderId:", oderId);
+    } else {
+        $('#OderId').css("border","2px solid red");
+
+        console.log("Invalid OderId:", oderId);
+    }
+});

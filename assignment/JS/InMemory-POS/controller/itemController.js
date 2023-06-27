@@ -126,11 +126,9 @@ function saveItem() {
     let ItemId = $("#txtItemId").val();
     //check customer is exists or not?
     if (searchItem(ItemId.trim()) == undefined) {
-        //if the customer is not available then add him to the array
         let ItemName = $("#txtItemName").val();
         let ItemPrice = $("#txtItemPrice").val();
         let ItemQty = $("#txtItemQty").val();
-
         //by using this one we can create a new object using
         //the customer model with same properties
         let newItem = Object.assign({}, itemObj);
@@ -180,14 +178,15 @@ function getAllItem() {
 }
 
 
-
 function searchItem(id) {
-    return itemDb.find(function (item) {
-        //if the search id match with customer record
-        //then return that object
-        return item.itemId == id;
-    });
+    for (let item of itemDb) {
+        if (item.itemId === id) {
+            return item;
+        }
+    }
+    return undefined; // Return undefined if no match is found
 }
+
 
 function clearItemData() {
     let id = $("#txtItemId").val("");

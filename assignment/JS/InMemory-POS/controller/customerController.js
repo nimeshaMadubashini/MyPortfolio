@@ -2,9 +2,9 @@
 //load all existing customers
 function updateCus(id) {
     if (searchCustomer(id) == undefined) {
-        alert("No Serch id")
+        alert("No such id found");
     } else {
-        let consent = confirm("Do You Want to Update?")
+        let consent = confirm("Do you want to update?");
         if (consent) {
             let customer = searchCustomer(id);
             let cusId = $("#cid").val();
@@ -13,13 +13,11 @@ function updateCus(id) {
             let cusSalary = $("#slry").val();
             customer.id = cusId;
             customer.name = cusName;
-            customer.add = cusAdd;
+            customer.address = cusAdd; // corrected variable name
             customer.salary = cusSalary;
             getAllCustomers();
             clearCusData();
         }
-
-
     }
 }
 $("#btnUpdateCustomer").click(function () {
@@ -149,11 +147,12 @@ function getAllCustomers() {
 
 
 function searchCustomer(id) {
-    return customerDb.find(function (customer) {
-        //if the search id match with customer record
-        //then return that object
-        return customer.id == id;
-    });
+    for (let cus of customerDb) {
+        if (cus.id === id) {
+            return cus;
+        }
+    }
+    return undefined;
 }
 
 function clearCusData() {

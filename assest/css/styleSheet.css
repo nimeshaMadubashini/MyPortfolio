@@ -99,7 +99,7 @@ img:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-background: #576574;
+background: white;
 }
 #loading{
     width: 200px;
@@ -142,7 +142,7 @@ animation: animateee 2s linear infinite;
     text-align: center;
     line-height: 200px;
     font-size: 20px;
-    color: white;
+    color: black;
     animation:tex 2s linear infinite;
 }
 @keyframes tex {
