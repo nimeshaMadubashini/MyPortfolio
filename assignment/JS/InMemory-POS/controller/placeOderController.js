@@ -329,7 +329,14 @@ $("#placeOder").click(function () {
         let discount = $("#discount").val();
         let cost = $("#subTotal").val();
 
-        if (oderId !== "") {
+        let cusId = $("#OderCusId").val();
+        let itemCode = $('#OderItemCode').val();
+        let description = $('#OderDec').val();
+        let unitPrice = parseFloat($('#unitPrice').val());
+        let quantity = parseInt($('#OderQty').val());
+        let qtyOnHand = $("#QtyOnHand").val();
+        if ((oderId !== "")&&(cusName !== "")&&(cusId !== "")&&(itemCode !== "")&&(description !== "")
+            &&(unitPrice !== 0)&&(quantity !== 0)&&(qtyOnHand !== 0)) {
             if (OIDRegex.test(oderId)) {
                 placeOderDB2.push({
                     OdId: oderId,
